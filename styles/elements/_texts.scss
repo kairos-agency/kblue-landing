@@ -1,0 +1,42 @@
+.gray {
+	color: $color-grey;
+}
+
+p.medium {
+	font-size: rem(1.4);
+	@media (min-width: $from-small) {
+		font-size: rem(1.2);
+		max-width: rem(42);
+	}
+}
+
+section ul {
+	li {
+		font-size: rem(1.1);
+		font-weight: 700;
+		line-height: 1.6;
+		@media (min-width: $from-small) {
+			font-size: rem(1.2);
+		}
+	}
+}
+
+.text-75 {
+	max-width: rem(84);
+}
+
+.text-2col {
+	.container-sm {
+		display: grid;
+		gap: rem(2);
+		@media (min-width: $from-small) {
+			grid-template-columns: 1fr 1fr;
+			gap: rem(6);
+			align-items: flex-start;
+			p {
+				font-size: rem(1.4);
+				max-width: rem(40);
+			}
+		}
+	}
+}

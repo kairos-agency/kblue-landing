@@ -1,0 +1,10 @@
+.btn-primary {
+	color: $color-white;
+	background: $color-primary;
+	font-weight: 400;
+	padding: rem(0.8) rem(3);
+	border-radius: 8px;
+	@media (min-width: $from-mini) {
+		padding: rem(1) rem(4);
+	}
+}

@@ -1,0 +1,51 @@
+h1 {
+	font-size: rem(4);
+	font-weight: 500;
+	line-height: 1;
+	text-align: center;
+	@media (min-width: $from-small) {
+		font-size: 5vw;
+	}
+	span {
+		font-family: Requila;
+		font-size: rem(5);
+		@media (min-width: $from-small) {
+			font-size: 6vw;
+		}
+	}
+}
+
+h2 {
+	font-size: rem(2.6);
+	line-height: 1;
+	@media (min-width: $from-small) {
+		font-size: 6vw;
+	}
+	span {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: rem(1);
+		@media (min-width: $from-small) {
+			gap: rem(2);
+		}
+	}
+	&.small {
+		font-size: rem(2);
+		line-height: 1.2;
+		@media (min-width: $from-small) {
+			font-size: rem(3.6);
+		}
+		span {
+			justify-content: flex-start;
+		}
+	}
+}
+
+h3 {
+	font-size: rem(2);
+	line-height: 1;
+	@media (min-width: $from-small) {
+		font-size: rem(3.2);
+	}
+}

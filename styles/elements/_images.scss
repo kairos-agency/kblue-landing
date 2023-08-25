@@ -1,0 +1,27 @@
+.full {
+	width: 100%;
+}
+
+.round {
+	width: rem(5);
+	height: rem(5);
+	background: $color-primary;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	@media (min-width: $from-small) {
+		width: rem(9);
+		height: rem(9);
+	}
+	img {
+		width: rem(1);
+		height: rem(1);
+		object-fit: contain;
+		@media (min-width: $from-small) {
+			width: rem(1.5);
+			height: rem(1.5);
+		}
+	}
+}

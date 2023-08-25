@@ -1,0 +1,28 @@
+section {
+	.container-sm {
+		> div {
+			div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: rem(1);
+				margin: 0 auto;
+				@media (min-width: $from-small) {
+					width: 60%;
+				}
+				p {
+					width: 50%;
+					text-align: center;
+					color: $color-grey-dark;
+					@media (min-width: $from-small) {
+						width: 75%;
+					}
+				}
+			}
+		}
+	}
+	.three {
+		height: 100vh;
+		position: relative;
+	}
+}

@@ -1,0 +1,29 @@
+section {
+	.container-xs {
+		hr {
+			border: 0.5px solid $color-grey;
+		}
+		.grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			grid-gap: 2rem;
+			justify-items: center;
+
+			margin-top: rem(5);
+
+			@media (min-width: $from-small) {
+				grid-template-columns: 1fr 1fr 1fr 1fr;
+				grid-template-rows: 1fr;
+			}
+			img {
+				width: 80%;
+				height: 80%;
+				object-fit: contain;
+				&:nth-child(2) {
+					width: 60%;
+				}
+			}
+		}
+	}
+}

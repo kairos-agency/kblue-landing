@@ -1,0 +1,20 @@
+@import './abstracts/variables';
+@import './abstracts/functions';
+
+@import './base/fonts';
+@import './base/reset';
+@import './base/base';
+
+@import './components/nav';
+@import './components/footer';
+@import './components/heroHome';
+@import './components/logoGrid';
+
+@import './elements/layouts';
+@import './elements/headings';
+@import './elements/texts';
+@import './elements/images';
+@import './elements/buttons';
+@import './elements/forms';
+
+@import './anims/anims';
