@@ -29,6 +29,10 @@ html {
 	}
 }
 
+canvas {
+	width: 80vw;
+}
+
 body {
 	background: $color-bg;
 	overscroll-behavior: none;
@@ -76,7 +80,7 @@ section {
 }
 
 section {
-	margin: rem(4) 0;
+	margin: rem(8) 0;
 	scroll-margin-top: rem(4);
 	@media (min-width: $from-small) {
 		margin: rem(12) 0;
@@ -106,3 +110,22 @@ section {
 // 	color: $color-grey-darker;
 // 	background: $color-primary;
 // }
+
+.Placeholder {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	aspect-ratio: 16/10;
+}
+
+.ScrollScene,
+.ViewportScrollScene {
+	// outline: 1px dashed rgba(255, 255, 255, 0.33);
+	position: relative;
+}
+
+#ScrollRig-canvas {
+	z-index: -1;
+}

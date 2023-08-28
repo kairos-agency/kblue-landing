@@ -114,6 +114,7 @@ function Animate({ ...props }) {
 						color={'#3F65FC'}
 					/>
 				</mesh>
+
 				<mesh
 					name='Window05'
 					castShadow

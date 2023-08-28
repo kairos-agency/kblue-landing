@@ -4,7 +4,7 @@ import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_an
 export default function LogoGrid() {
 	return (
 		<>
-			<section>
+			<section className='logo_grid'>
 				<div className='container-xs'>
 					<hr />
 					<FadeIn>
