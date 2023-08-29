@@ -13,7 +13,7 @@ export default function Footer() {
 						<Link href='/'>
 							<img src='/images/kairos-blue-logo-white.svg' alt='Logo Kairos Blue' />
 						</Link>
-						<p>Kairos blue, a software edited with love by Kairos Agency</p>
+						<p className='medium'>Kairos blue, a software edited with love by Kairos Agency</p>
 						<div>
 							<Link href='/'>Legal</Link>
 							<Link href='/'>Contact</Link>

@@ -41,6 +41,12 @@ footer {
 				@media (min-width: $from-small) {
 					flex-direction: row;
 				}
+				a {
+					font-size: rem(1.5);
+					@media (min-width: $from-small) {
+						font-size: rem(1.4);
+					}
+				}
 			}
 		}
 	}

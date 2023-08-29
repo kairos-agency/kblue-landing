@@ -2,11 +2,17 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
 import * as THREE from 'three'
 
 export default function HeroHome() {
+	const [isTouch, setTouch] = useState(false)
+	useEffect(() => {
+		const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+		setTouch(isTouch)
+		console.log(isTouch)
+	}, [])
 	return (
 		<>
 			<SmoothScrollbar>

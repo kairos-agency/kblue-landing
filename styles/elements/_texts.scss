@@ -3,13 +3,13 @@
 }
 
 p.medium {
-	font-size: rem(1.4);
+	font-size: rem(1.5);
 	text-align: center;
 	line-height: rem(2);
 
 	margin: rem(2) auto 0;
 	@media (min-width: $from-small) {
-		font-size: rem(1.2);
+		font-size: rem(1.4);
 		max-width: rem(42);
 		margin-top: rem(5);
 	}
