@@ -3,8 +3,6 @@ import Head from 'next/head'
 import Layout from '../components/layout'
 import { GlobalCanvas } from '@14islands/r3f-scroll-rig'
 import { Environment, Lightformer } from '@react-three/drei'
-import { useFrame } from '@react-three/fiber'
-import { easing } from 'maath'
 import * as THREE from 'three'
 import { Perf } from 'r3f-perf'
 
