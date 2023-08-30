@@ -16,7 +16,13 @@ export default function App({ Component, pageProps }) {
 			</Head>
 
 			<Layout>
-				<GlobalCanvas shadows dpr={[1, 2]}>
+				<GlobalCanvas
+					shadows
+					dpr={[1, 2]}
+					onCreated={({ gl }) => {
+						gl.toneMapping = THREE.NoToneMapping
+					}}
+				>
 					<color attach='background' args={['#FBFBFD']} />
 
 					<Environment resolution={32}>
