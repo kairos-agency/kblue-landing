@@ -15,6 +15,13 @@ p.medium {
 	}
 }
 
+p.overtitle {
+	color: $color-primary;
+	text-align: center;
+	font-weight: 600;
+	margin-bottom: rem(3);
+}
+
 section ul {
 	li {
 		font-size: rem(1.1);

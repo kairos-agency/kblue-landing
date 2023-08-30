@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Canvas, useFrame } from '@react-three/fiber'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 
@@ -7,12 +8,6 @@ import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-
 import * as THREE from 'three'
 
 export default function HeroHome() {
-	const [isTouch, setTouch] = useState(false)
-	useEffect(() => {
-		const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
-		setTouch(isTouch)
-		console.log(isTouch)
-	}, [])
 	return (
 		<>
 			<SmoothScrollbar>
@@ -29,13 +24,23 @@ export default function HeroHome() {
 									</div>
 								</FadeInBottom>
 							</div>
-							<KeyAnimationSection />
+							<TouchDevice />
 						</section>
 					</header>
 				)}
 			</SmoothScrollbar>
 		</>
 	)
+}
+
+function TouchDevice() {
+	const [isTouch, setTouch] = useState(false)
+	useEffect(() => {
+		const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+		setTouch(isTouch)
+		console.log(isTouch)
+	}, [])
+	return isTouch ? <img src='/images/heroImage.jpg' alt='hero image' /> : <KeyAnimationSection />
 }
 
 function KeyAnimationSection() {
