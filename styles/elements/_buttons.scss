@@ -12,16 +12,20 @@
 	color: $color-white;
 	background: $color-grey-darker;
 	font-weight: 400;
-	padding: rem(1) rem(3);
+	padding: rem(0.5) rem(1);
 	border-radius: 8px;
-	font-size: rem(1.4);
+	font-size: rem(1);
 	text-align: center;
 	line-height: rem(2);
+	@media (min-width: $from-mini) {
+		padding: rem(1.2) rem(3);
+		font-size: rem(1.2);
+	}
+	@media (min-width: $from-tiny) {
+		padding: rem(1.2) rem(4);
+		font-size: rem(1.4);
+	}
 	@media (min-width: $from-small) {
 		font-size: rem(1.2);
-		max-width: rem(42);
-	}
-	@media (min-width: $from-mini) {
-		padding: rem(1.2) rem(5);
 	}
 }

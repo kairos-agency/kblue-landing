@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link.js'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 
@@ -27,15 +28,17 @@ export default function Showcase() {
 								</p>
 							</FadeIn>
 							<FadeIn>
-								<div className='demo-btn'>
-									<p className='medium'>Ask for a demo today</p>
-									<Link className='btn-secondary' href='/'>
-										Demo
-									</Link>
+								<div className='canvas-container'>
+									<div className='demo-bar'>
+										<p className='medium'>Ask for a demo today</p>
+										<Link className='btn-secondary' href='/'>
+											Demo
+										</Link>
+									</div>
+									<TouchDevice />
 								</div>
 							</FadeIn>
 						</div>
-						<TouchDevice />
 					</section>
 				)}
 			</SmoothScrollbar>
@@ -50,7 +53,7 @@ function TouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/heroImage.jpg' alt='hero image' /> : <PlaneAnimationSection />
+	return isTouch ? <img src='/images/showcase.png' alt='hero image' /> : <PlaneAnimationSection />
 }
 
 function PlaneAnimationSection() {
@@ -70,7 +73,7 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
 
 	const { nodes, animations } = useGLTF('/plane.glb')
 
-	const albedo = useTexture('/tex/home.jpeg', (texture) => {
+	const albedo = useTexture('/tex/home.jpg', (texture) => {
 		texture.flipY = false
 		texture.encoding = THREE.sRGBEncoding
 	})
@@ -98,10 +101,10 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
 				<group name='PlaneParent' scale={2}>
 					<group name='Plane_1' scale={100}>
 						<mesh castShadow receiveShadow geometry={nodes.Plane_2.geometry}>
-							<meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
+							<meshBasicMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
 						</mesh>
 						<mesh castShadow receiveShadow geometry={nodes.Plane_3.geometry}>
-							<meshPhysicalMaterial map={albedo} />
+							<meshBasicMaterial map={albedo} />
 						</mesh>
 					</group>
 				</group>

@@ -40,7 +40,7 @@ function TouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/heroImage.jpg' alt='hero image' /> : <KeyAnimationSection />
+	return isTouch ? <img src='/images/hero.png' alt='hero image' /> : <KeyAnimationSection />
 }
 
 function KeyAnimationSection() {
