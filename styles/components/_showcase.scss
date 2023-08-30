@@ -25,6 +25,7 @@ section {
 					font-weight: 600;
 					text-align: center;
 					width: 50%;
+					white-space: nowrap;
 					@media (min-width: $from-mini) {
 						font-size: rem(1.2);
 					}
