@@ -25,13 +25,13 @@ section {
 							&::before {
 								content: '';
 								position: absolute;
-								top: 25%;
-								left: 0;
-								transform: translateX(-50%);
-								width: 100%;
-								height: 100%;
-								background-image: url('/images/dot.svg');
-								background-repeat: no-repeat;
+								top: 50%;
+								left: rem(-1.3);
+								transform: translateY(-50%);
+								width: rem(0.6);
+								height: rem(0.6);
+								background-color: $color-primary;
+								border-radius: 50%;
 							}
 						}
 					}
