@@ -1,44 +1,62 @@
 const emsContent = {
 	item1: {
-		btnTitle: 'test1',
-		title: 'Test 1 Title EMS',
-		description: 'Test 1 Description',
+		btnTitle: 'Document database',
+		title: 'Centralize your documents',
+		description:
+			'A shared document storage space to <strong>facilitate records management</strong> <br/>➔ All types of documents: Word, Excel, Powerpoint, PDF, Videos, Images etc. <br/>➔ No storage volume limit for premium accounts',
 		image: '/images/placeholder.png'
 	},
 	item2: {
-		btnTitle: 'test2',
-		title: 'Test 2 Title',
-		description: 'Test 2 Description',
+		btnTitle: 'Phone book',
+		title: 'Facilitate internal communication 📞',
+		description:
+			'➔ Seat <br/>➔ Members <br/>➔ Administraton <br/>➔ Suppliers <br/>➔ Other: service providers, freelancers, delivery people, etc.',
 		image: '/images/placeholder.png'
 	},
 	item3: {
-		btnTitle: 'test3',
-		title: 'Test 3 Title',
-		description: 'Test 3 Description',
+		btnTitle: 'Internal messaging',
+		title: 'You have a new message! 📨',
+		description: 'Allow members of your structure to write to each other in an secured internal chat.',
 		image: '/images/placeholder.png'
 	},
 	item4: {
-		btnTitle: 'test4',
-		title: 'Test 4 Title',
+		btnTitle: 'After Sale Service',
+		title: 'Increase your customer satisfaction 🛟',
 		description: 'Test 4 Description',
 		image: '/images/placeholder.png'
 	},
 	item5: {
-		btnTitle: 'test5',
-		title: 'Test 5 Title',
-		description: 'Test 5 Description',
+		btnTitle: 'Making appointments',
+		title: 'Never miss an appointment 📅',
+		description:
+			'If your team needs to organize appointments with your customers or partners, the platform centralizes them and sends reminders automatically.',
 		image: '/images/placeholder.png'
 	},
 	item6: {
-		btnTitle: 'test6',
-		title: 'Test 6 Title',
-		description: 'Test 6 Description',
+		btnTitle: 'Subscription / payment',
+		title: 'Manage your members 🎫',
+		description:
+			'If your company or non-profit manages recurring payments like subscriptions or contributions, Kairos Blue orchestrates them for you.',
 		image: '/images/placeholder.png'
 	},
 	item7: {
-		btnTitle: 'test7',
-		title: 'Test 7 Title',
-		description: 'Test 7 Description',
+		btnTitle: 'Forum',
+		title: 'A forum to meet 👥',
+		description:
+			'A forum makes it possible to build a library of evolving knowledge, or to exchange by subject on ongoing projects. More effective than emails!',
+		image: '/images/placeholder.png'
+	},
+	item8: {
+		btnTitle: 'Statistics',
+		title: 'Track engagement KPIs 👀',
+		description: 'Observe the use of your new tool by following the usage statistics from the extranet.',
+		image: '/images/placeholder.png'
+	},
+	item9: {
+		btnTitle: 'APIs',
+		title: 'Connect your existing tools 🖇️',
+		description:
+			'Automate your activities by linking your existing tools to the extranet: Salesforce, Zendesk, G-drive, internal APIs, etc.',
 		image: '/images/placeholder.png'
 	}
 }

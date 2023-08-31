@@ -68,7 +68,12 @@ function CmsContent() {
 			<div className='content'>
 				<div>
 					<h4>{cmsContent[activeCmsItem].title}</h4>
-					<p className='grey'>{cmsContent[activeCmsItem].description}</p>
+					<p
+						className='grey'
+						dangerouslySetInnerHTML={{
+							__html: cmsContent[activeCmsItem].description
+						}}
+					/>
 					<img src={cmsContent[activeCmsItem].image} alt='placeholder' />
 				</div>
 			</div>
@@ -94,7 +99,12 @@ function EmsContent() {
 			<div className='content'>
 				<div>
 					<h4>{emsContent[activeEmsItem].title}</h4>
-					<p className='grey'>{emsContent[activeEmsItem].description}</p>
+					<p
+						className='grey'
+						dangerouslySetInnerHTML={{
+							__html: emsContent[activeEmsItem].description
+						}}
+					/>
 					<img src={emsContent[activeEmsItem].image} alt='placeholder' />
 				</div>
 			</div>
@@ -120,7 +130,12 @@ function LmsContent() {
 			<div className='content'>
 				<div>
 					<h4>{lmsContent[activeLmsItem].title}</h4>
-					<p className='grey'>{lmsContent[activeLmsItem].description}</p>
+					<p
+						className='grey'
+						dangerouslySetInnerHTML={{
+							__html: lmsContent[activeLmsItem].description
+						}}
+					/>
 					<img src={lmsContent[activeLmsItem].image} alt='placeholder' />
 				</div>
 			</div>
