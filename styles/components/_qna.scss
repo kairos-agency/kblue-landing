@@ -1,0 +1,19 @@
+section {
+	.container {
+		.accordion-container {
+			display: flex;
+			flex-direction: column;
+			gap: rem(0.3);
+			.accordion {
+				&:first-of-type {
+					border-top-left-radius: rem(1);
+					border-top-right-radius: rem(1);
+				}
+				&:last-of-type {
+					border-bottom-left-radius: rem(1);
+					border-bottom-right-radius: rem(1);
+				}
+			}
+		}
+	}
+}

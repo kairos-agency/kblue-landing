@@ -1,0 +1,40 @@
+.accordion {
+	background-color: $color-white;
+	padding: rem(1.5) rem(3);
+	cursor: pointer;
+	overflow: hidden;
+	border-radius: rem(0.2);
+	.accordion-title {
+		display: flex;
+		justify-content: space-between;
+		p {
+			font-size: rem(1.2);
+			font-weight: 500;
+			max-width: 80%;
+		}
+		img {
+			&.rotate {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	.accordion-pulltab {
+		overflow: hidden;
+		transition: all 0.5s ease;
+		max-height: 0;
+		div {
+			padding: rem(1.5) 0 0;
+			p {
+				padding-left: rem(2);
+				color: $color-grey-dark;
+				font-size: rem(1);
+				line-height: 175%;
+				border-left: 1px solid $color-grey;
+				max-width: 100%;
+				@media (min-width: $from-small) {
+					max-width: 80%;
+				}
+			}
+		}
+	}
+}

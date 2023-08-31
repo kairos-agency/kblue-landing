@@ -8,6 +8,7 @@ import LogoScroller from '../components/content/LogoScroller'
 import Pricing from '../components/content/Pricing'
 import OpenSource from '../components/content/OpenSource'
 import Developper from '../components/content/Developper'
+import Qna from '../components/content/qna'
 
 export default function Home() {
 	return (
@@ -23,6 +24,7 @@ export default function Home() {
 			<LogoScroller />
 			<Pricing />
 			<OpenSource />
+			<Qna />
 			<Developper />
 		</>
 	)
