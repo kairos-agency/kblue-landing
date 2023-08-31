@@ -4,21 +4,42 @@ section {
 			display: flex;
 			flex-direction: column;
 
-			margin: rem(12) auto;
+			margin: rem(12) auto 0;
 
+			&:last-of-type {
+				margin-top: 0;
+			}
+
+			@media (min-width: $from-small) {
+				margin: rem(12) auto;
+			}
 			.staggered-row {
 				display: flex;
-				flex-direction: row;
+				flex-direction: column;
 				justify-content: space-between;
 				&.reverse {
-					flex-direction: row-reverse;
+					flex-direction: column;
+				}
+				@media (min-width: $from-small) {
+					flex-direction: row;
+
+					&.reverse {
+						flex-direction: row-reverse;
+					}
 				}
 				.staggered-col {
-					width: 40%;
+					width: 100%;
+					@media (min-width: $from-small) {
+						width: 40%;
+					}
 					h4 {
-						font-size: rem(1.5);
+						font-size: rem(1.8);
 						font-weight: 500;
-						width: 80%;
+						width: 100%;
+						@media (min-width: $from-small) {
+							font-size: rem(1.5);
+							width: 80%;
+						}
 					}
 					p {
 						text-align: left;
@@ -26,6 +47,9 @@ section {
 				}
 				.Placeholder {
 					width: 50%;
+				}
+				img {
+					margin: rem(5) 0;
 				}
 			}
 		}

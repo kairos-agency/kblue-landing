@@ -71,7 +71,7 @@ function MarkupTouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/showcase.png' alt='hero image' /> : <MarkupSection />
+	return isTouch ? <img src='/images/markup.jpg' alt='hero image' /> : <MarkupSection />
 }
 
 function MarkupSection() {
@@ -146,7 +146,7 @@ function GlobeTouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/showcase.png' alt='hero image' /> : <GlobeSection />
+	return isTouch ? <img src='/images/globe.jpg' alt='hero image' /> : <GlobeSection />
 }
 
 function GlobeSection() {
