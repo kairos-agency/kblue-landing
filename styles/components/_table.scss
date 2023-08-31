@@ -131,7 +131,7 @@ section {
 				.content {
 					display: flex;
 					justify-content: center;
-					align-items: center;
+					align-items: flex-start;
 
 					padding: rem(2) 0;
 					margin: 0 auto;
@@ -142,8 +142,8 @@ section {
 						display: flex;
 						flex-direction: column;
 						gap: rem(2);
-						width: 80%;
-						margin: auto;
+						width: rem(40);
+						margin-top: rem(5);
 						@media (max-width: $from-small) {
 							width: 100%;
 							h4 {

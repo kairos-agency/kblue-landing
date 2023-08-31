@@ -102,24 +102,7 @@ function Markup({ scale, scrollState, ...props }) {
 		<group {...props} dispose={null} scale={75}>
 			<group name='Markup'>
 				<mesh name='Markup_1' castShadow receiveShadow geometry={nodes.Markup_1.geometry}>
-					<MeshTransmissionMaterial
-						backside
-						backsideThickness={0.44}
-						samples={128}
-						resolution={1024}
-						transmission={1}
-						clearcoat={0.1}
-						clearcoatRoughness={0}
-						thickness={1.85}
-						chromaticAberration={0}
-						anisotropy={0.3}
-						roughness={0.3}
-						distortion={0}
-						distortionScale={0}
-						temporalDistortion={0}
-						ior={1.5}
-						color={'#ffffff'}
-					/>
+					<meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
 				</mesh>
 				<mesh
 					name='MarkupWindow03'
@@ -189,19 +172,7 @@ function Globe({ scale, scrollState, ...props }) {
 				<meshToonMaterial color={'#2854ff'} />
 			</mesh>
 			<mesh castShadow receiveShadow geometry={nodes.PlanetWindow02.geometry} position={[-2.182, -1.161, 1.475]}>
-				<MeshTransmissionMaterial
-					backside
-					backsideThickness={0.44}
-					samples={64}
-					resolution={64}
-					transmission={1}
-					clearcoat={0.1}
-					clearcoatRoughness={0}
-					thickness={0.45}
-					roughness={0.45}
-					ior={0.4}
-					color={'#3F65FC'}
-				/>
+				<meshPhysicalMaterial color={'#2854ff'} />
 			</mesh>
 			<mesh castShadow receiveShadow geometry={nodes.PlanetWindow01.geometry} position={[-2.299, 0.36, -1.471]}>
 				<meshToonMaterial color={'#3F65FC'} />
@@ -209,24 +180,7 @@ function Globe({ scale, scrollState, ...props }) {
 			<group ref={ref}>
 				{/* OCEAN */}
 				<mesh castShadow receiveShadow geometry={nodes.Mesh001.geometry}>
-					<MeshTransmissionMaterial
-						backside
-						backsideThickness={0.44}
-						samples={128}
-						resolution={1024}
-						transmission={1}
-						clearcoat={0.1}
-						clearcoatRoughness={0}
-						thickness={1.85}
-						chromaticAberration={0}
-						anisotropy={0.3}
-						roughness={0.3}
-						distortion={0}
-						distortionScale={0}
-						temporalDistortion={0}
-						ior={1.5}
-						color={'#ffffff'}
-					/>
+					<meshPhysicalMaterial color={'#3F65FC'} roughness={1} clearcoat={1} clearcoatRoughness={1} />
 				</mesh>
 				{/* LAND */}
 				<mesh castShadow receiveShadow geometry={nodes.Mesh001_1.geometry}>

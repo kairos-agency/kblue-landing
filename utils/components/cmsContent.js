@@ -1,20 +1,23 @@
 const cmsContent = {
 	item1: {
-		btnTitle: 'test1',
-		title: 'Test 1 Title CMS',
-		description: 'Test 1 Description',
+		btnTitle: 'Website',
+		title: 'Welcome home 🫶!',
+		description:
+			'We offer you a customizable website, in the colors of your organization and en effective information architecture. Webpage, blog, contact, all your pages are freely editable with a library of blocks. Configure the SEO of your web pages at the same time.',
 		image: '/images/placeholder.png'
 	},
 	item2: {
-		btnTitle: 'test2',
-		title: 'Test 2 Title',
-		description: 'Test 2 Description',
+		btnTitle: 'Job center',
+		title: 'Recruit quickly 🙋',
+		description:
+			'Publish and manage your job offers, centralize your applications in your extranet, involve your teams in the process.',
 		image: '/images/placeholder.png'
 	},
 	item3: {
-		btnTitle: 'test3',
-		title: 'Test 3 Title',
-		description: 'Test 3 Description',
+		btnTitle: 'Events',
+		title: 'Let the festivities begin ! 🎉',
+		description:
+			'Create presentation pages and registration forms for all your events, free or paid. Manage the volumes of subscribers, send reminders before D-Day to ensure a maximum of presents.',
 		image: '/images/placeholder.png'
 	},
 	item4: {
