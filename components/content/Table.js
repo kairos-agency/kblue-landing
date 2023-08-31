@@ -1,16 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 import React, { useState } from 'react'
+import cmsContent from '../../utils/components/cmsContent.js'
+import emsContent from '../../utils/components/emsContent.js'
+import lmsContent from '../../utils/components/lmsContent.js'
 
 export default function Table() {
 	const [activeTab, setActiveTab] = useState('CMS')
 	const handleClick = (tab) => {
 		setActiveTab(tab)
-	}
-
-	const [activeItem, setActiveItem] = useState('Site web')
-	const handleClickItem = (item) => {
-		setActiveItem(item)
 	}
 
 	return (
@@ -42,55 +40,90 @@ export default function Table() {
 							</div>
 						</div>
 						<div className='content-container'>
-							<div className='items'>
-								<div onClick={() => handleClickItem('Site web')} className={activeItem === 'Site web' ? 'active' : ''}>
-									<p>Site web</p>
-								</div>
-								<div
-									onClick={() => handleClickItem('Job center')}
-									className={activeItem === 'Job center' ? 'active' : ''}
-								>
-									<p>Job center</p>
-								</div>
-								<div onClick={() => handleClickItem('Events')} className={activeItem === 'Events' ? 'active' : ''}>
-									<p>Events</p>
-								</div>
-								<div
-									onClick={() => handleClickItem('Elearnning')}
-									className={activeItem === 'Elearnning' ? 'active' : ''}
-								>
-									<p>Elearning</p>
-								</div>
-								<div
-									onClick={() => handleClickItem('User rights')}
-									className={activeItem === 'User rights' ? 'active' : ''}
-								>
-									<p>User rights</p>
-								</div>
-								<div
-									onClick={() => handleClickItem('Documentary base')}
-									className={activeItem === 'Documentary base' ? 'active' : ''}
-								>
-									<p>Documentary base</p>
-								</div>
-							</div>
-							<div className='content'>
-								<div>
-									<h4>How content management system works ?</h4>
-									<p className='grey'>
-										Wondering how our content management system works? It's simple and powerful! Kairos blue lets you
-										create, organize, and publish engaging content in a snap. With intuitive features and a
-										user-friendly interface, you have full control over your content. You can easily upload media, add
-										text, design attractive layouts, and even schedule posts in advance. Transform your content
-										management experience with Kairos blue and unleash your creativity without limits!
-									</p>
-									<img src='/images/placeholder.png' alt='placeholder' />
-								</div>
-							</div>
+							{activeTab === 'CMS' && <CmsContent />}
+							{activeTab === 'EMS' && <EmsContent />}
+							{activeTab === 'LMS' && <LmsContent />}
 						</div>
 					</div>
 				</div>
 			</section>
+		</>
+	)
+}
+
+function CmsContent() {
+	const [activeCmsItem, setActiveCmsItem] = useState('item1')
+	const handleClickCmsItem = (item) => {
+		setActiveCmsItem(item)
+	}
+	return (
+		<>
+			<div className='items'>
+				{Object.keys(cmsContent).map((key) => (
+					<div key={key} onClick={() => handleClickCmsItem(key)} className={activeCmsItem === key ? 'active' : ''}>
+						<p>{cmsContent[key].btnTitle}</p>
+					</div>
+				))}
+			</div>
+			<div className='content'>
+				<div>
+					<h4>{cmsContent[activeCmsItem].title}</h4>
+					<p className='grey'>{cmsContent[activeCmsItem].description}</p>
+					<img src={cmsContent[activeCmsItem].image} alt='placeholder' />
+				</div>
+			</div>
+		</>
+	)
+}
+
+function EmsContent() {
+	const [activeEmsItem, setActiveEmsItem] = useState('item1')
+	const handleClickEmsItem = (item) => {
+		setActiveEmsItem(item)
+	}
+
+	return (
+		<>
+			<div className='items'>
+				{Object.keys(emsContent).map((key) => (
+					<div key={key} onClick={() => handleClickEmsItem(key)} className={activeEmsItem === key ? 'active' : ''}>
+						<p>{emsContent[key].btnTitle}</p>
+					</div>
+				))}
+			</div>
+			<div className='content'>
+				<div>
+					<h4>{emsContent[activeEmsItem].title}</h4>
+					<p className='grey'>{emsContent[activeEmsItem].description}</p>
+					<img src={emsContent[activeEmsItem].image} alt='placeholder' />
+				</div>
+			</div>
+		</>
+	)
+}
+
+function LmsContent() {
+	const [activeLmsItem, setActiveLmsItem] = useState('item1')
+	const handleClickLmsItem = (item) => {
+		setActiveLmsItem(item)
+	}
+
+	return (
+		<>
+			<div className='items'>
+				{Object.keys(lmsContent).map((key) => (
+					<div key={key} onClick={() => handleClickLmsItem(key)} className={activeLmsItem === key ? 'active' : ''}>
+						<p>{lmsContent[key].btnTitle}</p>
+					</div>
+				))}
+			</div>
+			<div className='content'>
+				<div>
+					<h4>{lmsContent[activeLmsItem].title}</h4>
+					<p className='grey'>{lmsContent[activeLmsItem].description}</p>
+					<img src={lmsContent[activeLmsItem].image} alt='placeholder' />
+				</div>
+			</div>
 		</>
 	)
 }

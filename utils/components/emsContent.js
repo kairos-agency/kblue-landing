@@ -1,7 +1,7 @@
-const cmsContent = {
+const emsContent = {
 	item1: {
 		btnTitle: 'test1',
-		title: 'Test 1 Title CMS',
+		title: 'Test 1 Title EMS',
 		description: 'Test 1 Description',
 		image: '/images/placeholder.png'
 	},
@@ -43,4 +43,4 @@ const cmsContent = {
 	}
 }
 
-export default cmsContent
+export default emsContent
