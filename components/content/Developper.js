@@ -1,3 +1,4 @@
+import Link from 'next/link.js'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 
 export default function Developper() {
@@ -12,6 +13,13 @@ export default function Developper() {
 						<h2>
 							Contribure to <span>the project</span>
 						</h2>
+					</FadeIn>
+					<FadeIn>
+						<div className='github-btn'>
+							<Link href='/' className='btn-primary'>
+								GitHub
+							</Link>
+						</div>
 					</FadeIn>
 				</div>
 			</section>
