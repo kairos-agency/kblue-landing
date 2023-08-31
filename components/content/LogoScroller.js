@@ -1,6 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
+import React, { useRef, useEffect } from 'react'
 
 export default function LogoScroller() {
+	const imageUrls = [
+		'/images/marquee/nextcloud.svg',
+		'/images/marquee/sharepoint.svg',
+		'/images/marquee/zendesk.svg',
+		'/images/marquee/aircall.svg',
+		'/images/marquee/salesforce.svg',
+		'/images/marquee/hubspot.svg',
+		'/images/marquee/googledrive.svg',
+		'/images/marquee/slack.svg',
+		'/images/marquee/discord.svg'
+	]
 	return (
 		<>
 			<section>
@@ -19,7 +32,25 @@ export default function LogoScroller() {
 					</FadeIn>
 					<hr />
 				</div>
+				<InfiniteMarquee images={imageUrls} />
 			</section>
 		</>
+	)
+}
+
+const InfiniteMarquee = ({ images }) => {
+	return (
+		<div className='marquee'>
+			<div className='marquee__group'>
+				{images.map((imageUrl, index) => (
+					<img key={index} src={imageUrl} alt={`Logo ${index}`} />
+				))}
+			</div>
+			<div aria-hidden='true' className='marquee__group'>
+				{images.map((imageUrl, index) => (
+					<img key={index} src={imageUrl} alt={`Logo ${index}`} />
+				))}
+			</div>
+		</div>
 	)
 }
