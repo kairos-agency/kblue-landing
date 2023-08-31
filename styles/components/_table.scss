@@ -142,7 +142,7 @@ section {
 						display: flex;
 						flex-direction: column;
 						gap: rem(2);
-						width: rem(30);
+						width: 80%;
 						margin: auto;
 						@media (max-width: $from-small) {
 							width: 100%;
