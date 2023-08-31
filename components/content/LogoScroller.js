@@ -30,9 +30,9 @@ export default function LogoScroller() {
 							exchange data and functionalities
 						</p>
 					</FadeIn>
-					<hr />
 				</div>
 				<InfiniteMarquee images={imageUrls} />
+				<hr className='marquee-bar' />
 			</section>
 		</>
 	)
