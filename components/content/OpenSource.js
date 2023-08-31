@@ -41,16 +41,14 @@ export default function OpenSource() {
 									</div>
 									<MarkupTouchDevice />
 								</div>
-							</div>
-							<div className='staggered-container'>
 								<div className='staggered-row reverse'>
 									<div className='staggered-col'>
-										<h4>It's about trust, transparency, breaking down barriers and creating together.</h4>
+										<h4>
+											Open source is an adventure, a journey to a world where technology is open, shared and constantly
+											improved.
+										</h4>
 										<p className='medium grey'>
-											It allows everyone to understand, modify and improve the code, thus creating a dynamic of constant
-											innovation. By opting for open source, Kairos blue gains in flexibility and independence. You are
-											no longer limited by the constraints of a single supplier. You can tailor the code to your
-											specific needs, creating bespoke solutions that perfectly match your vision
+											Embark with Kairos Blue on this journey and discover the true power of open source.
 										</p>
 									</div>
 									<GlobeTouchDevice />
@@ -168,7 +166,7 @@ function Globe({ scale, scrollState, ...props }) {
 	useFrame((state, delta) => (ref.current.rotation.y += delta / 4))
 	return (
 		<group {...props} dispose={null} scale={75}>
-			<mesh castShadow receiveShadow geometry={nodes.PlanetWindow03.geometry} position={[2.787, 1.685, -2.313]}>
+			<mesh castShadow receiveShadow geometry={nodes.PlanetWindow03.geometry} position={[2.787, -0.7, -2.313]}>
 				<meshToonMaterial color={'#2854ff'} />
 			</mesh>
 			<mesh castShadow receiveShadow geometry={nodes.PlanetWindow02.geometry} position={[-2.182, -1.161, 1.475]}>
