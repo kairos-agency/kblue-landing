@@ -32,11 +32,11 @@ export default function Table() {
 							<div onClick={() => handleClick('CMS')} className={activeTab === 'CMS' ? 'tab active' : 'tab'}>
 								<h3>CMS</h3>
 							</div>
-							<div onClick={() => handleClick('EMS')} className={activeTab === 'EMS' ? 'tab active' : 'tab'}>
-								<h3>EMS</h3>
-							</div>
 							<div onClick={() => handleClick('LMS')} className={activeTab === 'LMS' ? 'tab active' : 'tab'}>
 								<h3>LMS</h3>
+							</div>
+							<div onClick={() => handleClick('EMS')} className={activeTab === 'EMS' ? 'tab active' : 'tab'}>
+								<h3>EMS</h3>
 							</div>
 						</div>
 						<div className='content-container'>
