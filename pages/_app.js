@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }) {
 
 					<ambientLight intensity={0.75} />
 
-					{/* <Perf /> */}
+					<Perf />
 				</GlobalCanvas>
 				<Component {...pageProps} />
 			</Layout>

@@ -3,7 +3,7 @@ import { MeshTransmissionMaterial, useGLTF, useTexture } from '@react-three/drei
 import * as THREE from 'three'
 
 export default function MarkupTest(props) {
-	const { nodes, materials } = useGLTF('/markup-test.glb')
+	const { nodes } = useGLTF('/markup-test.glb')
 
 	const albedoChart = useTexture('/tex/chart.png', (texture) => {
 		texture.flipY = false

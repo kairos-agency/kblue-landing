@@ -1,0 +1,33 @@
+section {
+	.container {
+		.staggered-container {
+			display: flex;
+			flex-direction: column;
+
+			margin: rem(12) auto;
+
+			.staggered-row {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				&.reverse {
+					flex-direction: row-reverse;
+				}
+				.staggered-col {
+					width: 40%;
+					h4 {
+						font-size: rem(1.5);
+						font-weight: 500;
+						width: 80%;
+					}
+					p {
+						text-align: left;
+					}
+				}
+				.Placeholder {
+					width: 50%;
+				}
+			}
+		}
+	}
+}

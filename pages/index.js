@@ -6,6 +6,7 @@ import Showcase from '../components/content/Showcase'
 import Table from '../components/content/Table'
 import LogoScroller from '../components/content/LogoScroller'
 import Pricing from '../components/content/Pricing'
+import OpenSource from '../components/content/OpenSource'
 import Developper from '../components/content/Developper'
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
 			<Table />
 			<LogoScroller />
 			<Pricing />
+			<OpenSource />
 			<Developper />
 		</>
 	)
