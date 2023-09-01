@@ -2,8 +2,15 @@
 import Link from 'next/link.js'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 import { useState } from 'react'
+import { PricingAccordionMobile } from '../../utils/components/pricingMobile.js'
+import { useSnapshot } from 'valtio'
+import { state } from '../../utils/store.js'
 
 export default function Pricing() {
+	const [activePlan, setActivePlan] = useState('CMS')
+	const handleClick = (plan) => {
+		setActivePlan(plan)
+	}
 	return (
 		<>
 			<section>
@@ -33,7 +40,13 @@ export default function Pricing() {
 					<div className='pricing'>
 						<div className='cards'>
 							<FadeInBottom>
-								<div className='card'>
+								<div
+									onClick={() => {
+										handleClick('Basic')
+										state.plan = 'Basic'
+									}}
+									className={activePlan === 'Basic' ? 'card active' : 'card'}
+								>
 									<div className='card__title'>
 										<h3>Basic</h3>
 										<p>The starter pack</p>
@@ -51,7 +64,13 @@ export default function Pricing() {
 								</div>
 							</FadeInBottom>
 							<FadeInBottom>
-								<div className='card'>
+								<div
+									onClick={() => {
+										handleClick('Kblue')
+										state.plan = 'Kblue'
+									}}
+									className={activePlan === 'Kblue' ? 'card active' : 'card'}
+								>
 									<div className='card__title'>
 										<h3>Kblue</h3>
 										<p>The all-in-one package</p>
@@ -69,7 +88,13 @@ export default function Pricing() {
 								</div>
 							</FadeInBottom>
 							<FadeInBottom>
-								<div className='card card--white'>
+								<div
+									onClick={() => {
+										handleClick('Premium')
+										state.plan = 'Premium'
+									}}
+									className={activePlan === 'Premium' ? 'card card--white active' : 'card card--white'}
+								>
 									<div className='card__title'>
 										<h3>Premium</h3>
 										<p>The all-in-one package</p>
@@ -87,7 +112,8 @@ export default function Pricing() {
 								</div>
 							</FadeInBottom>
 						</div>
-						<PricingAccordion title='test' />
+						<PricingAccordion />
+						<PricingAccordionMobile />
 					</div>
 				</div>
 			</section>
@@ -95,7 +121,7 @@ export default function Pricing() {
 	)
 }
 
-function PricingAccordion(props) {
+function PricingAccordion() {
 	const [isShowing, setIsShowing] = useState(false)
 
 	function toggle(e) {
