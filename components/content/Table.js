@@ -13,7 +13,7 @@ export default function Table() {
 
 	return (
 		<>
-			<section>
+			<section id='Features'>
 				<div className='container'>
 					<FadeIn>
 						<h2>

@@ -13,7 +13,7 @@ export default function OpenSource() {
 		<>
 			<SmoothScrollbar>
 				{(bind) => (
-					<section {...bind}>
+					<section {...bind} id='Ressources'>
 						<div className='container'>
 							<FadeInBottom>
 								<p className='overtitle'>It's all</p>

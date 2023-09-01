@@ -13,7 +13,7 @@ export default function Pricing() {
 	}
 	return (
 		<>
-			<section>
+			<section id='Pricing'>
 				<div className='container'>
 					<FadeIn>
 						<h2>Pricing</h2>

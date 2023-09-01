@@ -16,7 +16,7 @@ export default function LogoScroller() {
 	]
 	return (
 		<>
-			<section>
+			<section id='APIs'>
 				<div className='container-sm'>
 					<FadeInBottom>
 						<p className='overtitle'>Get help from the best</p>

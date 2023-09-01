@@ -31,9 +31,6 @@ function Nav() {
 						<img src='/images/kairos-blue-logo.svg' alt='Logo Kairos Blue' />
 					</Link>
 					<div className='center'>
-						<Link href='#CMS'>CMS</Link>
-						<Link href='#LMS'>LMS</Link>
-						<Link href='#EMS'>EMS</Link>
 						<Link href='#Features'>Features</Link>
 						<Link href='#APIs'>APIs</Link>
 						<Link href='#Pricing'>Pricing</Link>
@@ -61,21 +58,6 @@ function Nav() {
 				</div>
 				<div className='menu'>
 					<ul>
-						<li>
-							<Link onClick={closeMenu} href='#CMS'>
-								CMS
-							</Link>
-						</li>
-						<li>
-							<Link onClick={closeMenu} href='#LMS'>
-								LMS
-							</Link>
-						</li>
-						<li>
-							<Link onClick={closeMenu} href='#EMS'>
-								EMS
-							</Link>
-						</li>
 						<li>
 							<Link onClick={closeMenu} href='#Features'>
 								Features
