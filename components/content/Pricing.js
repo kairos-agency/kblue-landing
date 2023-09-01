@@ -143,7 +143,7 @@ function PricingAccordion() {
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
-				<div className='accordion__pulltab accordion__pulltab--pricing'>
+				<div className='accordion__pulltab accordion__pulltab--pricing' style={{ maxHeight: `fit-content` }}>
 					<div className='pulltab--wrapper'>
 						<div>
 							<p>Starter web template</p>
