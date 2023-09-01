@@ -8,6 +8,19 @@ import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-
 import * as THREE from 'three'
 
 export default function HeroHome() {
+	useEffect(() => {
+		const handleScroll = () => {
+			const title = document.querySelector('.title')
+			title.style.transform = `translateY(-${window.scrollY / 2}px)`
+		}
+
+		window.addEventListener('scroll', handleScroll)
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll)
+		}
+	}, [])
+
 	return (
 		<>
 			<SmoothScrollbar>
@@ -16,7 +29,7 @@ export default function HeroHome() {
 						<section>
 							<div className='container-sm'>
 								<FadeInBottom>
-									<div>
+									<div className='title'>
 										<h1>
 											The all-in-one <span>backoffice</span>
 										</h1>
@@ -137,8 +150,8 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
 						<MeshTransmissionMaterial
 							backside
 							backsideThickness={0.44}
-							samples={128}
-							resolution={1024}
+							samples={16}
+							resolution={512}
 							transmission={1}
 							clearcoat={0.1}
 							clearcoatRoughness={0}
