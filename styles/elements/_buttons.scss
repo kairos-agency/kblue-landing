@@ -17,12 +17,15 @@
 	font-size: rem(1);
 	text-align: center;
 	line-height: rem(2);
+	&:hover {
+		background: darken($color-grey-darker, 10%);
+	}
 	@media (min-width: $from-mini) {
 		padding: rem(1.2) rem(3);
 		font-size: rem(1.2);
 	}
 	@media (min-width: $from-tiny) {
-		padding: rem(1.2) rem(4);
+		padding: rem(0.8) rem(4);
 		font-size: rem(1.4);
 	}
 	@media (min-width: $from-small) {

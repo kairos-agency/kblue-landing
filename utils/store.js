@@ -1,7 +1,8 @@
 import { proxy } from 'valtio'
 
 const state = proxy({
-	plan: 'Basic'
+	plan: 'Basic',
+	openedTab: 'CMS'
 })
 
 export { state }
