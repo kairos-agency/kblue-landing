@@ -17,7 +17,7 @@ section {
 				@media (min-width: $from-small) {
 					padding: rem(1);
 					max-width: rem(40);
-					margin: rem(10) auto rem(0);
+					margin: rem(10) auto rem(2);
 				}
 				p {
 					margin: 0;
@@ -38,7 +38,7 @@ section {
 				}
 			}
 			.Placeholder {
-				aspect-ratio: 16/14;
+				aspect-ratio: 16/18;
 			}
 			img {
 				margin-top: rem(5);
