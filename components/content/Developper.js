@@ -11,7 +11,7 @@ export default function Developper() {
 					</FadeInBottom>
 					<FadeIn>
 						<h2>
-							Contribure to <span>the project</span>
+							Contribute to <span>the project</span>
 						</h2>
 					</FadeIn>
 					<FadeIn>
