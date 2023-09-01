@@ -1,5 +1,5 @@
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
-import Accordion from '../../utils/Accordion.js'
+import { Accordion } from '../../utils/Accordion.js'
 
 export default function Qna() {
 	return (
