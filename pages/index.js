@@ -24,8 +24,8 @@ export default function Home() {
 			<LogoScroller />
 			<Pricing />
 			<OpenSource />
-			<Qna />
 			<Developper />
+			<Qna />
 		</>
 	)
 }
