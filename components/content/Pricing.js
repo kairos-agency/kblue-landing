@@ -112,6 +112,7 @@ export default function Pricing() {
 								</div>
 							</FadeInBottom>
 						</div>
+						<p className='grey medium'>Compare features</p>
 						<PricingAccordion />
 						<PricingAccordionMobile />
 					</div>
@@ -143,7 +144,7 @@ function PricingAccordion() {
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
-				<div className='accordion__pulltab accordion__pulltab--pricing' style={{ maxHeight: `fit-content` }}>
+				<div className='accordion__pulltab accordion__pulltab--pricing' style={{ maxHeight: `591px` }}>
 					<div className='pulltab--wrapper'>
 						<div>
 							<p>Starter web template</p>
@@ -329,7 +330,7 @@ function PricingAccordion() {
 					</div>
 				</div>
 			</div>
-			<div className='accordion accordion--pricing' onClick={toggle}>
+			<div className='accordion accordion--pricing last' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
 						<p>EMS</p>
