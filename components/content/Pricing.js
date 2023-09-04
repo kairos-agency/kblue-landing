@@ -32,7 +32,7 @@ export default function Pricing() {
 							<FadeInLeft>
 								<div className='card'>
 									<p>2</p>
-									<p>Add on-demande tailor-made features </p>
+									<p>Add on-demand tailor-made features </p>
 								</div>
 							</FadeInLeft>
 						</div>
