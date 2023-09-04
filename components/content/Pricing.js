@@ -52,8 +52,8 @@ export default function Pricing() {
 										<p>The starter pack</p>
 									</div>
 									<div className='card__price'>
-										<p className='price'>300€</p>
-										<p>45€ each month</p>
+										<p className='price'>300$</p>
+										<p>45$ each month</p>
 									</div>
 									<Link href='/' className='btn-primary'>
 										Choose Plan
@@ -76,8 +76,8 @@ export default function Pricing() {
 										<p>The all-in-one package</p>
 									</div>
 									<div className='card__price'>
-										<p className='price'>2000€</p>
-										<p>110€ each month</p>
+										<p className='price'>2000$</p>
+										<p>110$ each month</p>
 									</div>
 									<Link href='/' className='btn-primary'>
 										Choose Plan
@@ -100,8 +100,8 @@ export default function Pricing() {
 										<p>The all-in-one package</p>
 									</div>
 									<div className='card__price'>
-										<p className='price'>2500€</p>
-										<p>190€ each month</p>
+										<p className='price'>2500$</p>
+										<p>190$ each month</p>
 									</div>
 									<Link href='/' className='btn-primary'>
 										Choose Plan
