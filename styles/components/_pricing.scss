@@ -1,4 +1,5 @@
-section {
+#Pricing {
+	margin-top: rem(0);
 	.container {
 		.tuto {
 			.cards {
@@ -118,6 +119,11 @@ section {
 				}
 			}
 		}
+		.grey {
+			color: $color-grey-darker;
+			font-weight: 700;
+			margin-bottom: rem(2);
+		}
 		.accordion--pricing {
 			padding: rem(1.3) rem(3) 0 rem(3);
 			display: none;
@@ -188,7 +194,8 @@ section {
 					}
 				}
 			}
-			&:nth-child(4) {
+
+			&.last {
 				.accordion__title--pricing {
 					border-bottom: unset;
 				}
