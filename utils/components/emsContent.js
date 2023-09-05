@@ -4,7 +4,7 @@ const emsContent = {
 		title: 'Centralize your documents',
 		description:
 			'A shared document storage space to <strong>facilitate records management</strong> <br/>➔ All types of documents: Word, Excel, Powerpoint, PDF, Videos, Images etc. <br/>➔ No storage volume limit for premium accounts',
-		image: '/images/placeholder.png'
+		image: '/images/table/ems/database-en.jpg'
 	},
 	item2: {
 		btnTitle: 'Phone book',
