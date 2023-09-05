@@ -5,7 +5,9 @@ section.logo_grid {
 			border: 0.5px solid $color-grey;
 		}
 		p {
-			margin-top: unset;
+			margin: unset;
+			text-align: left;
+			margin-bottom: rem(1);
 		}
 		.grid {
 			display: grid;
@@ -14,7 +16,7 @@ section.logo_grid {
 			grid-gap: 2rem;
 			justify-items: center;
 
-			margin-bottom: rem(4);
+			margin-bottom: rem(3);
 			margin-top: rem(3);
 
 			@media (min-width: $from-small) {

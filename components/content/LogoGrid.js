@@ -9,6 +9,7 @@ export default function LogoGrid() {
 					<FadeInBottom>
 						<p className='light-grey small'>They chose Kairos Blue</p>
 					</FadeInBottom>
+					<hr />
 					<FadeIn>
 						<div className='grid'>
 							<img src='/images/ffbad-logo.svg' alt='logo FFBAD' />
