@@ -6,7 +6,9 @@ export default function LogoGrid() {
 		<>
 			<section className='logo_grid'>
 				<div className='container-xs'>
-					<hr />
+					<FadeInBottom>
+						<p className='light-grey small'>They chose Kairos Blue</p>
+					</FadeInBottom>
 					<FadeIn>
 						<div className='grid'>
 							<img src='/images/ffbad-logo.svg' alt='logo FFBAD' />
@@ -15,6 +17,7 @@ export default function LogoGrid() {
 							<img src='/images/msrh-logo.svg' alt='hero' />
 						</div>
 					</FadeIn>
+					<hr />
 				</div>
 			</section>
 		</>
