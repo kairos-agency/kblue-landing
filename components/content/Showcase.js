@@ -9,18 +9,20 @@ import { useRef, useEffect, useState } from 'react'
 import { Float, MeshTransmissionMaterial, useAnimations, useGLTF, useTexture } from '@react-three/drei'
 import * as THREE from 'three'
 
+import Form from './Form.js'
+
 export default function Showcase() {
 	return (
 		<>
 			<SmoothScrollbar>
 				{(bind) => (
 					<section {...bind}>
-						<div className='container-sm'>
-							<FadeIn>
+						<div className='container'>
+							<FadeInBottom>
 								<h2>
 									Manage all your web assets <span>on a single dashboard</span>
 								</h2>
-							</FadeIn>
+							</FadeInBottom>
 							<FadeIn>
 								<p className='medium grey'>
 									Imagine that google drive, wordpress and crossknowledge had a eco-build baby together. One place to
@@ -29,15 +31,27 @@ export default function Showcase() {
 							</FadeIn>
 							<FadeIn>
 								<div className='canvas-container'>
-									<div className='demo-bar'>
-										<p className='medium'>Ask for a demo today</p>
-										<Link className='btn-secondary' href='/'>
-											Demo
-										</Link>
-									</div>
 									<TouchDevice />
 								</div>
 							</FadeIn>
+							<div className='demo-container'>
+								<div className='demo-wrapper'>
+									<FadeInBottom>
+										<div>
+											<h2>
+												Ask for your <span>demo</span>
+											</h2>
+											<p className='small grey'>
+												Our revolutionary platform skillfully combines a content management system (CMS), a learning
+												management system (LMS), and an enterprise data management system (EMS).
+											</p>
+										</div>
+									</FadeInBottom>
+									<FadeInRight>
+										<Form />
+									</FadeInRight>
+								</div>
+							</div>
 						</div>
 					</section>
 				)}
