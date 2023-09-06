@@ -2,6 +2,35 @@
 import React, { useState } from 'react'
 
 function Form() {
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [submitted, setSubmitted] = useState(false)
+
+	const handleSubmit = (e) => {
+		e.preventDefault()
+		console.log('Sending')
+		let data = {
+			name,
+			email
+		}
+		fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				Accept: 'application/json, text/plain, */*',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		}).then((res) => {
+			console.log('Response received', data)
+			if (res.status === 200) {
+				console.log('Response succeeded!')
+				setSubmitted(true)
+				setName('')
+				setEmail('')
+				setBody('')
+			}
+		})
+	}
 	return (
 		<div className='demo-form'>
 			<div>
@@ -11,14 +40,34 @@ function Form() {
 			<form>
 				<div className='form-group'>
 					<label htmlFor='name'>Name</label>
-					<input type='text' name='name' id='name' />
+					<input
+						type='text'
+						onChange={(e) => {
+							setName(e.target.value)
+						}}
+						name='name'
+						id='name'
+					/>
 				</div>
 				<div className='form-group'>
 					<label htmlFor='email'>Email</label>
-					<input type='email' name='email' id='email' />
+					<input
+						type='email'
+						onChange={(e) => {
+							setEmail(e.currentTarget.value)
+						}}
+						name='email'
+						id='email'
+					/>
 				</div>
 				<div className='form-group'>
-					<button type='submit' className='btn btn-primary'>
+					<button
+						type='submit'
+						onClick={(e) => {
+							handleSubmit(e)
+						}}
+						className='btn btn-primary'
+					>
 						Get my demo
 					</button>
 				</div>
