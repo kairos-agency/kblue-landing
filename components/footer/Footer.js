@@ -17,7 +17,7 @@ export default function Footer() {
 						<hr />
 						<div className='footer_bottom'>
 							<div>
-								<Link href='/'>Legal</Link>
+								<Link href='/legal'>Legal</Link>
 								<Link href='/'>Contact</Link>
 							</div>
 						</div>

@@ -1,0 +1,40 @@
+.legal {
+	.container-xs {
+		display: grid;
+		gap: rem(2);
+		max-width: rem(54);
+		@media (min-width: $from-small) {
+			gap: rem(4);
+		}
+		> div {
+			display: grid;
+			gap: rem(2);
+			@media (min-width: $from-small) {
+				gap: rem(1);
+			}
+			p {
+				a {
+					display: inline-block;
+					text-decoration: underline;
+				}
+			}
+			h3 {
+				font-size: rem(1.5);
+				color: $color-primary;
+				text-transform: capitalize;
+			}
+			.btn-link {
+				margin-bottom: unset;
+				text-transform: uppercase;
+			}
+			ul {
+				margin-left: rem(2);
+				li {
+					margin-bottom: rem(1);
+					font-size: unset;
+					font-weight: unset;
+				}
+			}
+		}
+	}
+}
