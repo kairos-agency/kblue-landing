@@ -125,15 +125,15 @@ section {
 	background: $color-grey;
 }
 
-// ::-moz-selection {
-// 	color: $color-white;
-// 	background: $color-primary;
-// }
+::-moz-selection {
+	color: $color-blue-dark;
+	background: $color-blue-lighter;
+}
 
-// ::selection {
-// 	color: $color-grey-darker;
-// 	background: $color-primary;
-// }
+::selection {
+	color: $color-blue-dark;
+	background: $color-blue-lighter;
+}
 
 .Placeholder {
 	display: flex;
