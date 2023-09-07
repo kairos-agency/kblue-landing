@@ -1,4 +1,13 @@
 nav {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 10;
+	@media (min-width: $from-small) {
+		position: unset;
+		transform: unset;
+	}
 	.container {
 		display: flex;
 		justify-content: space-between;
