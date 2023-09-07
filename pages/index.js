@@ -23,8 +23,8 @@ export default function Home() {
 			<Table />
 			<LogoScroller />
 			<Pricing />
-			<OpenSource />
-			<Developper />
+			{/* <OpenSource /> */}
+			{/* <Developper /> */}
 			<Qna />
 		</>
 	)
