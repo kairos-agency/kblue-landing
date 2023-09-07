@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import { FadeInBottom, FadeInLeft } from '../scripts/_anims'
 
 export default function Legal() {
 	return (
 		<>
+			<Head>
+				<title>Kairos Blue - Legal</title>
+				<meta name='description' content='To be redacted.' />
+			</Head>
 			<section className='legal'>
 				<div className='container-xs'>
 					<FadeInBottom>

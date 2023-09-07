@@ -1,0 +1,56 @@
+section.article {
+	.container-xs {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: rem(2);
+		justify-items: start;
+		h2 {
+			font-size: rem(2);
+			text-align: left;
+			margin: unset;
+		}
+		h3 {
+			font-size: rem(1.8);
+			text-align: left;
+			margin: unset;
+			font-weight: 500;
+		}
+		p {
+			font-size: rem(1);
+			line-height: rem(1.5);
+		}
+		img {
+			width: 100%;
+		}
+		ul {
+			li {
+				list-style-type: disc;
+				margin-left: rem(2);
+				p {
+					font-size: rem(1);
+					font-weight: 400;
+				}
+			}
+		}
+		ol {
+			li {
+				list-style-type: decimal;
+				margin-left: rem(2);
+				p {
+					font-size: rem(1);
+					font-weight: 400;
+				}
+			}
+		}
+		code {
+			background-color: $color-blue-dark;
+			color: $color-blue-ice;
+			padding: rem(0.5);
+			border-radius: rem(0.5);
+			width: 100%;
+		}
+		blockquote {
+			//style
+		}
+	}
+}

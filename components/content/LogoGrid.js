@@ -5,7 +5,7 @@ export default function LogoGrid() {
 	return (
 		<>
 			<section className='logo_grid'>
-				<div className='container-xs'>
+				<div className='container-xxs'>
 					<FadeInBottom>
 						<p className='light-grey small'>They chose Kairos Blue</p>
 					</FadeInBottom>

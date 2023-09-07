@@ -75,6 +75,15 @@ body {
 }
 
 .container-xs {
+	width: 92vw;
+	margin-right: auto;
+	margin-left: auto;
+	@media (min-width: $from-small) {
+		width: 50vw;
+	}
+}
+
+.container-xxs {
 	width: 72vw;
 	margin-right: auto;
 	margin-left: auto;

@@ -1,0 +1,33 @@
+header.article {
+	section {
+		.container {
+			h1 {
+				font-size: rem(2);
+				line-height: rem(2.8);
+				margin-bottom: rem(5);
+				@media (min-width: $from-small) {
+					font-size: rem(3);
+					line-height: rem(4.2);
+					margin-bottom: rem(15);
+				}
+			}
+			> div {
+				display: flex;
+				justify-content: flex-end;
+				gap: rem(1);
+			}
+			p {
+				&:first-of-type {
+					color: $color-primary;
+				}
+				&:last-of-type {
+					color: $color-grey-dark;
+				}
+			}
+			img {
+				margin-top: rem(5);
+				width: 100%;
+			}
+		}
+	}
+}
