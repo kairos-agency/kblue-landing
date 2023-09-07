@@ -47,6 +47,17 @@ body {
 	margin-left: auto;
 	@media (min-width: $from-small) {
 		width: 80vw;
+		max-width: 75rem;
+	}
+}
+
+.container-xl {
+	width: 100vw;
+	margin-right: auto;
+	margin-left: auto;
+	@media (min-width: $from-small) {
+		width: 80vw;
+		max-width: 75rem;
 	}
 }
 
