@@ -67,6 +67,10 @@ section.article {
 			border-radius: rem(0.5);
 			width: 100%;
 		}
+		.btn-article {
+			color: $color-primary;
+			border-bottom: 1px solid $color-primary;
+		}
 		blockquote {
 			p {
 				font-size: rem(1.2);
@@ -87,6 +91,12 @@ section.article {
 					z-index: -1;
 				}
 			}
+		}
+		.more {
+			margin-top: rem(5);
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
 		}
 	}
 }

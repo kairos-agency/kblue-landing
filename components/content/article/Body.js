@@ -67,7 +67,7 @@ export default function ArticleBody({ article }) {
 					</code>
 					<img src='/images/placeholder.png' alt='' />
 					<Link href='/'>
-						<p className='btn btn-primary'>Visiter le site</p>
+						<p className='btn btn-article'>Visiter le site</p>
 					</Link>
 					<blockquote>
 						<p>
@@ -76,6 +76,22 @@ export default function ArticleBody({ article }) {
 							notre passion et notre soif de création.
 						</p>
 					</blockquote>
+					<div className='more'>
+						<div>
+							<Link href='/'>
+								<p className='btn btn-primary btn-outline'>
+									Titre de l'autre article
+								</p>
+							</Link>
+						</div>
+						<div>
+							<Link href='/'>
+								<p className='btn btn-primary btn-outline'>
+									Titre de l'autre article
+								</p>
+							</Link>
+						</div>
+					</div>
 				</div>
 			</section>
 		</>
