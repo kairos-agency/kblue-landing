@@ -34,7 +34,7 @@ function Nav() {
 						<Link href='#Features'>Features</Link>
 						<Link href='#APIs'>APIs</Link>
 						<Link href='#Pricing'>Pricing</Link>
-						<Link href='#Ressources'>Ressources</Link>
+						<Link href='/blog'>Ressources</Link>
 					</div>
 					<div className='links'>
 						<Link href='/'>Login</Link>
