@@ -99,40 +99,34 @@ function Markup({ scale, scrollState, ...props }) {
 	return (
 		<group {...props} dispose={null} scale={75}>
 			<group name='Markup'>
-				<Float floatIntensity={4} rotationIntensity={0.5}>
-					<mesh name='Markup_1' castShadow receiveShadow geometry={nodes.Markup_1.geometry}>
-						<MeshTransmissionMaterial
-							backside
-							backsideThickness={0.44}
-							samples={16}
-							resolution={512}
-							transmission={1}
-							clearcoat={0.1}
-							clearcoatRoughness={0}
-							thickness={1.85}
-							chromaticAberration={0}
-							anisotropy={0.3}
-							roughness={0.3}
-							distortion={0}
-							distortionScale={0}
-							temporalDistortion={0}
-							ior={1.5}
-							color={'#ffffff'}
-						/>
-					</mesh>
-					<group name='MarkupWindow02' position={[2.627, 0.655, -1.811]}>
-						<mesh name='window04002_1' castShadow receiveShadow geometry={nodes.window04002_1.geometry}>
-							<meshBasicMaterial map={albedoChart} />
-						</mesh>
-					</group>
-					<group name='MarkupWindow04' position={[-2.334, -1.638, 0.602]}>
-						<mesh name='window04003_1' castShadow receiveShadow geometry={nodes.window04003_1.geometry}>
-							<meshBasicMaterial map={albedoGraph} />
-						</mesh>
-					</group>
-				</Float>
+				<Float floatIntensity={4} rotationIntensity={0.5}></Float>
 				<mesh name='Background001' geometry={nodes.Background001.geometry} position={[0.7, 0, -3.435]}>
 					<meshBasicMaterial color={'#eef1f9'} />
+				</mesh>
+
+				<mesh castShadow receiveShadow geometry={nodes.Markup_1.geometry}>
+					{/* <MeshTransmissionMaterial
+						backside
+						backsideThickness={0.2}
+						samples={128}
+						resolution={1024}
+						transmission={1}
+						clearcoat={0.1}
+						clearcoatRoughness={0}
+						thickness={1.85}
+						chromaticAberration={0}
+						anisotropy={0.3}
+						roughness={0.3}
+						ior={1.5}
+						color={'#ffffff'}
+					/> */}
+					<meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
+				</mesh>
+				<mesh castShadow receiveShadow geometry={nodes.PlanetWindow03001.geometry} position={[1.855, -1.081, 0.836]}>
+					{/* <meshToonMaterial color={'#2854ff'} /> */}
+				</mesh>
+				<mesh castShadow receiveShadow geometry={nodes.PlanetWindow01001.geometry} position={[-2.225, 0.915, -1.236]}>
+					<meshToonMaterial color={'#2854ff'} />
 				</mesh>
 			</group>
 		</group>
@@ -179,7 +173,7 @@ function Globe({ scale, scrollState, ...props }) {
 				</mesh>
 
 				<mesh castShadow receiveShadow geometry={nodes.PlanetWindow01.geometry} position={[-1.8, 0.9, 1.49]}>
-					<meshToonMaterial color={'#3F65FC'} />
+					{/* <meshToonMaterial color={'#3F65FC'} /> */}
 				</mesh>
 				<group ref={ref}>
 					{/* OCEAN */}
