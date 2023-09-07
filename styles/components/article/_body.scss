@@ -15,6 +15,24 @@ section.article {
 			margin: unset;
 			font-weight: 500;
 		}
+		h4 {
+			font-size: rem(1.6);
+			text-align: left;
+			margin: unset;
+			font-weight: 500;
+		}
+		h5 {
+			font-size: rem(1.4);
+			text-align: left;
+			margin: unset;
+			font-weight: 500;
+		}
+		h6 {
+			font-size: rem(1.2);
+			text-align: left;
+			margin: unset;
+			font-weight: 500;
+		}
 		p {
 			font-size: rem(1);
 			line-height: rem(1.5);
@@ -50,7 +68,25 @@ section.article {
 			width: 100%;
 		}
 		blockquote {
-			//style
+			p {
+				font-size: rem(1.2);
+				line-height: rem(1.4);
+				font-style: italic;
+				position: relative;
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: rem(-0.5);
+					left: rem(-1);
+					background-image: url('/images/chevron.svg');
+					background-repeat: no-repeat;
+					background-size: contain;
+					width: rem(3);
+					height: rem(3);
+					z-index: -1;
+				}
+			}
 		}
 	}
 }
