@@ -1,5 +1,8 @@
 section {
 	.container {
+		h2 {
+			margin-bottom: rem(5);
+		}
 		.accordion-container {
 			display: flex;
 			flex-direction: column;

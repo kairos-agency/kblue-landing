@@ -6,6 +6,12 @@ export default function Qna() {
 		<>
 			<section>
 				<div className='container'>
+					<FadeInBottom>
+						<p className='overtitle'>Any questions ?</p>
+					</FadeInBottom>
+					<FadeIn>
+						<h2>Q&A</h2>
+					</FadeIn>
 					<div className='accordion-container'>
 						<Accordion
 							title='How content management system works?'
