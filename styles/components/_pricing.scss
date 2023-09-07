@@ -48,70 +48,125 @@
 				}
 			}
 		}
+	}
+	.container-xl {
 		.pricing {
 			margin: rem(8) auto;
 			.cards {
-				display: grid;
+				display: flex;
 				grid-template-columns: repeat(3, 1fr);
+				align-items: center;
 				gap: rem(2);
+
+				padding: rem(2);
+
 				margin-bottom: rem(8);
 				width: 100%;
 				overflow-x: scroll;
-				overflow-y: hidden;
+				@media (min-width: $from-small) {
+					display: grid;
+					overflow-x: unset;
+					gap: 0;
+				}
 				.card {
 					display: flex;
 					flex-direction: column;
-					align-items: flex-start;
-					justify-content: flex-start;
+					align-items: center;
+					justify-content: space-between;
+					flex: 0 0 100%;
+
 					gap: rem(2);
-					padding: rem(4);
-					background-color: $color-blue-ice;
-					border-radius: rem(0.4);
+					padding: rem(4) 0;
+					background-color: $color-white;
+					border-radius: rem(2);
 					width: 100%;
-					border: 1px solid $color-grey-light;
+					border: 2px solid $color-grey-light;
+					box-shadow: 0px 4px 17px 0px rgba(129, 139, 197, 0.24);
 
 					&.active {
-						border: 1px solid $color-primary;
+						border: 2px solid $color-primary;
 					}
 					@media (min-width: $from-small) {
-						padding: rem(3);
+						padding: rem(3) 0;
+						height: rem(30);
+
 						&.active {
-							border: 1px solid $color-grey-light;
+							border: 2px solid $color-grey-light;
+						}
+						&:nth-child(2) {
+							height: rem(35);
+
+							border: 2px solid $color-primary;
+						}
+						&:first-of-type {
+							border-radius: rem(2) 0 0 rem(2);
+						}
+						&:last-of-type {
+							border-radius: 0 rem(2) rem(2) 0;
 						}
 					}
-					&.card--white {
-						background-color: $color-white;
-					}
 					.card__title {
+						display: flex;
+						align-items: center;
+						gap: rem(2);
 						font-size: rem(1);
+						width: 100%;
+						padding: 0 rem(3);
+						padding-bottom: rem(3);
+						border-bottom: 1px solid $color-blue-ice;
+						.title {
+							display: flex;
+							gap: rem(2);
+						}
+						.badge {
+							padding: rem(1) rem(1);
+							background-color: $color-blue-ice;
+							p {
+								font-size: rem(0.8);
+								white-space: nowrap;
+							}
+						}
 						h3 {
-							font-size: rem(1.8);
-							font-weight: 500;
+							font-size: rem(1.5);
+							font-weight: 600;
 							margin-bottom: rem(0.2);
 						}
 						p {
 							color: $color-primary;
 						}
 					}
-					.card__price {
+					.card__content {
 						display: flex;
-						flex-direction: row;
-						align-items: center;
-						gap: rem(1.5);
-						p {
-							&:first-of-type {
-								font-size: rem(1.8);
+						flex-direction: column;
+						gap: rem(1.75);
+						> div {
+							display: flex;
+							gap: rem(1);
+							align-items: center;
+							p {
+								margin: unset;
 							}
-							&:last-of-type {
-								font-size: rem(0.8);
-								color: $color-blue-light;
-								border-bottom: 1px solid $color-blue-light;
-								white-space: nowrap;
+							img {
+								height: rem(1.5);
+								width: rem(1.5);
 							}
 						}
 					}
+					.card__price {
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						gap: rem(0.75);
+						p {
+							font-size: rem(0.75);
+						}
+					}
+
 					.btn-primary {
-						padding: rem(1) rem(2);
+						padding: rem(1) rem(3);
+					}
+					.btn-outline {
+						padding: rem(1) rem(3);
 					}
 					.blue--light {
 						color: $color-blue-light;
@@ -145,6 +200,9 @@
 							font-size: rem(1.2);
 						}
 					}
+					img {
+						align-self: center;
+					}
 				}
 			}
 			.accordion__pulltab--pricing {
@@ -156,6 +214,7 @@
 					padding-top: unset;
 					img {
 						opacity: 0;
+						align-self: center;
 					}
 					&:first-of-type {
 						> div {
@@ -187,6 +246,8 @@
 						}
 						img {
 							opacity: 1;
+							align-self: center;
+
 							&.hidden {
 								opacity: 0;
 							}

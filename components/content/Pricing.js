@@ -3,14 +3,12 @@ import Link from 'next/link.js'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 import { useState } from 'react'
 import { PricingAccordionMobile } from '../../utils/components/pricingMobile.js'
-import { useSnapshot } from 'valtio'
+
 import { state } from '../../utils/store.js'
+import { useSnapshot } from 'valtio'
 
 export default function Pricing() {
-	const [activePlan, setActivePlan] = useState('CMS')
-	const handleClick = (plan) => {
-		setActivePlan(plan)
-	}
+	const snap = useSnapshot(state)
 	return (
 		<>
 			<section id='Pricing'>
@@ -37,81 +35,123 @@ export default function Pricing() {
 							</FadeInLeft>
 						</div>
 					</div>
+				</div>
+				<div className='container-xl'>
 					<div className='pricing'>
 						<div className='cards'>
-							<FadeInBottom>
-								<div
-									onClick={() => {
-										handleClick('Basic')
-										state.plan = 'Basic'
-									}}
-									className={activePlan === 'Basic' ? 'card active' : 'card'}
-								>
-									<div className='card__title'>
-										<h3>Basic</h3>
-										<p>The starter pack</p>
-									</div>
-									<div className='card__price'>
-										<p className='price'>300$</p>
-										<p>45$ each month</p>
-									</div>
-									<Link href='/' className='btn-primary'>
-										Choose Plan
-									</Link>
-									<p className='blue--light'>
-										Notre plateforme révolutionnaire allie habilement un système de gestion.
-									</p>
+							<div
+								onClick={() => {
+									state.plan = 'Basic'
+								}}
+								className={snap.plan === 'Basic' ? 'card active' : 'card'}
+							>
+								<div className='card__title'>
+									<img src='/images/stack-basic.svg' alt='Basic' />
+									<h3>Basic</h3>
 								</div>
-							</FadeInBottom>
-							<FadeInBottom>
-								<div
-									onClick={() => {
-										handleClick('Kblue')
-										state.plan = 'Kblue'
-									}}
-									className={activePlan === 'Kblue' ? 'card active' : 'card'}
-								>
-									<div className='card__title'>
+								<div className='card__content'>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Accesio estis sunt <strong>et planea</strong>
+										</p>
+									</div>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Moltes <strong>planetarum</strong> actis
+										</p>
+									</div>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>Intelo et factis et dasilania</p>
+									</div>
+								</div>
+								<div className='card__price'>
+									<Link href='/' className='btn btn-primary btn-outline'>
+										Subscribe
+									</Link>
+									<p className='blue--light'>300$ install fee then 45$/m</p>
+								</div>
+							</div>
+							<div
+								onClick={() => {
+									state.plan = 'Kblue'
+								}}
+								className={snap.plan === 'Kblue' ? 'card active' : 'card'}
+							>
+								<div className='card__title'>
+									<div className='title'>
+										<img src='/images/stack-kblue.svg' alt='Kblue' />
 										<h3>Kblue</h3>
-										<p>The all-in-one package</p>
 									</div>
-									<div className='card__price'>
-										<p className='price'>2000$</p>
-										<p>110$ each month</p>
+									<div className='badge'>
+										<p>Most popular</p>
 									</div>
-									<Link href='/' className='btn-primary'>
-										Choose Plan
-									</Link>
-									<p className='blue--light'>
-										Notre plateforme révolutionnaire allie habilement un système de gestion.
-									</p>
 								</div>
-							</FadeInBottom>
-							<FadeInBottom>
-								<div
-									onClick={() => {
-										handleClick('Premium')
-										state.plan = 'Premium'
-									}}
-									className={activePlan === 'Premium' ? 'card card--white active' : 'card card--white'}
-								>
-									<div className='card__title'>
-										<h3>Premium</h3>
-										<p>The all-in-one package</p>
+								<div className='card__content'>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Accesio estis sunt <strong>et planea</strong>
+										</p>
 									</div>
-									<div className='card__price'>
-										<p className='price'>2500$</p>
-										<p>190$ each month</p>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Moltes <strong>planetarum</strong> actis
+										</p>
 									</div>
-									<Link href='/' className='btn-primary'>
-										Choose Plan
-									</Link>
-									<p className='blue--light'>
-										Notre plateforme révolutionnaire allie habilement un système de gestion.
-									</p>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>Intelo et factis et dasilania</p>
+									</div>
 								</div>
-							</FadeInBottom>
+								<div className='card__price'>
+									<Link href='/' className='btn btn-primary'>
+										Subscribe
+									</Link>
+									<p className='blue--light'>2000$ install fee then 110$/m</p>
+								</div>
+							</div>
+							<div
+								onClick={() => {
+									state.plan = 'Premium'
+								}}
+								className={snap.plan === 'Premium' ? 'card active' : 'card '}
+							>
+								<div className='card__title'>
+									<img src='/images/stack-premium.svg' alt='Premium' />
+									<h3>Premium</h3>
+								</div>
+								<div className='card__content'>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Accesio estis sunt <strong>et planea</strong>
+										</p>
+									</div>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>
+											Moltes <strong>planetarum</strong> actis
+										</p>
+									</div>
+									<div>
+										<img src='/images/checkmark.svg' alt='check' />
+										<p className='small blue--light'>Intelo et factis et dasilania</p>
+									</div>
+								</div>
+								<div className='card__price'>
+									<Link href='/' className='btn btn-primary btn-outline'>
+										Subscribe
+									</Link>
+									<p className='blue--light'>2500$ install fee then 190$/m</p>
+								</div>
+							</div>
 						</div>
+					</div>
+					<div className='container'>
 						<p className='grey medium'>Compare features</p>
 						<PricingAccordion />
 						<PricingAccordionMobile />
