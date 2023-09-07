@@ -1,11 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
-import { Canvas, useFrame } from '@react-three/fiber'
-import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
+import { useFrame } from '@react-three/fiber'
+import {
+	FadeInBottom,
+	FadeInLeft,
+	FadeInRight,
+	FadeIn,
+} from '../../scripts/_anims.js'
 
-import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
+import {
+	SmoothScrollbar,
+	UseCanvas,
+	ScrollScene,
+} from '@14islands/r3f-scroll-rig'
 import { useRef, useEffect, useState } from 'react'
-import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
+import {
+	Float,
+	MeshTransmissionMaterial,
+	useAnimations,
+	useGLTF,
+} from '@react-three/drei'
 import * as THREE from 'three'
+
+import React from 'react'
+
+import { motion } from 'framer-motion'
 
 export default function HeroHome() {
 	useEffect(() => {
@@ -21,6 +39,41 @@ export default function HeroHome() {
 		}
 	}, [])
 
+	const text =
+		'One place to manage all of your business content, one	login portal.'
+
+	const words = text.split(' ')
+
+	// Variants for Container of words.
+	const container = {
+		hidden: { opacity: 0 },
+		visible: (i = 1) => ({
+			opacity: 1,
+			transition: { staggerChildren: 0.12, delayChildren: 0.04 * i },
+		}),
+	}
+
+	// Variants for each word.
+
+	const child = {
+		visible: {
+			opacity: 1,
+			x: 0,
+			transition: {
+				ease: 'linear',
+				duration: 0.75,
+			},
+		},
+		hidden: {
+			opacity: 0,
+			x: 20,
+			transition: {
+				ease: 'linear',
+				duration: 0.75,
+			},
+		},
+	}
+
 	return (
 		<>
 			<SmoothScrollbar>
@@ -28,14 +81,34 @@ export default function HeroHome() {
 					<header className='hero' {...bind}>
 						<section>
 							<div className='container-sm'>
-								<FadeInBottom>
-									<div className='title'>
+								<div className='title'>
+									<FadeInBottom>
 										<h1>
 											The all-in-one <span>backoffice</span>
 										</h1>
-										<p className='medium grey'>One place to manage all of your business content, one login portal.</p>
-									</div>
-								</FadeInBottom>
+									</FadeInBottom>
+									<motion.div
+										className='undertitle medium grey'
+										variants={container}
+										initial='hidden'
+										animate='visible'
+										style={{ overflowh: 'hidden' }}
+									>
+										{words.map((word, index) => (
+											<motion.span
+												variants={child}
+												key={index}
+												style={{ marginRight: '5px' }}
+											>
+												{word}
+											</motion.span>
+										))}
+									</motion.div>
+									{/* <p className='medium grey'>
+											One place to manage all of your business content, one
+											login portal.
+										</p> */}
+								</div>
 							</div>
 							<TouchDevice />
 						</section>
@@ -49,11 +122,18 @@ export default function HeroHome() {
 function TouchDevice() {
 	const [isTouch, setTouch] = useState(false)
 	useEffect(() => {
-		const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
+		const isTouch =
+			'ontouchstart' in window ||
+			navigator.maxTouchPoints > 0 ||
+			navigator.msMaxTouchPoints > 0
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/hero.png' alt='hero image' /> : <KeyAnimationSection />
+	return isTouch ? (
+		<img src='/images/hero.png' alt='hero image' />
+	) : (
+		<KeyAnimationSection />
+	)
 }
 
 function KeyAnimationSection() {
@@ -63,7 +143,9 @@ function KeyAnimationSection() {
 			<div ref={ref} className='Placeholder ScrollScene'></div>
 			<UseCanvas>
 				<Float rotationIntensity={0.5} floatIntensity={2}>
-					<ScrollScene track={ref}>{(props) => <SpinningBoxWebGL {...props} />}</ScrollScene>
+					<ScrollScene track={ref}>
+						{(props) => <SpinningBoxWebGL {...props} />}
+					</ScrollScene>
 				</Float>
 			</UseCanvas>
 		</>
@@ -145,8 +227,17 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
 				>
 					<meshToonMaterial color={'#3F65FC'} />
 				</mesh>
-				<group name='Empty' position={[0, 4.55, 0]} rotation={[-0.271, 0.127, 1.406]}>
-					<mesh name='Rounded_Key' castShadow receiveShadow geometry={nodes.Rounded_Key.geometry}>
+				<group
+					name='Empty'
+					position={[0, 4.55, 0]}
+					rotation={[-0.271, 0.127, 1.406]}
+				>
+					<mesh
+						name='Rounded_Key'
+						castShadow
+						receiveShadow
+						geometry={nodes.Rounded_Key.geometry}
+					>
 						<MeshTransmissionMaterial
 							backside
 							backsideThickness={0.44}

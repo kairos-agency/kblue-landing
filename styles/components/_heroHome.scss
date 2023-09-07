@@ -5,7 +5,7 @@
 		margin-bottom: 0;
 		margin-top: rem(15);
 		.container-sm {
-			> div {
+			.title {
 				div {
 					display: flex;
 					flex-direction: column;
@@ -15,22 +15,23 @@
 					@media (min-width: $from-small) {
 						width: 60%;
 					}
-					p {
-						margin: unset;
-						width: 75%;
-						text-align: center;
-						@media (min-width: $from-small) {
-							width: 75%;
-						}
-					}
+				}
+				.undertitle {
+					margin-top: rem(1);
+					width: 50%;
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					justify-content: center;
+					gap: 0;
 				}
 			}
-		}
-		img {
-			margin-top: rem(5);
-			margin-bottom: rem(5);
-			width: 100%;
-			height: auto;
+			img {
+				margin-top: rem(5);
+				margin-bottom: rem(5);
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
 }
