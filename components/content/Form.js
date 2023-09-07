@@ -34,7 +34,7 @@ function Form() {
 	return (
 		<div className='demo-form'>
 			<div>
-				<p>Completely free</p>
+				<p>Ask for a demo</p>
 				<img src='/images/blue-stack.svg' alt='demo' />
 			</div>
 			<form>
