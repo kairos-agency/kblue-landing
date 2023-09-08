@@ -4,6 +4,11 @@ import { useState } from 'react'
 import { useSnapshot } from 'valtio'
 import { state } from '../../utils/store.js'
 
+import { useRouter } from 'next/router.js'
+
+import { enPricing } from '../../lang/en.js'
+import { frPricing } from '../../lang/fr.js'
+
 export function PricingAccordionMobile() {
 	return (
 		<>
@@ -13,7 +18,7 @@ export function PricingAccordionMobile() {
 }
 function ActivePlan() {
 	const snap = useSnapshot(state)
-	console.log(snap.plan)
+
 	return snap.plan === 'Basic' ? <Basic /> : snap.plan === 'Kblue' ? <Kblue /> : <Premium />
 }
 
@@ -26,20 +31,23 @@ function Basic() {
 		element.offsetHeight === 0 ? (element.style.maxHeight = `${element.scrollHeight}px`) : (element.style.maxHeight = 0)
 		setIsShowing(!isShowing)
 	}
+
+	const content = useRouter().locale === 'en' ? enPricing : frPricing
+
 	return (
 		<>
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>CMS</p>
-						<p>Basic</p>
+						<p>{content.cms.title}</p>
+						<p>{content.cms.basic}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Starter web template</p>
+							<p>{content.cms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -47,7 +55,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Text and media customization</p>
+							<p>{content.cms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -63,7 +71,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Unlimited webpages</p>
+							<p>{content.cms.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -71,7 +79,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Blog</p>
+							<p>{content.cms.line5}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -79,7 +87,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Advanced web-page template</p>
+							<p>{content.cms.line6}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -87,7 +95,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Tailor-made web-page template</p>
+							<p>{content.cms.line7}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -95,7 +103,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Job center</p>
+							<p>{content.cms.line8}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -103,82 +111,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Events</p>
-
-							<img src='/images/cross.svg' alt='cross' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-				</div>
-			</div>
-			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
-				<div className='accordion__title accordion__title--pricing'>
-					<div>
-						<p>LMS</p>
-						<p>Basic</p>
-					</div>
-					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
-				</div>
-				<div className='accordion__pulltab accordion__pulltab--pricing'>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Course</p>
-
-							<img src='/images/checkmark.svg' alt='check' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Statistics</p>
-
-							<img src='/images/checkmark.svg' alt='check' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Quiz</p>
-
-							<img src='/images/checkmark.svg' alt='check' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Solo challenges</p>
-
-							<img src='/images/checkmark.svg' alt='check' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Team challenges</p>
-
-							<img src='/images/cross.svg' alt='cross' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Advanced gamification</p>
-
-							<img src='/images/cross.svg' alt='cross' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Custom game</p>
-
-							<img src='/images/cross.svg' alt='cross' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Educational engineering</p>
+							<p>{content.cms.line9}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -189,15 +122,15 @@ function Basic() {
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>EMS</p>
-						<p>Basic</p>
+						<p>{content.lms.title}</p>
+						<p>{content.lms.basic}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>User rights</p>
+							<p>{content.lms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -205,7 +138,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Documentary database</p>
+							<p>{content.lms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -213,7 +146,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Q&A</p>
+							<p>{content.lms.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -221,7 +154,58 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Directory</p>
+							<p>{content.lms.line4}</p>
+
+							<img src='/images/cross.svg' alt='check' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.lms.line5}</p>
+
+							<img src='/images/cross.svg' alt='cross' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.lms.line6}</p>
+
+							<img src='/images/cross.svg' alt='cross' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.lms.line7}</p>
+
+							<img src='/images/cross.svg' alt='cross' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.lms.line8}</p>
+
+							<img src='/images/cross.svg' alt='cross' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+				</div>
+			</div>
+			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
+				<div className='accordion__title accordion__title--pricing'>
+					<div>
+						<p>{content.ems.title}</p>
+						<p>{content.ems.basic}</p>
+					</div>
+					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
+				</div>
+				<div className='accordion__pulltab accordion__pulltab--pricing'>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.ems.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -229,7 +213,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Internal messaging</p>
+							<p>{content.ems.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -237,7 +221,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Forum</p>
+							<p>{content.ems.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -245,7 +229,7 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>After Sale Service</p>
+							<p>{content.ems.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -253,33 +237,57 @@ function Basic() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Appointment booking</p>
+							<p>{content.ems.line5}</p>
 
-							<img src='/images/checkmark.svg' alt='check' />
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Subscription / payment</p>
+							<p>{content.ems.line6}</p>
 
-							<img src='/images/checkmark.svg' alt='check' />
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Statistics</p>
+							<p>{content.ems.line7}</p>
 
-							<img src='/images/checkmark.svg' alt='check' />
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>APIs</p>
+							<p>{content.ems.line8}</p>
 
-							<p>Quotation</p>
+							<img src='/images/cross.svg' alt='check' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.ems.line9}</p>
+
+							<img src='/images/cross.svg' alt='check' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.ems.line10}</p>
+
+							<img src='/images/cross.svg' alt='check' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.ems.line11}</p>
+
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
@@ -298,20 +306,22 @@ function Kblue() {
 		element.offsetHeight === 0 ? (element.style.maxHeight = `${element.scrollHeight}px`) : (element.style.maxHeight = 0)
 		setIsShowing(!isShowing)
 	}
+
+	const content = useRouter().locale === 'en' ? enPricing : frPricing
 	return (
 		<>
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>CMS</p>
-						<p>Kblue</p>
+						<p>{content.cms.title}</p>
+						<p>{content.cms.kblue}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Starter web template</p>
+							<p>{content.cms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -319,7 +329,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Text and media customization</p>
+							<p>{content.cms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -327,7 +337,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>SEO</p>
+							<p>{content.cms.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -335,7 +345,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Unlimited webpages</p>
+							<p>{content.cms.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -343,7 +353,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Blog</p>
+							<p>{content.cms.line5}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -351,7 +361,15 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Advanced web-page template</p>
+							<p>{content.cms.line6}</p>
+
+							<img src='/images/checkmark.svg' alt='cross' />
+						</div>
+						<img src='/images/drop-down.svg' alt='emptyness' />
+					</div>
+					<div className='pulltab--wrapper'>
+						<div>
+							<p>{content.cms.line7}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -359,7 +377,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Tailor-made web-page template</p>
+							<p>{content.cms.line8}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -367,15 +385,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Job center</p>
-
-							<img src='/images/cross.svg' alt='cross' />
-						</div>
-						<img src='/images/drop-down.svg' alt='emptyness' />
-					</div>
-					<div className='pulltab--wrapper'>
-						<div>
-							<p>Events</p>
+							<p>{content.cms.line9}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -386,15 +396,15 @@ function Kblue() {
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>LMS</p>
-						<p>Kblue</p>
+						<p>{content.lms.title}</p>
+						<p>{content.lms.kblue}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Course</p>
+							<p>{content.lms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -402,7 +412,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Statistics</p>
+							<p>{content.lms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -410,7 +420,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Quiz</p>
+							<p>{content.lms.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -418,7 +428,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Solo challenges</p>
+							<p>{content.lms.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -426,7 +436,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Team challenges</p>
+							<p>{content.lms.line5}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -434,7 +444,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Advanced gamification</p>
+							<p>{content.lms.line6}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -442,7 +452,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Custom game</p>
+							<p>{content.lms.line7}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -450,7 +460,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Educational engineering</p>
+							<p>{content.lms.line8}</p>
 
 							<img src='/images/cross.svg' alt='cross' />
 						</div>
@@ -461,15 +471,15 @@ function Kblue() {
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>EMS</p>
-						<p>Kblue</p>
+						<p>{content.ems.title}</p>
+						<p>{content.ems.kblue}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>User rights</p>
+							<p>{content.ems.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -477,7 +487,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Documentary database</p>
+							<p>{content.ems.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -485,7 +495,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Q&A</p>
+							<p>{content.ems.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -493,7 +503,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Directory</p>
+							<p>{content.ems.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -501,7 +511,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Internal messaging</p>
+							<p>{content.ems.line5}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -509,7 +519,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Forum</p>
+							<p>{content.ems.line6}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -517,7 +527,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>After Sale Service</p>
+							<p>{content.ems.line7}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -525,7 +535,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Appointment booking</p>
+							<p>{content.ems.line8}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -533,7 +543,7 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Subscription / payment</p>
+							<p>{content.ems.line9}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -541,17 +551,17 @@ function Kblue() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Statistics</p>
+							<p>{content.ems.line10}</p>
 
-							<img src='/images/checkmark.svg' alt='check' />
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>APIs</p>
+							<p>{content.ems.line11}</p>
 
-							<p>Quotation</p>
+							<img src='/images/cross.svg' alt='check' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
@@ -570,20 +580,22 @@ function Premium() {
 		element.offsetHeight === 0 ? (element.style.maxHeight = `${element.scrollHeight}px`) : (element.style.maxHeight = 0)
 		setIsShowing(!isShowing)
 	}
+
+	const content = useRouter().locale === 'en' ? enPricing : frPricing
 	return (
 		<>
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>CMS</p>
-						<p>Premium</p>
+						<p>{content.cms.title}</p>
+						<p>{content.cms.premium}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Starter web template</p>
+							<p>{content.cms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -591,7 +603,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Text and media customization</p>
+							<p>{content.cms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -599,7 +611,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>SEO</p>
+							<p>{content.cms.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -607,7 +619,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Unlimited webpages</p>
+							<p>{content.cms.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -615,7 +627,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Blog</p>
+							<p>{content.cms.line5}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -623,33 +635,33 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Advanced web-page template</p>
+							<p>{content.cms.line6}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Tailor-made web-page template</p>
+							<p>{content.cms.line7}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Job center</p>
+							<p>{content.cms.line8}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Events</p>
+							<p>{content.cms.line9}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
@@ -658,15 +670,15 @@ function Premium() {
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>LMS</p>
-						<p>Premium</p>
+						<p>{content.lms.title}</p>
+						<p>{content.lms.premium}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Course</p>
+							<p>{content.lms.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -674,7 +686,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Statistics</p>
+							<p>{content.lms.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -682,7 +694,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Quiz</p>
+							<p>{content.lms.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -690,7 +702,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Solo challenges</p>
+							<p>{content.lms.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -698,33 +710,33 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Team challenges</p>
+							<p>{content.lms.line5}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Advanced gamification</p>
+							<p>{content.lms.line6}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<img src='/images/checkmark.svg' alt='checkmark' />
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Custom game</p>
+							<p>{content.lms.line7}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<p>{content.quote}</p>
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Educational engineering</p>
+							<p>{content.lms.line8}</p>
 
-							<img src='/images/cross.svg' alt='cross' />
+							<p>{content.quote}</p>
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>
@@ -733,15 +745,15 @@ function Premium() {
 			<div className='accordion accordion--pricing accordion--mobile' onClick={toggle}>
 				<div className='accordion__title accordion__title--pricing'>
 					<div>
-						<p>EMS</p>
-						<p>Premium</p>
+						<p>{content.ems.title}</p>
+						<p>{content.ems.premium}</p>
 					</div>
 					<img src='/images/drop-down.svg' alt='arrow' className={isShowing ? 'rotate' : ''} />
 				</div>
 				<div className='accordion__pulltab accordion__pulltab--pricing'>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>User rights</p>
+							<p>{content.ems.line1}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -749,7 +761,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Documentary database</p>
+							<p>{content.ems.line2}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -757,7 +769,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Q&A</p>
+							<p>{content.ems.line3}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -765,7 +777,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Directory</p>
+							<p>{content.ems.line4}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -773,7 +785,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Internal messaging</p>
+							<p>{content.ems.line5}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -781,7 +793,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Forum</p>
+							<p>{content.ems.line6}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -789,7 +801,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>After Sale Service</p>
+							<p>{content.ems.line7}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -797,7 +809,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Appointment booking</p>
+							<p>{content.ems.line8}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -805,7 +817,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Subscription / payment</p>
+							<p>{content.ems.line9}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -813,7 +825,7 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>Statistics</p>
+							<p>{content.ems.line10}</p>
 
 							<img src='/images/checkmark.svg' alt='check' />
 						</div>
@@ -821,9 +833,9 @@ function Premium() {
 					</div>
 					<div className='pulltab--wrapper'>
 						<div>
-							<p>APIs</p>
+							<p>{content.ems.line11}</p>
 
-							<p>Quotation</p>
+							<p>{content.quote}</p>
 						</div>
 						<img src='/images/drop-down.svg' alt='emptyness' />
 					</div>

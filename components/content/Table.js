@@ -1,13 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 import React, { useState } from 'react'
-import cmsContent from '../../utils/components/cmsContent.js'
-import emsContent from '../../utils/components/emsContent.js'
-import lmsContent from '../../utils/components/lmsContent.js'
+import { enTable, enCmsContent, enEmsContent, enLmsContent } from '../../lang/en.js'
+import { frTable, frCmsContent, frEmsContent, frLmsContent } from '../../lang/fr.js'
 
 import AnimatedText from '../../utils/anims/anims.js'
+import { useRouter } from 'next/router.js'
 
 export default function Table() {
+	const content = useRouter().locale === 'en' ? enTable : frTable
+
 	const [activeTab, setActiveTab] = useState('CMS')
 	const handleClick = (tab) => {
 		setActiveTab(tab)
@@ -19,14 +21,11 @@ export default function Table() {
 				<div className='container'>
 					<FadeIn>
 						<h2>
-							Outside the <span>norm</span>
+							{content.title} <span>{content.altTitle}</span>
 						</h2>
 					</FadeIn>
 					<div>
-						<AnimatedText
-							classname='animated animated_centered medium grey'
-							text='Discover the secret to unparalleled content management with Kairos blue! Our revolutionary platform skillfully combines a content management system (CMS), a learning management system (LMS) and an enterprise data management system (EMS).'
-						/>
+						<AnimatedText classname='animated animated_centered medium grey' text={content.description} />
 					</div>
 					<div className='table'>
 						<div className='tabs'>
@@ -53,6 +52,8 @@ export default function Table() {
 }
 
 function CmsContent() {
+	const content = useRouter().locale === 'en' ? enCmsContent : frCmsContent
+
 	const [activeCmsItem, setActiveCmsItem] = useState('item1')
 	const handleClickCmsItem = (item) => {
 		setActiveCmsItem(item)
@@ -60,22 +61,22 @@ function CmsContent() {
 	return (
 		<>
 			<div className='items'>
-				{Object.keys(cmsContent).map((key) => (
+				{Object.keys(content).map((key) => (
 					<div key={key} onClick={() => handleClickCmsItem(key)} className={activeCmsItem === key ? 'active' : ''}>
-						<p>{cmsContent[key].btnTitle}</p>
+						<p>{content[key].btnTitle}</p>
 					</div>
 				))}
 			</div>
 			<div className='content'>
 				<div>
-					<h4>{cmsContent[activeCmsItem].title}</h4>
+					<h4>{content[activeCmsItem].title}</h4>
 					<p
 						className='grey'
 						dangerouslySetInnerHTML={{
-							__html: cmsContent[activeCmsItem].description
+							__html: content[activeCmsItem].description
 						}}
 					/>
-					<img src={cmsContent[activeCmsItem].image} alt='placeholder' />
+					<img src={content[activeCmsItem].image} alt='placeholder' />
 				</div>
 			</div>
 		</>
@@ -83,6 +84,8 @@ function CmsContent() {
 }
 
 function EmsContent() {
+	const content = useRouter().locale === 'en' ? enEmsContent : frEmsContent
+
 	const [activeEmsItem, setActiveEmsItem] = useState('item1')
 	const handleClickEmsItem = (item) => {
 		setActiveEmsItem(item)
@@ -91,22 +94,22 @@ function EmsContent() {
 	return (
 		<>
 			<div className='items'>
-				{Object.keys(emsContent).map((key) => (
+				{Object.keys(content).map((key) => (
 					<div key={key} onClick={() => handleClickEmsItem(key)} className={activeEmsItem === key ? 'active' : ''}>
-						<p>{emsContent[key].btnTitle}</p>
+						<p>{content[key].btnTitle}</p>
 					</div>
 				))}
 			</div>
 			<div className='content'>
 				<div>
-					<h4>{emsContent[activeEmsItem].title}</h4>
+					<h4>{content[activeEmsItem].title}</h4>
 					<p
 						className='grey'
 						dangerouslySetInnerHTML={{
-							__html: emsContent[activeEmsItem].description
+							__html: content[activeEmsItem].description
 						}}
 					/>
-					<img src={emsContent[activeEmsItem].image} alt='placeholder' />
+					<img src={content[activeEmsItem].image} alt='placeholder' />
 				</div>
 			</div>
 		</>
@@ -114,6 +117,8 @@ function EmsContent() {
 }
 
 function LmsContent() {
+	const content = useRouter().locale === 'en' ? enLmsContent : frLmsContent
+
 	const [activeLmsItem, setActiveLmsItem] = useState('item1')
 	const handleClickLmsItem = (item) => {
 		setActiveLmsItem(item)
@@ -122,22 +127,22 @@ function LmsContent() {
 	return (
 		<>
 			<div className='items'>
-				{Object.keys(lmsContent).map((key) => (
+				{Object.keys(content).map((key) => (
 					<div key={key} onClick={() => handleClickLmsItem(key)} className={activeLmsItem === key ? 'active' : ''}>
-						<p>{lmsContent[key].btnTitle}</p>
+						<p>{content[key].btnTitle}</p>
 					</div>
 				))}
 			</div>
 			<div className='content'>
 				<div>
-					<h4>{lmsContent[activeLmsItem].title}</h4>
+					<h4>{content[activeLmsItem].title}</h4>
 					<p
 						className='grey'
 						dangerouslySetInnerHTML={{
-							__html: lmsContent[activeLmsItem].description
+							__html: content[activeLmsItem].description
 						}}
 					/>
-					<img src={lmsContent[activeLmsItem].image} alt='placeholder' />
+					<img src={content[activeLmsItem].image} alt='placeholder' />
 				</div>
 			</div>
 		</>
