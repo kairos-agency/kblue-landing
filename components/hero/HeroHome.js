@@ -91,7 +91,6 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
 
         const clipDuration = action.getClip().duration
         const reverseTime = clipDuration - clipDuration * scroll
-
         action.time = damp(action.time, reverseTime, 100, delta)
 
         state.camera.lookAt(0, 0, 0)
