@@ -10,6 +10,7 @@ import { Float, MeshTransmissionMaterial, useAnimations, useGLTF, useTexture } f
 import * as THREE from 'three'
 
 import Form from './Form.js'
+import AnimatedText from '../../utils/anims/anims.js'
 
 export default function Showcase() {
 	return (
@@ -23,12 +24,14 @@ export default function Showcase() {
 									Manage all your web assets <span>on a single dashboard</span>
 								</h2>
 							</FadeInBottom>
-							<FadeIn>
-								<p className='medium grey'>
-									Imagine that google drive, wordpress and crossknowledge had a eco-build baby together. One place to
-									manage all of your business content, one login portal.
-								</p>
-							</FadeIn>
+							<div>
+								<AnimatedText
+									classname='medium grey animated animated_centered'
+									text={
+										'Imagine that google drive, wordpress and crossknowledge had a eco-build baby together. One place to manage all of your business content, one login portal.'
+									}
+								/>
+							</div>
 							<FadeIn>
 								<div className='canvas-container'>
 									<TouchDevice />
@@ -41,10 +44,14 @@ export default function Showcase() {
 											<h2>
 												Ask for your <span>demo</span>
 											</h2>
-											<p className='small grey'>
-												Our revolutionary platform skillfully combines a content management system (CMS), a learning
-												management system (LMS), and an enterprise data management system (EMS).
-											</p>
+											<div>
+												<AnimatedText
+													classname='small grey animated'
+													text={
+														'Our revolutionary platform skillfully combines a content management system (CMS), a learning management system (LMS), and an enterprise data management system (EMS).'
+													}
+												/>
+											</div>
 										</div>
 									</FadeInBottom>
 									<FadeInRight>

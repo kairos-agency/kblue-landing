@@ -7,6 +7,8 @@ import { PricingAccordionMobile } from '../../utils/components/pricingMobile.js'
 import { state } from '../../utils/store.js'
 import { useSnapshot } from 'valtio'
 
+import AnimatedText from '../../utils/anims/anims.js'
+
 export default function Pricing() {
 	const snap = useSnapshot(state)
 	return (
@@ -16,9 +18,13 @@ export default function Pricing() {
 					<FadeIn>
 						<h2>Pricing</h2>
 					</FadeIn>
-					<FadeIn>
-						<p className='medium grey'>Adapt or evolve the features you need at any time. No commitment.</p>
-					</FadeIn>
+
+					<div>
+						<AnimatedText
+							classname={'medium grey animated animated_centered'}
+							text={'Adapt or evolve the features you need at any time. No commitment.'}
+						/>
+					</div>
 					<div className='tuto'>
 						<div className='cards'>
 							<FadeInLeft>

@@ -1,11 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-import { Canvas, useFrame } from '@react-three/fiber'
-import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
-
+import React from 'react'
+import { useFrame } from '@react-three/fiber'
+import * as THREE from 'three'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
+
 import { useRef, useEffect, useState } from 'react'
 import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
-import * as THREE from 'three'
+
+import { FadeInBottom } from '../../scripts/_anims.js'
+import AnimatedText from '../../utils/anims/anims.js'
 
 export default function HeroHome() {
 	useEffect(() => {
@@ -28,14 +31,17 @@ export default function HeroHome() {
 					<header className='hero' {...bind}>
 						<section>
 							<div className='container-sm'>
-								<FadeInBottom>
-									<div className='title'>
+								<div className='title'>
+									<FadeInBottom>
 										<h1>
 											The all-in-one <span>backoffice</span>
 										</h1>
-										<p className='medium grey'>One place to manage all of your business content, one login portal.</p>
-									</div>
-								</FadeInBottom>
+									</FadeInBottom>
+									<AnimatedText
+										classname='medium grey undertitle'
+										text={'One place to manage all of your business content, one login portal.'}
+									/>
+								</div>
 							</div>
 							<TouchDevice />
 						</section>

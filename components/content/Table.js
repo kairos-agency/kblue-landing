@@ -5,6 +5,8 @@ import cmsContent from '../../utils/components/cmsContent.js'
 import emsContent from '../../utils/components/emsContent.js'
 import lmsContent from '../../utils/components/lmsContent.js'
 
+import AnimatedText from '../../utils/anims/anims.js'
+
 export default function Table() {
 	const [activeTab, setActiveTab] = useState('CMS')
 	const handleClick = (tab) => {
@@ -20,13 +22,12 @@ export default function Table() {
 							Outside the <span>norm</span>
 						</h2>
 					</FadeIn>
-					<FadeIn>
-						<p className='medium grey'>
-							Discover the secret to unparalleled content management with Kairos blue! Our revolutionary platform
-							skillfully combines a content management system (CMS), a learning management system (LMS) and an
-							enterprise data management system (EMS).
-						</p>
-					</FadeIn>
+					<div>
+						<AnimatedText
+							classname='animated animated_centered medium grey'
+							text='Discover the secret to unparalleled content management with Kairos blue! Our revolutionary platform skillfully combines a content management system (CMS), a learning management system (LMS) and an enterprise data management system (EMS).'
+						/>
+					</div>
 					<div className='table'>
 						<div className='tabs'>
 							<div onClick={() => handleClick('CMS')} className={activeTab === 'CMS' ? 'tab active' : 'tab'}>

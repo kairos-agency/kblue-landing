@@ -19,6 +19,16 @@ p.medium {
 	}
 }
 
+div.medium {
+	span {
+		font-size: rem(1.1);
+		line-height: rem(2);
+		@media (min-width: $from-small) {
+			font-size: rem(1.2);
+		}
+	}
+}
+
 p.small {
 	font-size: rem(1);
 	text-align: center;
