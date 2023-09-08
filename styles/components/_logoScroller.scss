@@ -1,63 +1,63 @@
 :root {
-	--size: 20rem;
-	--gap: 2rem;
-	--duration: 40s;
-	--scroll-start: 0;
-	--scroll-end: calc(-100% - var(--gap));
+    --size: 20rem;
+    --gap: 2rem;
+    --duration: 40s;
+    --scroll-start: 0;
+    --scroll-end: calc(-100% - var(--gap));
 }
 
 .marquee {
-	margin-top: rem(12);
-	display: flex;
-	overflow: hidden;
-	user-select: none;
-	gap: var(--gap);
+    margin-top: rem(12);
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--gap);
 }
 
 .marquee__group {
-	flex-shrink: 0;
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	gap: var(--gap);
-	min-width: 100%;
-	animation: scroll-x var(--duration) linear infinite;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: var(--gap);
+    min-width: 100%;
+    animation: scroll-x var(--duration) linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.marquee__group {
-		animation-play-state: paused;
-	}
+    .marquee__group {
+        animation-play-state: paused;
+    }
 }
 
 .marquee--reverse .marquee__group {
-	animation-direction: reverse;
-	animation-delay: -3s;
+    animation-direction: reverse;
+    animation-delay: -3s;
 }
 
 @keyframes scroll-x {
-	from {
-		transform: translateX(var(--scroll-start));
-	}
+    from {
+        transform: translateX(var(--scroll-start));
+    }
 
-	to {
-		transform: translateX(var(--scroll-end));
-	}
+    to {
+        transform: translateX(var(--scroll-end));
+    }
 }
 
-.marquee__group div {
-	img {
-		width: rem(10);
-		height: rem(8);
-		object-fit: contain;
-	}
+.marquee__group {
+    img {
+        width: rem(10);
+        max-height: rem(2.5);
+        object-fit: contain;
+    }
 }
 
 .marquee-bar {
-	width: 92vw;
-	border: 0.5px solid $color-grey;
-	margin: rem(8) auto;
-	@media (min-width: $from-small) {
-		width: 58vw;
-	}
+    width: 92vw;
+    border: 0.5px solid $color-grey;
+    margin: rem(8) auto;
+    @media (min-width: $from-small) {
+        width: 58vw;
+    }
 }
