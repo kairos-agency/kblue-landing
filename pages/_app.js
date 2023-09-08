@@ -2,8 +2,7 @@ import '../styles/index.scss'
 import Head from 'next/head'
 import Layout from '../components/layout'
 import { GlobalCanvas } from '@14islands/r3f-scroll-rig'
-import { Environment, Html, Lightformer, Loader, useProgress } from '@react-three/drei'
-import * as THREE from 'three'
+import { Environment, Lightformer, Loader } from '@react-three/drei'
 
 import { Suspense } from 'react'
 
@@ -19,7 +18,7 @@ export default function App({ Component, pageProps }) {
                     shadows
                     dpr={[1, 2]}
                     onCreated={({ gl }) => {
-                        gl.toneMapping = THREE.NoToneMapping
+                        gl.toneMapping = 0
                     }}
                 >
                     <Suspense fallback={null}>
