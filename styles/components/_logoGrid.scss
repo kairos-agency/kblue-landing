@@ -1,36 +1,37 @@
 section.logo_grid {
-	margin-top: 0;
-	.container-xxs {
-		hr {
-			border: 0.5px solid $color-grey;
-		}
-		p {
-			margin: unset;
-			text-align: left;
-			margin-bottom: rem(1);
-		}
-		.grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-			grid-gap: 2rem;
-			justify-items: center;
+    margin-top: 0;
+    .container-xxs {
+        hr {
+            border: 0.5px solid $color-grey;
+        }
+        p {
+            margin: unset;
+            text-align: left;
+            margin-bottom: rem(1);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-gap: 2rem;
+            justify-items: center;
+            align-items: center;
 
-			margin-bottom: rem(3);
-			margin-top: rem(3);
+            margin-bottom: rem(3);
+            margin-top: rem(3);
 
-			@media (min-width: $from-small) {
-				grid-template-columns: 1fr 1fr 1fr 1fr;
-				grid-template-rows: 1fr;
-			}
-			img {
-				width: 80%;
-				height: 80%;
-				object-fit: contain;
-				&:nth-child(2) {
-					width: 60%;
-				}
-			}
-		}
-	}
+            @media (min-width: $from-small) {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+            svg {
+                width: 80%;
+                height: 80%;
+                object-fit: contain;
+                &:nth-child(2) {
+                    width: 60%;
+                }
+            }
+        }
+    }
 }
