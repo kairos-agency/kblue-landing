@@ -55,12 +55,15 @@
 
 .animated {
 	margin: rem(1) auto 0;
-	width: 50%;
+	width: 100%;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 0;
 	&_centered {
 		justify-content: center;
+	}
+	@media (min-width: $from-small) {
+		width: 50%;
 	}
 }
