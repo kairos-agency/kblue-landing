@@ -69,7 +69,7 @@ function MarkupTouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/markup.jpg' alt='hero image' /> : <MarkupSection />
+	return isTouch ? <img src='/images/markup.jpeg' alt='hero image' /> : <MarkupSection />
 }
 
 function MarkupSection() {
