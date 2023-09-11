@@ -53,21 +53,21 @@ const frCmsContent = {
 		title: 'Recrutez vite 🙋',
 		description:
 			"Publiez et gérez vos offres d'emploi, centralisez vos candidatures dans votre extranet, faites participer vos équipes à leurs écritures.",
-		image: '/images/table/cms/jobs-en.jpg'
+		image: '/images/table/cms/jobs-fr.jpg'
 	},
 	item4: {
 		btnTitle: 'Évènements',
 		title: 'Que la fête commence ! 🎉',
 		description:
 			"Créer des pages de présentation et formulaires d'inscription pour tous vos évènements, gratuits ou payants. Gérez les volumes d'inscrits, envoyez des rappels avant le jour J pour vous assurez un maximum de présents.",
-		image: '/images/table/cms/events-en.jpg'
+		image: '/images/table/cms/events-fr.jpg'
 	},
 	item5: {
 		btnTitle: 'FAQ',
 		title: 'Gagnez du temps! ⌛',
 		description:
 			'Construisez une bibliothèque des questions fréquemment posées par votre communauté avec un accès filtré à vos ressources documentaires clefs.',
-		image: '/images/table/cms/qna-en.jpg'
+		image: '/images/table/cms/qna-fr.jpg'
 	}
 }
 
@@ -131,7 +131,7 @@ const frEmsContent = {
 		title: 'Connectez vos outils existants 🖇️',
 		description:
 			"Automatisez vos activités en reliant vos outils existants à l'extranet : Salesforce, Zendesk, G-drive, API internes etc.",
-		image: '/images/placeholder.png'
+		image: '/images/table/ems/api.jpg'
 	}
 }
 
@@ -141,28 +141,28 @@ const frLmsContent = {
 		title: 'Le savoir faire de votre entreprise est le bien le plus précieux 💎',
 		description:
 			"Organiser la transmission des savoirs au sein de l'entreprise, depuis l'arrivée d'un nouveau salarié jusqu'au départ à la retraite. Intégrez de nouveaux savoirs au sein du e-learning et formez vos équipes. Utilisez les fonctionnalités ludiques pour augmenter le taux de passage à l'action.",
-		image: '/images/placeholder.png'
+		image: '/images/table/lms/elearning.jpg'
 	},
 	item2: {
 		btnTitle: 'Quizz',
 		title: 'Tester les connaissances ❓',
 		description:
 			'Vérifiez le niveau de vos apprenants avec des QCMs. Paramétrez le niveau attendu pour la réussite du module.',
-		image: '/images/placeholder.png'
+		image: '/images/table/lms/quiz.jpg'
 	},
 	item3: {
 		btnTitle: 'Challenge',
 		title: 'Mobilisez vos équipes 🚴',
 		description:
 			"Organisez des challenges par équipes sur une période définie, augmentez le taux d'engagement en activant la motivation extrinsèque.",
-		image: '/images/placeholder.png'
+		image: '/images/table/lms/challenges.jpg'
 	},
 	item4: {
 		btnTitle: 'Parcours',
 		title: 'Organisez vos savoirs 📚',
 		description:
 			"Paramétrez des parcours de formations avec des étapes de chapitres et sections. Découpez l'apprentissage en briques claires pour augmenter la motivation des apprenants.",
-		image: '/images/placeholder.png'
+		image: '/images/table/lms/journey.png'
 	}
 }
 
