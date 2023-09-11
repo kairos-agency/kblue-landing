@@ -48,11 +48,11 @@ function Nav() {
 						<Link href='#Features'>{content.item1}</Link>
 						<Link href='#APIs'>{content.item2}</Link>
 						<Link href='#Pricing'>{content.item3}</Link>
-						<Link href='/blog'>{content.item4}</Link>
+						{/* <Link href='/blog'>{content.item4}</Link> */}
 					</div>
 					<div className='links'>
-						<Link href='/'>{content.item5}</Link>
-						<Link className='btn-primary' href='/'>
+						<Link href='mailto:hello@kairos-agency.com'>Contact</Link>
+						<Link className='btn-primary' href='#Demo'>
 							{content.item6}
 						</Link>
 					</div>
@@ -87,15 +87,15 @@ function Nav() {
 								{content.item3}
 							</Link>
 						</li>
-						<li>
+						{/* <li>
 							<Link onClick={closeMenu} href='/blog'>
 								{content.item4}
 							</Link>
-						</li>
+						</li> */}
 					</ul>
 					<div className='links'>
-						<Link href='/'>Login</Link>
-						<Link className='btn-primary' href='/'>
+						<Link href='mailto:hello@kairos-agency.com'>Contact</Link>
+						<Link className='btn-primary' href='#Demo'>
 							{content.item6}
 						</Link>
 						<Link href={router.asPath} locale={router.locale === 'fr' ? 'en' : 'fr'} className='lang'>

@@ -37,7 +37,7 @@ export default function Showcase() {
 									<TouchDevice />
 								</div>
 							</FadeIn>
-							<div className='demo-container'>
+							<div className='demo-container' id='Demo'>
 								<div className='demo-wrapper'>
 									<FadeInBottom>
 										<div>
