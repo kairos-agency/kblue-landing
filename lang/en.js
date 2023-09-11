@@ -304,6 +304,11 @@ const enQna = {
 	}
 }
 
+const enContact = {
+	title: 'Contact',
+	description: 'Feel free to contact us for any questions or requests.'
+}
+
 const enNav = {
 	item1: 'Features',
 	item2: 'APIs',
@@ -333,6 +338,7 @@ export {
 	enLogoScroller,
 	enPricing,
 	enQna,
+	enContact,
 	enNav,
 	enFooter
 }

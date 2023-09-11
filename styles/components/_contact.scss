@@ -1,0 +1,40 @@
+.demo-container {
+	.demo-wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: stretch;
+		width: 100%;
+		@media (min-width: $from-small) {
+			flex-direction: row;
+			align-items: center;
+		}
+		> div {
+			&:first-of-type {
+				width: 100%;
+				> div {
+					background-color: $color-blue-ice;
+					padding: rem(4) rem(3);
+					border-radius: rem(2) rem(2) 0 0;
+					@media (min-width: $from-small) {
+						padding: rem(6) rem(5);
+						border-radius: rem(2) 0 0 rem(2);
+					}
+					h2 {
+						text-align: left;
+						margin: unset;
+						margin-bottom: rem(2);
+					}
+					div {
+						text-align: left;
+						margin: unset;
+						width: 100%;
+						@media (min-width: $from-small) {
+							width: 90%;
+						}
+					}
+				}
+			}
+		}
+	}
+}

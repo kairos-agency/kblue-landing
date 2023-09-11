@@ -305,6 +305,11 @@ const frQna = {
 	}
 }
 
+const frContact = {
+	title: 'Contact',
+	description: 'Feel free to contact us for any questions or requests.'
+}
+
 const frNav = {
 	item1: 'Fonctionnalités',
 	item2: 'APIs',
@@ -334,6 +339,7 @@ export {
 	frLogoScroller,
 	frPricing,
 	frQna,
+	frContact,
 	frNav,
 	frFooter
 }
