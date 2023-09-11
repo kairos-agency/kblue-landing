@@ -88,13 +88,13 @@
 					}
 					@media (min-width: $from-small) {
 						padding: rem(3) 0;
-						height: rem(30);
+						height: rem(35);
 
 						&.active {
 							border: 2px solid $color-grey-light;
 						}
 						&:nth-child(2) {
-							height: rem(35);
+							height: rem(40);
 
 							border: 2px solid $color-primary;
 						}
@@ -143,12 +143,14 @@
 						display: flex;
 						flex-direction: column;
 						gap: rem(1.75);
+						padding: 0 rem(2);
 						> div {
 							display: flex;
-							gap: rem(1);
+							gap: rem(1.75);
 							align-items: center;
 							p {
 								margin: unset;
+								text-align: left;
 							}
 							img {
 								height: rem(1.5);

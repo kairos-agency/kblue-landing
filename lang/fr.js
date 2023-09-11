@@ -190,28 +190,28 @@ const frPricing = {
 	tuto2: 'Ajoutez les fonctionnalités dont vous avez besoin à la carte',
 	card1: {
 		title: 'Basic',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		description1: 'Gérez le contenu de votre site web',
+		description2: 'Mettez en ligne vos formations',
+		description3: 'Rangez les docs de votre entreprise',
 		cta: 'Souscrire',
-		price: "300€ de frais d'installation puis 45€/mois"
+		price: 'Installation 650€ht / 89€ht par mois'
 	},
 	card2: {
 		title: 'Kblue',
-		badge: 'Most popular',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		badge: 'Populaire',
+		description1: 'Toutes les fonctionnalités du plan basic',
+		description2: 'Proposez des défis à vos collaborateurs',
+		description3: 'Gérez le quotidien client avec SAV et abonnement',
 		cta: 'Souscrire',
-		price: "2000€ de frais d'installation puis 110€/mois"
+		price: 'Installation 2500€ht / 115€ht par mois'
 	},
 	card3: {
-		title: 'Kblue',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		title: 'Premium',
+		description1: 'Toutes les fonctionnalités des plans basic et Kblue',
+		description2: 'Votre site vitrine entièrement sur mesure',
+		description3: "Développement d'API personnalisées",
 		cta: 'Souscrire',
-		price: "2500€ de frais d'installation puis 190€/mois"
+		price: 'Installation offerte  / Sur devis'
 	},
 	smallTitle: 'Comparer les fonctionnalités',
 	cms: {
@@ -264,8 +264,8 @@ const frPricing = {
 }
 
 const frQna = {
-	overtitle: 'Any questions ?',
-	title: 'Q&A',
+	overtitle: 'Des questions ?',
+	title: 'FAQ',
 	accordion: {
 		item1: {
 			title: 'Comment fonctionne un CMS ?',

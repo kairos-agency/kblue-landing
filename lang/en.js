@@ -189,26 +189,26 @@ const enPricing = {
 	tuto2: 'Add on-demand tailor-made features',
 	card1: {
 		title: 'Basic',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		description1: 'Manage the content of your website',
+		description2: 'Upload your courses',
+		description3: "Organize your company's documents",
 		cta: 'Subscribe',
 		price: '300$ install fee then 45$/m'
 	},
 	card2: {
 		title: 'Kblue',
 		badge: 'Most popular',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		description1: 'All the features of the basic plan',
+		description2: 'Offer challenges to your employees',
+		description3: 'Manage customer daily life with customer service and subscription',
 		cta: 'Subscribe',
 		price: '2000$ install fee then 110$/m'
 	},
 	card3: {
-		title: 'Kblue',
-		description1: 'Accesio estis sunt et planea',
-		description2: 'Moltes planetarum actis',
-		description3: 'Intelo et factis et dasilania',
+		title: 'Premium',
+		description1: 'All the features of the basic and Kblue plans',
+		description2: 'Your fully customized showcase website',
+		description3: 'Custom API development',
 		cta: 'Subscribe',
 		price: '2500$ install fee then 190$/m'
 	},
