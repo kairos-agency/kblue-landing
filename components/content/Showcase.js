@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link.js'
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 
@@ -15,6 +14,7 @@ import AnimatedText from '../../utils/anims/anims.js'
 
 import { enShowcase } from '../../lang/en.js'
 import { frShowcase } from '../../lang/fr.js'
+import Image from 'next/image.js'
 
 export default function Showcase() {
 	const content = useRouter().locale === 'en' ? enShowcase : frShowcase
@@ -44,9 +44,7 @@ export default function Showcase() {
 											<h2>
 												{content.title2} <span>{content.altTitle2}</span>
 											</h2>
-											<div>
-												<AnimatedText classname='small grey animated' text={content.description2} />
-											</div>
+											<AnimatedText classname='grey medium animated' text={content.description2} />
 										</div>
 									</FadeInBottom>
 									<FadeInRight>
@@ -69,7 +67,19 @@ function TouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/showcase.png' alt='hero image' /> : <PlaneAnimationSection />
+	return isTouch ? (
+		<Image
+			src='/images/showcase.png'
+			alt='Kairos-Blue backoffice homepage'
+			width={1}
+			height={1}
+			sizes='80vw'
+			quality='70'
+			priority
+		/>
+	) : (
+		<PlaneAnimationSection />
+	)
 }
 
 function PlaneAnimationSection() {

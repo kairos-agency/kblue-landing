@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
 import React, { useState } from 'react'
 import { enTable, enCmsContent, enEmsContent, enLmsContent } from '../../lang/en.js'
@@ -6,6 +5,7 @@ import { frTable, frCmsContent, frEmsContent, frLmsContent } from '../../lang/fr
 
 import AnimatedText from '../../utils/anims/anims.js'
 import { useRouter } from 'next/router.js'
+import Image from 'next/image.js'
 
 export default function Table() {
 	const content = useRouter().locale === 'en' ? enTable : frTable
@@ -76,7 +76,15 @@ function CmsContent() {
 							__html: content[activeCmsItem].description
 						}}
 					/>
-					<img src={content[activeCmsItem].image} alt='placeholder' />
+					<Image
+						src={content[activeCmsItem].image}
+						alt='placeholder'
+						width={1}
+						height={1}
+						sizes='80vw'
+						quality='70'
+						priority
+					/>
 				</div>
 			</div>
 		</>
@@ -109,7 +117,15 @@ function EmsContent() {
 							__html: content[activeEmsItem].description
 						}}
 					/>
-					<img src={content[activeEmsItem].image} alt='placeholder' />
+					<Image
+						src={content[activeEmsItem].image}
+						alt='placeholder'
+						width={1}
+						height={1}
+						sizes='80vw'
+						quality='70'
+						priority
+					/>
 				</div>
 			</div>
 		</>
@@ -142,7 +158,15 @@ function LmsContent() {
 							__html: content[activeLmsItem].description
 						}}
 					/>
-					<img src={content[activeLmsItem].image} alt='placeholder' />
+					<Image
+						src={content[activeLmsItem].image}
+						alt='placeholder'
+						width={1}
+						height={1}
+						sizes='80vw'
+						quality='70'
+						priority
+					/>
 				</div>
 			</div>
 		</>

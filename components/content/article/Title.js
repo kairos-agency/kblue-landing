@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
+
 export default function ArticleTitle({ article }) {
 	return (
 		<>
@@ -10,7 +11,7 @@ export default function ArticleTitle({ article }) {
 							<p>{article.author}</p>
 							<p>{article.date}</p>
 						</div>
-						<img src={article.img} alt={article.alt} />
+						<Image src={article.img} alt={article.alt} width={1} height={1} sizes='80vw' quality='70' priority />
 					</div>
 				</section>
 			</header>

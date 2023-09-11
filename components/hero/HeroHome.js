@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import { useFrame } from '@react-three/fiber'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
@@ -13,6 +12,7 @@ import { enHome } from '../../lang/en.js'
 import { frHome } from '../../lang/fr.js'
 
 import { useRouter } from 'next/router'
+import Image from 'next/image.js'
 
 export default function HeroHome() {
 	useEffect(() => {
@@ -62,7 +62,11 @@ function TouchDevice() {
 		setTouch(isTouch)
 		console.log(isTouch)
 	}, [])
-	return isTouch ? <img src='/images/hero.png' alt='hero image' /> : <KeyAnimationSection />
+	return isTouch ? (
+		<Image src='/images/hero.png' alt='hero image' width={1} height={1} sizes='80vw' quality='70' priority />
+	) : (
+		<KeyAnimationSection />
+	)
 }
 
 function KeyAnimationSection() {

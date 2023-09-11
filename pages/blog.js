@@ -1,11 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link'
-import {
-	FadeInBottom,
-	FadeInLeft,
-	FadeInRight,
-	FadeIn,
-} from '../scripts/_anims'
+import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../scripts/_anims'
+import Image from 'next/image'
 
 export default function Blog() {
 	return (
@@ -15,10 +11,15 @@ export default function Blog() {
 					<div className='other-project_grid other-project_grid_list'>
 						<Link href='/article'>
 							<FadeInLeft>
-								<img
+								<Image
 									className='full'
 									src='/images/placeholder.png'
 									alt='Placeholder'
+									width={1}
+									height={1}
+									sizes='80vw'
+									quality='70'
+									priority
 								/>
 							</FadeInLeft>
 							<FadeInBottom>
@@ -31,10 +32,15 @@ export default function Blog() {
 						</Link>
 						<Link href='/article'>
 							<FadeInRight>
-								<img
+								<Image
 									className='full'
 									src='/images/placeholder.png'
 									alt='Placeholder'
+									width={1}
+									height={1}
+									sizes='80vw'
+									quality='70'
+									priority
 								/>
 							</FadeInRight>
 							<FadeInBottom>
@@ -47,10 +53,15 @@ export default function Blog() {
 						</Link>
 						<Link href='/article'>
 							<FadeInLeft>
-								<img
+								<Image
 									className='full'
 									src='/images/placeholder.png'
 									alt='Placeholder'
+									width={1}
+									height={1}
+									sizes='80vw'
+									quality='70'
+									priority
 								/>
 							</FadeInLeft>
 							<FadeInBottom>
@@ -63,10 +74,15 @@ export default function Blog() {
 						</Link>
 						<Link href='/article'>
 							<FadeInRight>
-								<img
+								<Image
 									className='full'
 									src='/images/placeholder.png'
 									alt='Placeholder'
+									width={1}
+									height={1}
+									sizes='80vw'
+									quality='70'
+									priority
 								/>
 							</FadeInRight>
 							<FadeInBottom>
