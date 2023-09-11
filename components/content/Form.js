@@ -40,7 +40,7 @@ function Form() {
 	}
 	return (
 		<div className='demo-form'>
-			<div>
+			<div className='form__title'>
 				<p>{content.title}</p>
 				<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 44 44'>
 					<circle cx='22' cy='22' r='22' fill='#EAF1FD' />
@@ -64,7 +64,7 @@ function Form() {
 					/>
 				</svg>
 			</div>
-			<form>
+			{/* <form>
 				<div className='form-group'>
 					<label htmlFor='name'>{content.name}</label>
 					<input
@@ -98,7 +98,47 @@ function Form() {
 						{content.submit}
 					</button>
 				</div>
-			</form>
+			</form> */}
+			<div id='mc_embed_shell'>
+				<div id='mc_embed_signup'>
+					<form
+						action='https://kairos-agency.us13.list-manage.com/subscribe/post?u=cdbe50ac410ba94aa4ca0b2f9&amp;id=f8b1ee1ee4&amp;f_id=00b52ce5f0'
+						method='post'
+						id='mc-embedded-subscribe-form'
+						name='mc-embedded-subscribe-form'
+						class='validate'
+						target='_self'
+						novalidate=''
+					>
+						<div id='mc_embed_signup_scroll'>
+							<div class='mc-field-group'>
+								<label for='mce-EMAIL'>{content.email}</label>
+								<input type='email' name='EMAIL' class='required email' id='mce-EMAIL' required='' />
+							</div>
+							<div class='mc-field-group'>
+								<label for='mce-LNAME'>{content.name}</label>
+								<input type='text' name='LNAME' class=' text' id='mce-LNAME' />
+							</div>
+							<div id='mce-responses' style={{ display: 'none' }}>
+								<div class='response' id='mce-error-response' style={{ display: 'none' }}></div>
+								<div class='response' id='mce-success-response' style={{ display: 'none' }}></div>
+							</div>
+							<div aria-hidden='true' style={{ display: 'none' }}>
+								<input type='text' name='b_cdbe50ac410ba94aa4ca0b2f9_f8b1ee1ee4' tabindex='-1' value='' />
+							</div>
+							<div>
+								<input
+									type='submit'
+									name='subscribe'
+									id='mc-embedded-subscribe'
+									class='btn btn-primary'
+									value={content.submit}
+								/>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	)
 }
