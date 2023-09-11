@@ -30,7 +30,7 @@ export default function Footer() {
 						<div className='footer_bottom'>
 							<div>
 								<Link href='/legal'>{content.item1}</Link>
-								<Link href='/'>{content.item2}</Link>
+								<Link href='mailto:hello@kairos-agency.com'>{content.item2}</Link>
 							</div>
 						</div>
 					</div>
