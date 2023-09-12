@@ -141,14 +141,14 @@ const frLmsContent = {
 		title: 'Le savoir faire de votre entreprise est le bien le plus précieux 💎',
 		description:
 			"Organiser la transmission des savoirs au sein de l'entreprise, depuis l'arrivée d'un nouveau salarié jusqu'au départ à la retraite. Intégrez de nouveaux savoirs au sein du e-learning et formez vos équipes. Utilisez les fonctionnalités ludiques pour augmenter le taux de passage à l'action.",
-		image: '/images/table/lms/elearning.jpg'
+		image: '/images/table/lms/elearning.png'
 	},
 	item2: {
 		btnTitle: 'Quizz',
 		title: 'Tester les connaissances ❓',
 		description:
 			'Vérifiez le niveau de vos apprenants avec des QCMs. Paramétrez le niveau attendu pour la réussite du module.',
-		image: '/images/table/lms/quiz.jpg'
+		image: '/images/table/lms/quiz.png'
 	},
 	item3: {
 		btnTitle: 'Challenge',

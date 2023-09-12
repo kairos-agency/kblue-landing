@@ -141,14 +141,14 @@ const enLmsContent = {
 		title: 'The know-how of your company is the most precious asset 💎',
 		description:
 			'Organize the transmission of knowledge within the company, from the arrival of a new employee to the retirement. Integrate new knowledge into e-learning and train your teams. Use fun features to increase the take-up rate.',
-		image: '/images/table/lms/elearning.jpg'
+		image: '/images/table/lms/elearning.png'
 	},
 	item2: {
 		btnTitle: 'Quiz',
 		title: 'Test knowledge ❓',
 		description:
 			'Check the level of your learners with multiple choice questions. Set the expected level for successful completion of the module.',
-		image: '/images/table/lms/quiz.jpg'
+		image: '/images/table/lms/quiz.png'
 	},
 	item3: {
 		btnTitle: 'Challenge',
