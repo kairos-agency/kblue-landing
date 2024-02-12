@@ -193,7 +193,7 @@ const enPricing = {
 		description2: 'Upload your courses',
 		description3: "Organize your company's documents",
 		cta: 'Subscribe',
-		price: '300$ install fee then 45$/m'
+		price: '1800 USD$ install fee then 90 USD$/m'
 	},
 	card2: {
 		title: 'Kblue',
@@ -202,7 +202,7 @@ const enPricing = {
 		description2: 'Offer challenges to your employees',
 		description3: 'Manage customer daily life with customer service and subscription',
 		cta: 'Subscribe',
-		price: '2000$ install fee then 110$/m'
+		price: 'Free install fee then 550 USD$/m'
 	},
 	card3: {
 		title: 'Premium',
@@ -210,7 +210,7 @@ const enPricing = {
 		description2: 'Your fully customized showcase website',
 		description3: 'Custom API development',
 		cta: 'Subscribe',
-		price: '2500$ install fee then 190$/m'
+		price: 'Free install / Quotation'
 	},
 	smallTitle: 'Compare features',
 	cms: {
