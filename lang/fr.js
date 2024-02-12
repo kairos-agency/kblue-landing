@@ -194,7 +194,7 @@ const frPricing = {
 		description2: 'Mettez en ligne vos formations',
 		description3: 'Rangez les docs de votre entreprise',
 		cta: 'Souscrire',
-		price: 'Installation 650€ht / 89€ht par mois'
+		price: 'Installation 1800€ht puis 90€ par mois'
 	},
 	card2: {
 		title: 'Kblue',
@@ -203,7 +203,7 @@ const frPricing = {
 		description2: 'Proposez des défis à vos collaborateurs',
 		description3: 'Gérez le quotidien client avec SAV et abonnement',
 		cta: 'Souscrire',
-		price: 'Installation 2500€ht / 115€ht par mois'
+		price: 'Installation offerte puis 550€ par mois'
 	},
 	card3: {
 		title: 'Premium',
