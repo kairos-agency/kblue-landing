@@ -202,7 +202,7 @@ const enPricing = {
 		description2: 'Offer challenges to your employees',
 		description3: 'Manage customer daily life with customer service and subscription',
 		cta: 'Subscribe',
-		price: 'Free install fee then 550 USD$/m'
+		price: 'Free install then 550 USD$/m'
 	},
 	card3: {
 		title: 'Premium',
