@@ -5,7 +5,7 @@ module.exports = {
         websiteURL: process.env.WEBSITE_URL,
         wordpressApiURL: process.env.WORDPRESS_API_URL,
         userApi: process.env.USER_API,
-        passwordApi: process.env.PASSWORD_API
+        passwordApi: process.env.PASSWORD_API,
     },
     images: {
         remotePatterns: [
@@ -13,20 +13,24 @@ module.exports = {
                 protocol: 'http',
                 hostname: 'localhost',
                 port: '8888',
-                pathname: '/kairos-blue/wp-content/uploads/**'
-            }
-        ]
+                pathname: '/kairos-blue/wp-content/uploads/**',
+            },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                pathname: '/kairos-blue/wp-content/uploads/**',
+            },
+        ],
     },
     i18n: {
-        locales: ['fr', 'en'],
+        locales: ['en', 'fr'],
         defaultLocale: 'fr',
-        localDetection: true
     },
     webpack: (config, { isServer }) => {
         if (isServer) {
-            require('./scripts/generate-sitemap')
+            // require('./scripts/generate-sitemap')
         }
 
         return config
-    }
+    },
 }
