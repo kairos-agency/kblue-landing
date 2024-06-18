@@ -1,19 +1,16 @@
-import '../styles/index.scss'
-import Head from 'next/head'
-import Layout from '../components/layout'
-import { GlobalCanvas } from '@14islands/r3f-scroll-rig'
-import { Environment, Html, Lightformer, Loader, useProgress } from '@react-three/drei'
+'use client'
 
 import { Suspense } from 'react'
+import Nav from './nav/Nav'
+import Footer from './footer/Footer'
+import { ReactLenis } from '@studio-freight/react-lenis'
+import { GlobalCanvas } from '@14islands/r3f-scroll-rig'
+import { Environment, Lightformer, Loader } from '@react-three/drei'
 
-export default function App({ Component, pageProps }) {
+export default function ContentPage({ children }) {
     return (
-        <>
-            <Head>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
-
-            <Layout>
+        <ReactLenis root>
+            <div>
                 <GlobalCanvas
                     shadows
                     dpr={[1, 2]}
@@ -22,7 +19,7 @@ export default function App({ Component, pageProps }) {
                     }}
                 >
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#FBFBFD']} />
+                        <color attach='background' args={['#FBFBFD']} />
 
                         <Environment resolution={32}>
                             <group rotation={[-Math.PI / 4, -0.3, 0]}>
@@ -30,13 +27,14 @@ export default function App({ Component, pageProps }) {
                                 <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, 1, -1]} scale={[10, 2, 1]} />
                                 <Lightformer intensity={2} rotation-y={Math.PI / 2} position={[-5, -1, -1]} scale={[10, 2, 1]} />
                                 <Lightformer intensity={2} rotation-y={-Math.PI / 2} position={[10, 1, 0]} scale={[20, 2, 1]} />
-                                <Lightformer type="ring" intensity={2} rotation-y={Math.PI / 2} position={[-0.1, -1, -5]} scale={10} />
+                                <Lightformer type='ring' intensity={2} rotation-y={Math.PI / 2} position={[-0.1, -1, -5]} scale={10} />
                             </group>
                         </Environment>
 
                         <ambientLight intensity={0.75} />
                     </Suspense>
                 </GlobalCanvas>
+
                 <Loader
                     containerStyles={{ backgroundColor: '#FBFBFD' }}
                     innerStyles={{ backgroundColor: '#FBFBFD' }}
@@ -45,8 +43,10 @@ export default function App({ Component, pageProps }) {
                     dataInterpolation={p => `${p.toFixed(2)}`}
                 />
 
-                <Component {...pageProps} />
-            </Layout>
-        </>
+                <Nav />
+                <main>{children}</main>
+                <Footer />
+            </div>
+        </ReactLenis>
     )
 }

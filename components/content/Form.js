@@ -7,7 +7,8 @@ import { enForm } from '../../lang/en.js'
 import { frForm } from '../../lang/fr.js'
 
 function Form() {
-    const content = useRouter().locale === 'en' ? enForm : frForm
+    // const content = useRouter().locale === 'en' ? enForm : frForm
+    const content = enForm
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
