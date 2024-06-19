@@ -15,10 +15,20 @@ module.exports = {
                 port: '8888',
                 pathname: '/kairos-blue/wp-content/uploads/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                pathname: '/kairos-blue/wp-content/uploads/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'kairos-blue.kairos-valley.net',
+                pathname: '/wp-content/uploads/**',
+            },
         ],
     },
     i18n: {
-        locales: ['fr', 'en'],
+        locales: ['en', 'fr'],
         defaultLocale: 'fr',
         localDetection: true,
     },

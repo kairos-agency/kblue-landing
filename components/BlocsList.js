@@ -3,7 +3,10 @@
 import dynamic from 'next/dynamic'
 
 const componentMapping = {
-    // haut_de_page_accueil: dynamic(() => import('./hero/HeroHome'))
+    hero: dynamic(() => import('./hero/HeroHome')),
+    logo_grid: dynamic(() => import('./content/LogoGrid')),
+    showcase: dynamic(() => import('./content/Showcase')),
+    table: dynamic(() => import('./content/Table')),
 }
 
 export default function BlocsList({ index, bloc }) {

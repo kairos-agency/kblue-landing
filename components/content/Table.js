@@ -7,168 +7,131 @@ import AnimatedText from '../../utils/anims/anims.js'
 import { useRouter } from 'next/router.js'
 import Image from 'next/image.js'
 
-export default function Table() {
-	const content = useRouter().locale === 'en' ? enTable : frTable
+export default function Table({ index, bloc }) {
+    // const content = useRouter().locale === 'en' ? enTable : frTable
 
-	const [activeTab, setActiveTab] = useState('CMS')
-	const handleClick = (tab) => {
-		setActiveTab(tab)
-	}
+    const [activeTab, setActiveTab] = useState(bloc.column[0].name)
+    const handleClick = tab => {
+        setActiveTab(tab)
+    }
+    // console.log(bloc.column)
 
-	return (
-		<>
-			<section id='Features'>
-				<div className='container'>
-					<FadeIn>
-						<h2>
-							{content.title} <span>{content.altTitle}</span>
-						</h2>
-					</FadeIn>
-					<div>
-						<AnimatedText classname='animated animated_centered medium grey' text={content.description} />
-					</div>
-					<div className='table'>
-						<div className='tabs'>
-							<div onClick={() => handleClick('CMS')} className={activeTab === 'CMS' ? 'tab active' : 'tab'}>
-								<h3>CMS</h3>
-							</div>
-							<div onClick={() => handleClick('LMS')} className={activeTab === 'LMS' ? 'tab active' : 'tab'}>
-								<h3>LMS</h3>
-							</div>
-							<div onClick={() => handleClick('EMS')} className={activeTab === 'EMS' ? 'tab active' : 'tab'}>
-								<h3>EMS</h3>
-							</div>
-						</div>
-						<div className='content-container'>
-							{activeTab === 'CMS' && <CmsContent />}
-							{activeTab === 'EMS' && <EmsContent />}
-							{activeTab === 'LMS' && <LmsContent />}
-						</div>
-					</div>
-				</div>
-			</section>
-		</>
-	)
+    return (
+        <section id="Features" key={index}>
+            <div className="container">
+                <FadeIn>
+                    <h2>
+                        {bloc.title1} <span>{bloc.title2}</span>
+                    </h2>
+                </FadeIn>
+                <div>
+                    <AnimatedText classname="animated animated_centered medium grey" text={bloc.description} />
+                </div>
+                <div className="table">
+                    <div className="tabs">
+                        {bloc.column.map((item, index) => {
+                            return (
+                                <div
+                                    key={index}
+                                    onClick={() => handleClick(item.name)}
+                                    className={activeTab === item.name ? 'tab active' : 'tab'}
+                                >
+                                    <h3>{item.name}</h3>
+                                </div>
+                            )
+                        })}
+                        {/* // <div onClick={() => handleClick('CMS')} className={activeTab === 'CMS' ? 'tab active' : 'tab'}>
+                        //     <h3>CMS</h3>
+                        // </div>
+                        // <div onClick={() => handleClick('LMS')} className={activeTab === 'LMS' ? 'tab active' : 'tab'}>
+                        //     <h3>LMS</h3>
+                        // </div>
+                        // <div onClick={() => handleClick('EMS')} className={activeTab === 'EMS' ? 'tab active' : 'tab'}>
+                        //     <h3>EMS</h3>
+                        // </div> */}
+                    </div>
+                    <div className="content-container">
+                        <ColumnContent activeTab={activeTab} bloc={bloc} />
+                        {/* {activeTab === 'CMS' && <CmsContent />}
+                        {activeTab === 'EMS' && <EmsContent />}
+                        {activeTab === 'LMS' && <LmsContent />} */}
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
 }
 
-function CmsContent() {
-	const content = useRouter().locale === 'en' ? enCmsContent : frCmsContent
+function ColumnContent({ activeTab, bloc }) {
+    // const content = useRouter().locale === 'en' ? enCmsContent : frCmsContent
 
-	const [activeCmsItem, setActiveCmsItem] = useState('item1')
-	const handleClickCmsItem = (item) => {
-		setActiveCmsItem(item)
-	}
-	return (
-		<>
-			<div className='items'>
-				{Object.keys(content).map((key) => (
-					<div key={key} onClick={() => handleClickCmsItem(key)} className={activeCmsItem === key ? 'active' : ''}>
-						<p>{content[key].btnTitle}</p>
-					</div>
-				))}
-			</div>
-			<div className='content'>
-				<div>
-					<h4>{content[activeCmsItem].title}</h4>
-					<p
-						className='grey'
-						dangerouslySetInnerHTML={{
-							__html: content[activeCmsItem].description
-						}}
-					/>
-					<Image
-						src={content[activeCmsItem].image}
-						alt='placeholder'
-						width={1}
-						height={1}
-						sizes='80vw'
-						quality='70'
-						priority
-					/>
-				</div>
-			</div>
-		</>
-	)
-}
+    console.log('active tab, lines : ', bloc) // show the lines where the column.name == activeTab
+    // const [activeItem, setActiveItem] = useState(activeColumn.line[0].name)
+    const activeColumn = bloc.column.find(col => col.name === activeTab)
 
-function EmsContent() {
-	const content = useRouter().locale === 'en' ? enEmsContent : frEmsContent
-
-	const [activeEmsItem, setActiveEmsItem] = useState('item1')
-	const handleClickEmsItem = (item) => {
-		setActiveEmsItem(item)
-	}
-
-	return (
-		<>
-			<div className='items'>
-				{Object.keys(content).map((key) => (
-					<div key={key} onClick={() => handleClickEmsItem(key)} className={activeEmsItem === key ? 'active' : ''}>
-						<p>{content[key].btnTitle}</p>
-					</div>
-				))}
-			</div>
-			<div className='content'>
-				<div>
-					<h4>{content[activeEmsItem].title}</h4>
-					<p
-						className='grey'
-						dangerouslySetInnerHTML={{
-							__html: content[activeEmsItem].description
-						}}
-					/>
-					<Image
-						src={content[activeEmsItem].image}
-						alt='placeholder'
-						width={1}
-						height={1}
-						sizes='80vw'
-						quality='70'
-						priority
-					/>
-				</div>
-			</div>
-		</>
-	)
-}
-
-function LmsContent() {
-	const content = useRouter().locale === 'en' ? enLmsContent : frLmsContent
-
-	const [activeLmsItem, setActiveLmsItem] = useState('item1')
-	const handleClickLmsItem = (item) => {
-		setActiveLmsItem(item)
-	}
-
-	return (
-		<>
-			<div className='items'>
-				{Object.keys(content).map((key) => (
-					<div key={key} onClick={() => handleClickLmsItem(key)} className={activeLmsItem === key ? 'active' : ''}>
-						<p>{content[key].btnTitle}</p>
-					</div>
-				))}
-			</div>
-			<div className='content'>
-				<div>
-					<h4>{content[activeLmsItem].title}</h4>
-					<p
-						className='grey'
-						dangerouslySetInnerHTML={{
-							__html: content[activeLmsItem].description
-						}}
-					/>
-					<Image
-						src={content[activeLmsItem].image}
-						alt='placeholder'
-						width={1}
-						height={1}
-						sizes='80vw'
-						quality='70'
-						priority
-					/>
-				</div>
-			</div>
-		</>
-	)
+    const [activeItem, setActiveItem] = useState(() => {
+        if (activeColumn) {
+            return activeColumn.line[0].name
+        } else {
+            return 'Quizz'
+        }
+    })
+    const handleClickItem = item => {
+        setActiveItem(item)
+    }
+    return (
+        <>
+            <div className="items">
+                {activeColumn.line.map((line, index) => (
+                    <div
+                        key={index}
+                        onClick={() => handleClickItem(line.name)}
+                        className={activeItem === line.name ? 'active' : ''}
+                    >
+                        <p>{line.name}</p>
+                    </div>
+                ))}
+                {/* {column.map(key => (
+                    <div
+                        key={key}
+                        onClick={() => handleClickCmsItem(key)}
+                        className={activeCmsItem === key ? 'active' : ''}
+                    >
+                        <p>{content[key].btnTitle}</p>
+                    </div>
+                ))} */}
+            </div>
+            <div className="content">
+                {activeItem && (
+                    <>
+                        {activeColumn.line.map((line, index) => {
+                            if (line.name === activeItem) {
+                                return (
+                                    <div key={index}>
+                                        <h4>{line.title}</h4>
+                                        <p
+                                            className="grey"
+                                            dangerouslySetInnerHTML={{
+                                                __html: line.description,
+                                            }}
+                                        />
+                                        <Image
+                                            src={line.image.url}
+                                            alt={line.image.alt}
+                                            width={1}
+                                            height={1}
+                                            sizes="80vw"
+                                            quality="70"
+                                            priority
+                                        />
+                                    </div>
+                                )
+                            }
+                            return null
+                        })}
+                    </>
+                )}
+            </div>
+        </>
+    )
 }
