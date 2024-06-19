@@ -1,20 +1,13 @@
-import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
+import { FadeIn } from '../../scripts/_anims.js'
 import React, { useState } from 'react'
-import { enTable, enCmsContent, enEmsContent, enLmsContent } from '../../lang/en.js'
-import { frTable, frCmsContent, frEmsContent, frLmsContent } from '../../lang/fr.js'
-
 import AnimatedText from '../../utils/anims/anims.js'
-import { useRouter } from 'next/router.js'
 import Image from 'next/image.js'
 
 export default function Table({ index, bloc }) {
-    // const content = useRouter().locale === 'en' ? enTable : frTable
-
     const [activeTab, setActiveTab] = useState(bloc.column[0].name)
     const handleClick = tab => {
         setActiveTab(tab)
     }
-    // console.log(bloc.column)
 
     return (
         <section id="Features" key={index}>
@@ -40,21 +33,9 @@ export default function Table({ index, bloc }) {
                                 </div>
                             )
                         })}
-                        {/* // <div onClick={() => handleClick('CMS')} className={activeTab === 'CMS' ? 'tab active' : 'tab'}>
-                        //     <h3>CMS</h3>
-                        // </div>
-                        // <div onClick={() => handleClick('LMS')} className={activeTab === 'LMS' ? 'tab active' : 'tab'}>
-                        //     <h3>LMS</h3>
-                        // </div>
-                        // <div onClick={() => handleClick('EMS')} className={activeTab === 'EMS' ? 'tab active' : 'tab'}>
-                        //     <h3>EMS</h3>
-                        // </div> */}
                     </div>
                     <div className="content-container">
                         <ColumnContent activeTab={activeTab} bloc={bloc} />
-                        {/* {activeTab === 'CMS' && <CmsContent />}
-                        {activeTab === 'EMS' && <EmsContent />}
-                        {activeTab === 'LMS' && <LmsContent />} */}
                     </div>
                 </div>
             </div>
@@ -63,10 +44,6 @@ export default function Table({ index, bloc }) {
 }
 
 function ColumnContent({ activeTab, bloc }) {
-    // const content = useRouter().locale === 'en' ? enCmsContent : frCmsContent
-
-    console.log('active tab, lines : ', bloc) // show the lines where the column.name == activeTab
-    // const [activeItem, setActiveItem] = useState(activeColumn.line[0].name)
     const activeColumn = bloc.column.find(col => col.name === activeTab)
 
     const [activeItem, setActiveItem] = useState(() => {
@@ -91,15 +68,6 @@ function ColumnContent({ activeTab, bloc }) {
                         <p>{line.name}</p>
                     </div>
                 ))}
-                {/* {column.map(key => (
-                    <div
-                        key={key}
-                        onClick={() => handleClickCmsItem(key)}
-                        className={activeCmsItem === key ? 'active' : ''}
-                    >
-                        <p>{content[key].btnTitle}</p>
-                    </div>
-                ))} */}
             </div>
             <div className="content">
                 {activeItem && (

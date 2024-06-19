@@ -7,6 +7,8 @@ const componentMapping = {
     logo_grid: dynamic(() => import('./content/LogoGrid')),
     showcase: dynamic(() => import('./content/Showcase')),
     table: dynamic(() => import('./content/Table')),
+    logo_scroller: dynamic(() => import('./content/LogoScroller')),
+    q_and_a: dynamic(() => import('./content/qna')),
 }
 
 export default function BlocsList({ index, bloc }) {
