@@ -20,6 +20,11 @@ module.exports = {
                 hostname: 'localhost',
                 pathname: '/kairos-blue/wp-content/uploads/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'kairos-blue.kairos-valley.net',
+                pathname: '/wp-content/uploads/**',
+            },
         ],
     },
     i18n: {

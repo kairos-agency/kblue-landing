@@ -6,6 +6,7 @@ const componentMapping = {
     hero: dynamic(() => import('./hero/HeroHome')),
     logo_grid: dynamic(() => import('./content/LogoGrid')),
     showcase: dynamic(() => import('./content/Showcase')),
+    table: dynamic(() => import('./content/Table')),
 }
 
 export default function BlocsList({ index, bloc }) {

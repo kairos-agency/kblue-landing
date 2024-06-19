@@ -15,7 +15,6 @@ import { useRouter } from 'next/router'
 import Image from 'next/image.js'
 
 export default function HeroHome({ index, bloc }) {
-    console.log("bloc : ", bloc)
     useEffect(() => {
         const handleScroll = () => {
             const title = document.querySelector('.title')
