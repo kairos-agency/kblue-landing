@@ -8,7 +8,9 @@ const componentMapping = {
     showcase: dynamic(() => import('./content/Showcase')),
     table: dynamic(() => import('./content/Table')),
     logo_scroller: dynamic(() => import('./content/LogoScroller')),
-    q_and_a: dynamic(() => import('./content/qna')),
+    q_and_a: dynamic(() => import('./content/Qna')),
+    pricing: dynamic(() => import('./content/Pricing')),
+    legal_noticies: dynamic(() => import('./content/LegalNotices')),
 }
 
 export default function BlocsList({ index, bloc }) {

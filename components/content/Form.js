@@ -2,10 +2,6 @@
 import React, { useState } from 'react'
 
 function Form({ content }) {
-    console.log('content dans form : ', content)
-    // const content = useRouter().locale === 'en' ? enForm : frForm
-    // const content = enForm
-    // console.log('bloc : ', bloc)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [submitted, setSubmitted] = useState(false)
