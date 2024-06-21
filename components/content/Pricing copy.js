@@ -111,346 +111,347 @@ export default function Pricing({ index, bloc }) {
                 <div className="container">
                     {/*  <p className="grey medium">{content.smallTitle}</p>*/}
                     {/* <PricingAccordion />
-                    <PricingAccordionMobile /> */}
+                     */}
+                    <PricingAccordionMobile />
                 </div>
             </div>
         </section>
     )
 }
 
-// function PricingAccordion() {
-//     const [isShowing, setIsShowing] = useState(false)
+function PricingAccordion() {
+    const [isShowing, setIsShowing] = useState(false)
 
-//     function toggle(e) {
-//         const element = e.currentTarget.querySelector('.accordion__pulltab')
+    function toggle(e) {
+        const element = e.currentTarget.querySelector('.accordion__pulltab')
 
-//         element.offsetHeight === 0
-//             ? (element.style.maxHeight = `${element.scrollHeight}px`)
-//             : (element.style.maxHeight = 0)
-//         setIsShowing(!isShowing)
-//     }
+        element.offsetHeight === 0
+            ? (element.style.maxHeight = `${element.scrollHeight}px`)
+            : (element.style.maxHeight = 0)
+        setIsShowing(!isShowing)
+    }
 
-//     return (
-//         <>
-//             <div className="accordion accordion--pricing" onClick={toggle}>
-//                 <div className="accordion__title accordion__title--pricing">
-//                     <div>
-//                         <p>{content.cms.title}</p>
-//                         <p>{content.cms.basic}</p>
-//                         <p>{content.cms.kblue}</p>
-//                         <p>{content.cms.premium}</p>
-//                     </div>
-//                     <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
-//                 </div>
-//                 <div className="accordion__pulltab accordion__pulltab--pricing" style={{ maxHeight: `591px` }}>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line1}</p>
+    return (
+        <>
+            <div className="accordion accordion--pricing" onClick={toggle}>
+                <div className="accordion__title accordion__title--pricing">
+                    <div>
+                        <p>{content.cms.title}</p>
+                        <p>{content.cms.basic}</p>
+                        <p>{content.cms.kblue}</p>
+                        <p>{content.cms.premium}</p>
+                    </div>
+                    <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
+                </div>
+                <div className="accordion__pulltab accordion__pulltab--pricing" style={{ maxHeight: `591px` }}>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line1}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line2}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line2}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line3}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line3}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line4}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line4}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line5}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line5}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line6}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line6}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line7}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line7}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line8}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line8}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.cms.line9}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line9}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="accordion accordion--pricing" onClick={toggle}>
-//                 <div className="accordion__title accordion__title--pricing">
-//                     <div>
-//                         <p>{content.lms.title}</p>
-//                         <p>{content.lms.basic}</p>
-//                         <p>{content.lms.kblue}</p>
-//                         <p>{content.lms.premium}</p>
-//                     </div>
-//                     <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
-//                 </div>
-//                 <div className="accordion__pulltab accordion__pulltab--pricing">
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line1}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                </div>
+            </div>
+            <div className="accordion accordion--pricing" onClick={toggle}>
+                <div className="accordion__title accordion__title--pricing">
+                    <div>
+                        <p>{content.lms.title}</p>
+                        <p>{content.lms.basic}</p>
+                        <p>{content.lms.kblue}</p>
+                        <p>{content.lms.premium}</p>
+                    </div>
+                    <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
+                </div>
+                <div className="accordion__pulltab accordion__pulltab--pricing">
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line1}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line2}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line2}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line3}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line3}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line4}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line4}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line5}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line5}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line6}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line6}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line7}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line7}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <p>{content.quote}</p>
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.lms.line8}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <p>{content.quote}</p>
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.lms.line8}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <p>{content.quote}</p>
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                 </div>
-//             </div>
-//             <div className="accordion accordion--pricing last" onClick={toggle}>
-//                 <div className="accordion__title accordion__title--pricing">
-//                     <div>
-//                         <p>{content.ems.title}</p>
-//                         <p>{content.ems.basic}</p>
-//                         <p>{content.ems.kblue}</p>
-//                         <p>{content.ems.premium}</p>
-//                     </div>
-//                     <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
-//                 </div>
-//                 <div className="accordion__pulltab accordion__pulltab--pricing">
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line1}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <p>{content.quote}</p>
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                </div>
+            </div>
+            <div className="accordion accordion--pricing last" onClick={toggle}>
+                <div className="accordion__title accordion__title--pricing">
+                    <div>
+                        <p>{content.ems.title}</p>
+                        <p>{content.ems.basic}</p>
+                        <p>{content.ems.kblue}</p>
+                        <p>{content.ems.premium}</p>
+                    </div>
+                    <img src="/images/drop-down.svg" alt="arrow" className={isShowing ? 'rotate' : ''} />
+                </div>
+                <div className="accordion__pulltab accordion__pulltab--pricing">
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line1}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line2}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line2}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line3}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line3}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line4}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line4}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line5}</p>
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line5}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line6}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line6}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line7}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line7}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line8}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line8}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line9}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line9}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line10}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line10}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" />
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                     <div className="pulltab--wrapper">
-//                         <div>
-//                             <p>{content.ems.line11}</p>
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" />
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                    <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.ems.line11}</p>
 
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <img src="/images/checkmark.svg" alt="check" className="hidden" />
-//                             <p>{content.quote}</p>
-//                         </div>
-//                         <img src="/images/drop-down.svg" alt="emptyness" />
-//                     </div>
-//                 </div>
-//             </div>
-//         </>
-//     )
-// }
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <img src="/images/checkmark.svg" alt="check" className="hidden" />
+                            <p>{content.quote}</p>
+                        </div>
+                        <img src="/images/drop-down.svg" alt="emptyness" />
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}

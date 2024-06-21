@@ -10,6 +10,7 @@ const componentMapping = {
     logo_scroller: dynamic(() => import('./content/LogoScroller')),
     q_and_a: dynamic(() => import('./content/Qna')),
     pricing: dynamic(() => import('./content/Pricing')),
+    pricing_accordion: dynamic(() => import('./content/PricingAccordion')),
     legal_noticies: dynamic(() => import('./content/LegalNotices')),
 }
 
