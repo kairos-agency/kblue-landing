@@ -207,6 +207,7 @@ function Plan({ selected, bloc }) {
     )
 }
 function ColumnFeatures({ bloc, selected }) {
+    
     return selected === 0 ? firstColumnFeatures({ bloc }) : secondColumnFeatures({ bloc })
 }
 function firstColumnFeatures({ bloc }) {
@@ -216,6 +217,23 @@ function firstColumnFeatures({ bloc }) {
                 <div>
                     <p>{feature.title}</p>
                     {feature.is_first_column ? (
+                        <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
+                    ) : (
+                        <Image src="/images/cross.svg" alt="not checked" width={20} height={20} />
+                    )}
+                </div>
+                <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
+            </div>
+        ))
+    }
+}
+function secondColumnFeatures({ bloc }) {
+    {
+        bloc.rows[0].features.map((feature, featureIndex) => (
+            <div key={featureIndex} className="pulltab--wrapper">
+                <div>
+                    <p>{feature.title}</p>
+                    {feature.is_second_column ? (
                         <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
                     ) : (
                         <Image src="/images/cross.svg" alt="not checked" width={20} height={20} />

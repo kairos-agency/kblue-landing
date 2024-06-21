@@ -1,7 +1,8 @@
 import React from 'react'
+import localFont from 'next/font/local'
 import { useFrame } from '@react-three/fiber'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
-
+const requila = localFont({ src: '../../fonts/Requila.woff' })
 import { useRef, useEffect, useState } from 'react'
 import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
 
@@ -40,7 +41,7 @@ export default function HeroHome({ index, bloc }) {
                                 <div className="title">
                                     <FadeInBottom>
                                         <h1>
-                                            {bloc.title1} <span>{bloc.title2}</span>
+                                            {bloc.title1} <span className={requila.className}>{bloc.title2}</span>
                                         </h1>
                                     </FadeInBottom>
                                     <AnimatedText classname="medium grey undertitle" text={bloc.description} />

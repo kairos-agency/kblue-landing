@@ -1,7 +1,7 @@
 import { fetchData } from '../../utils/utils'
 import BlocsList from '../../components/BlocsList'
 import { notFound } from 'next/navigation'
-export async function generateMetadata({params}) {
+export async function generateMetadata({ params }) {
     const data = await fetchData(`wp/v2/pages?slug=${params.slug}&acf_format=standard`)
 
     return {

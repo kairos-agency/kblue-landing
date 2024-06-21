@@ -7,11 +7,9 @@ import { useState } from 'react'
 export default function Pricing({ index, bloc }) {
     const cards = Array.isArray(bloc.cards) ? bloc.cards : []
     const [selected, setSelected] = useState(0)
-
-    function toggleSelected(cardIndex) {
+    function toogleSelected(cardIndex) {
         setSelected(cardIndex)
     }
-
     return (
         <section key={index} id="Pricing">
             <div className="container">
@@ -43,14 +41,14 @@ export default function Pricing({ index, bloc }) {
                         {cards.map((card, cardIndex) => (
                             <div
                                 key={cardIndex}
-                                className={cardIndex === selected ? 'card active' : 'card'}
-                                onClick={() => toggleSelected(cardIndex)}
+                                className={cardIndex == selected ? 'card active' : 'card'}
+                                onClick={() => toogleSelected(cardIndex)}
                             >
                                 <div className="title">
                                     <div className="card__title">
                                         <Image src={card.image.url} alt={card.image.alt} width={23} height={23} />
                                         <h3>{card.title}</h3>
-                                        {cardIndex === 1 && (
+                                        {cardIndex == 1 && (
                                             <div className="badge">
                                                 <p>{bloc.badge}</p>
                                             </div>
@@ -68,7 +66,7 @@ export default function Pricing({ index, bloc }) {
                                 <div className="card__price">
                                     <Link
                                         href="/"
-                                        className={cardIndex === 1 ? 'btn btn-primary' : 'btn btn-primary btn-outline'}
+                                        className={cardIndex == 1 ? 'btn btn-primary' : 'btn btn-primary btn-outline'}
                                     >
                                         {bloc.button_text}
                                     </Link>
@@ -80,24 +78,24 @@ export default function Pricing({ index, bloc }) {
                     <div className="container">
                         <p className="grey medium">{bloc.table_title}</p>
                         <PricingAccordion bloc={bloc} />
-                        <PricingAccordionMobile selected={selected} bloc={bloc} />
+                        <PricingAccordionMobile selected={selected} />
                     </div>
                 </div>
             </div>
         </section>
     )
 }
-
 function PricingAccordion({ bloc }) {
     const [isShowing, setIsShowing] = useState(false)
 
     function toggle(e) {
         const element = e.currentTarget.querySelector('.accordion__pulltab')
 
-        element.style.maxHeight = element.offsetHeight === 0 ? `${element.scrollHeight}px` : 0
+        element.offsetHeight === 0
+            ? (element.style.maxHeight = `${element.scrollHeight}px`)
+            : (element.style.maxHeight = 0)
         setIsShowing(!isShowing)
     }
-
     return (
         <>
             {bloc.rows.map((row, rowIndex) => (
@@ -159,70 +157,52 @@ function PricingAccordion({ bloc }) {
         </>
     )
 }
-
-function PricingAccordionMobile({ selected, bloc }) {
+function PricingAccordionMobile(selected) {
     return (
         <>
-            <Plan selected={selected} bloc={bloc} />
+            <Plan plan={selected} />
         </>
     )
 }
 
-function Plan({ selected, bloc }) {
+function Plan({plan}) {
     const [isShowing, setIsShowing] = useState(false)
-    const plan = bloc.cards[selected]
 
     function toggle(e) {
         const element = e.currentTarget.querySelector('.accordion__pulltab')
 
-        element.style.maxHeight = element.offsetHeight === 0 ? `${element.scrollHeight}px` : 0
+        element.offsetHeight === 0
+            ? (element.style.maxHeight = `${element.scrollHeight}px`)
+            : (element.style.maxHeight = 0)
         setIsShowing(!isShowing)
     }
-
     return (
         <>
-            {bloc.cards.map((card, cardIndex) => {
-                return (
-                    <div key={cardIndex} className="accordion accordion--pricing accordion--mobile" onClick={toggle}>
-                        <div className="accordion__title accordion__title--pricing">
-                            <div>
-                                <p>{bloc.rows[cardIndex].title}</p>
-                                <p>{plan.title}</p>
-                            </div>
-                            <Image
-                                src="/images/drop-down.svg"
-                                alt="arrow"
-                                className={isShowing ? 'rotate' : ''}
-                                width={28}
-                                height={28}
-                            />
-                        </div>
-                        <div className="accordion__pulltab accordion__pulltab--pricing">
-                            <ColumnFeatures bloc={bloc} selected={selected} />
-                        </div>
+            <div className="accordion accordion--pricing accordion--mobile" onClick={toggle}>
+                <div className="accordion__title accordion__title--pricing">
+                    <div>
+                        <p>{content.cms.title}</p>
+                        <p>{content.cms.basic}</p>
                     </div>
-                )
-            })}
+                    <Image
+                        src="/images/drop-down.svg"
+                        alt="arrow"
+                        className={isShowing ? 'rotate' : ''}
+                        width={28}
+                        height={28}
+                    />
+                </div>
+                <div className="accordion__pulltab accordion__pulltab--pricing">
+                    {/* TODO bloc.map <div className="pulltab--wrapper">
+                        <div>
+                            <p>{content.cms.line1}</p>
+
+                            <Image src="/images/checkmark.svg" alt="check" width={28} height={28} />
+                        </div>
+                        <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
+                    </div> */}
+                </div>
+            </div>
         </>
     )
-}
-function ColumnFeatures({ bloc, selected }) {
-    return selected === 0 ? firstColumnFeatures({ bloc }) : secondColumnFeatures({ bloc })
-}
-function firstColumnFeatures({ bloc }) {
-    {
-        bloc.rows[0].features.map((feature, featureIndex) => (
-            <div key={featureIndex} className="pulltab--wrapper">
-                <div>
-                    <p>{feature.title}</p>
-                    {feature.is_first_column ? (
-                        <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
-                    ) : (
-                        <Image src="/images/cross.svg" alt="not checked" width={20} height={20} />
-                    )}
-                </div>
-                <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
-            </div>
-        ))
-    }
 }
