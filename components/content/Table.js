@@ -2,6 +2,8 @@ import { FadeIn } from '../../scripts/_anims.js'
 import React, { useState } from 'react'
 import AnimatedText from '../../utils/anims/anims.js'
 import Image from 'next/image.js'
+import localFont from 'next/font/local'
+const requila = localFont({ src: '../../fonts/Requila.woff' })
 
 export default function Table({ index, bloc }) {
     const [activeTab, setActiveTab] = useState(bloc.column[0].name)
@@ -14,7 +16,7 @@ export default function Table({ index, bloc }) {
             <div className="container">
                 <FadeIn>
                     <h2>
-                        {bloc.title1} <span>{bloc.title2}</span>
+                        {bloc.title1} <span className={requila.className}>{bloc.title2}</span>
                     </h2>
                 </FadeIn>
                 <div>

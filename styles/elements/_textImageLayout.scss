@@ -1,0 +1,40 @@
+.text-image-layout {
+
+  .text-layout {
+    flex-direction: column;
+    gap: rem(3);
+
+    h2 {
+      margin: 0;
+    }
+
+    div,
+    p {
+      max-width: 100%;
+    }
+
+    @media screen and (min-width: $from-small) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: rem(2);
+
+      div,
+      p {
+        max-width: rem(32);
+      }
+    }
+    p {
+      line-height: 1.5;
+    }
+    .overtitle,
+    h2 {
+      text-align: start;
+    }
+  }
+
+  .image-layout {
+    margin-top: rem(4);
+    box-shadow: $box-shadow;
+  }
+}

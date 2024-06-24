@@ -8,10 +8,13 @@ const componentMapping = {
     showcase: dynamic(() => import('./content/Showcase')),
     table: dynamic(() => import('./content/Table')),
     logo_scroller: dynamic(() => import('./content/LogoScroller')),
+    logo_featured: dynamic(() => import('./content/LogoFeatured')),
     q_and_a: dynamic(() => import('./content/Qna')),
     pricing: dynamic(() => import('./content/Pricing')),
     pricing_accordion: dynamic(() => import('./content/PricingAccordion')),
     legal_noticies: dynamic(() => import('./content/LegalNotices')),
+    text_image_full_layout: dynamic(() => import('./content/TextImageFullLayout')),
+    statistics_image: dynamic(() => import('./content/StatisticsImage')),
 }
 
 export default function BlocsList({ index, bloc }) {

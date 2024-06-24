@@ -1,23 +1,15 @@
-import Link from 'next/link.js'
-import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
-
-import { Canvas, useFrame } from '@react-three/fiber'
-
+import { FadeInBottom, FadeInRight, FadeIn } from '../../scripts/_anims.js'
+import { useFrame } from '@react-three/fiber'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
 import { useRef, useEffect, useState } from 'react'
-import { Float, MeshTransmissionMaterial, useAnimations, useGLTF, useTexture } from '@react-three/drei'
-
-import { useRouter } from 'next/router.js'
-
+import { useAnimations, useGLTF, useTexture } from '@react-three/drei'
 import Form from './Form.js'
 import AnimatedText from '../../utils/anims/anims.js'
-
-import { enShowcase } from '../../lang/en.js'
-import { frShowcase } from '../../lang/fr.js'
 import Image from 'next/image.js'
+import localFont from 'next/font/local'
+const requila = localFont({ src: '../../fonts/Requila.woff' })
 
 export default function Showcase({ index, bloc }) {
-    // const content = useRouter().locale === 'en' ? enShowcase : frShowcase
     return (
         <div key={index}>
             <SmoothScrollbar>
@@ -26,7 +18,7 @@ export default function Showcase({ index, bloc }) {
                         <div className="container">
                             <FadeInBottom>
                                 <h2>
-                                    {bloc.title1} <span>{bloc.alt_title1}</span>
+                                    {bloc.title1} <span className={requila.className}>{bloc.alt_title1}</span>
                                 </h2>
                             </FadeInBottom>
                             <div>
@@ -45,7 +37,8 @@ export default function Showcase({ index, bloc }) {
                                     <FadeInBottom>
                                         <div>
                                             <h2>
-                                                {bloc.title2} <span>{bloc.alt_title2}</span>
+                                                {bloc.title2}{' '}
+                                                <span className={requila.className}>{bloc.alt_title2}</span>
                                             </h2>
                                             <AnimatedText classname="grey medium animated" text={bloc.description2} />
                                         </div>

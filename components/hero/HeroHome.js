@@ -1,18 +1,12 @@
 import React from 'react'
 import localFont from 'next/font/local'
+const requila = localFont({ src: '../../fonts/Requila.woff' })
 import { useFrame } from '@react-three/fiber'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
-const requila = localFont({ src: '../../fonts/Requila.woff' })
 import { useRef, useEffect, useState } from 'react'
 import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
-
 import { FadeInBottom } from '../../scripts/_anims.js'
 import AnimatedText from '../../utils/anims/anims.js'
-
-import { enHome } from '../../lang/en.js'
-import { frHome } from '../../lang/fr.js'
-
-import { useRouter } from 'next/router'
 import Image from 'next/image.js'
 
 export default function HeroHome({ index, bloc }) {
@@ -28,9 +22,6 @@ export default function HeroHome({ index, bloc }) {
             window.removeEventListener('scroll', handleScroll)
         }
     }, [])
-
-    // const content = useRouter().locale === 'en' ? enHome : frHome
-
     return (
         <div key={index}>
             <SmoothScrollbar>

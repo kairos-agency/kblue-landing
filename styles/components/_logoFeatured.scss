@@ -1,0 +1,28 @@
+.logos-featured {
+    span {
+        display: block;
+        text-align: center;
+        color: $color-grey;
+        font-size: rem(0.8);
+        font-weight: 500;
+        margin-bottom: rem(2);
+    }
+
+    .logos-featured-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: rem(2);
+
+        img {
+            width: 100%;
+        }
+
+        @media screen and (min-width: $from-small) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: rem(3);
+        }
+    }
+}

@@ -25,12 +25,16 @@ module.exports = {
                 hostname: 'kairos-blue.kairos-valley.net',
                 pathname: '/wp-content/uploads/**',
             },
+            {
+                protocol: 'http',
+                hostname: 'via.placeholder.com',
+                pathname: '/**',
+            },
         ],
     },
     i18n: {
         locales: ['en', 'fr'],
         defaultLocale: 'fr',
-        localDetection: true,
     },
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
