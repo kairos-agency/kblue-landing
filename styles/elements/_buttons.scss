@@ -4,10 +4,12 @@
 	font-weight: 400;
 	padding: rem(0.8) rem(3);
 	border-radius: 8px;
+
 	@media (min-width: $from-mini) {
 		padding: rem(1) rem(4);
 	}
 }
+
 .btn-secondary {
 	color: $color-white;
 	background: $color-grey-darker;
@@ -17,17 +19,21 @@
 	font-size: rem(1);
 	text-align: center;
 	line-height: rem(2);
+
 	&:hover {
 		background: darken($color-grey-darker, 10%);
 	}
+
 	@media (min-width: $from-mini) {
 		padding: rem(1.2) rem(3);
 		font-size: rem(1.2);
 	}
+
 	@media (min-width: $from-tiny) {
 		padding: rem(0.8) rem(4);
 		font-size: rem(1.4);
 	}
+
 	@media (min-width: $from-small) {
 		font-size: rem(1.2);
 	}
@@ -35,7 +41,7 @@
 
 .btn-outline {
 	color: $color-primary;
-	background: $color-white;
+	background: none;
 	border: 1px solid $color-primary;
 }
 

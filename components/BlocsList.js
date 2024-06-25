@@ -15,6 +15,9 @@ const componentMapping = {
     legal_noticies: dynamic(() => import('./content/LegalNotices')),
     text_image_full_layout: dynamic(() => import('./content/TextImageFullLayout')),
     statistics_image: dynamic(() => import('./content/StatisticsImage')),
+    solutions: dynamic(() => import('./content/Solutions')),
+    team: dynamic(() => import('./content/Team')),
+    blog: dynamic(() => import('./content/Blog')),
 }
 
 export default function BlocsList({ index, bloc }) {
