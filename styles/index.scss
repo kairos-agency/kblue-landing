@@ -24,6 +24,12 @@
 @import './components/article/body';
 
 @import './components/blog';
+@import './components/logoFeatured';
+@import './components/solutions';
+@import './components/team';
+@import './components/lastBlogs';
+@import './components/cta';
+@import './components/testimonials';
 
 @import './elements/layouts';
 @import './elements/headings';
@@ -34,9 +40,6 @@
 @import './elements/accordion';
 @import './elements/textImageLayout';
 @import './elements/statisticsImageLayout';
-@import './components/logoFeatured';
-@import './components/solutions';
-@import './components/team';
-@import './components/lastBlogs';
+@import './elements/cta';
 
 @import './anims/anims';

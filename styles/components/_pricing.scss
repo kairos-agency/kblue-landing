@@ -60,6 +60,10 @@
 		.pricing {
 			margin: rem(8) auto;
 
+			.description {
+				color: $color-grey-dark;
+			}
+
 			.cards {
 				display: flex;
 				grid-template-columns: repeat(3, 1fr);

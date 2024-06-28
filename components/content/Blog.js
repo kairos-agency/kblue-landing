@@ -16,7 +16,7 @@ export default function Blog() {
                     <div className="last-blogs-grid">
                         <div className="blog">
                             <div className="blog-image">
-                                <Image src="/images/home-fr.webp" alt="Picture of the author" sizes="300px" fill />
+                                <Image src="/images/home-fr.webp" alt="Picture of the author" sizes="700px" fill />
                             </div>
                             <span>Ressources</span>
                             <h3>Kairos Blue n’a jamais été aussi performant</h3>
@@ -27,7 +27,7 @@ export default function Blog() {
                         </div>
                         <div className="blog">
                             <div className="blog-image">
-                                <Image src="/images/home-fr.webp" alt="Picture of the author" sizes="300px" fill />
+                                <Image src="/images/home-fr.webp" alt="Picture of the author" sizes="700px" fill />
                             </div>
                             <span>Ressources</span>
                             <h3>Kairos Blue n’a jamais été aussi performant</h3>

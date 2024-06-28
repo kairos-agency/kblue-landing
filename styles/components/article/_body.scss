@@ -1,46 +1,61 @@
 section.article {
+	a {
+		color: $color-primary;
+		text-decoration: underline;
+		text-underline-offset: rem(0.3);
+	}
+
 	.container-xs {
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: rem(2);
 		justify-items: start;
+
 		h2 {
 			font-size: rem(2);
 			text-align: left;
 			margin: unset;
 		}
+
 		h3 {
 			font-size: rem(1.8);
 			text-align: left;
 			margin: unset;
 			font-weight: 500;
 		}
+
 		h4 {
 			font-size: rem(1.6);
 			text-align: left;
 			margin: unset;
 			font-weight: 500;
 		}
+
 		h5 {
 			font-size: rem(1.4);
 			text-align: left;
 			margin: unset;
 			font-weight: 500;
 		}
+
 		h6 {
 			font-size: rem(1.2);
 			text-align: left;
 			margin: unset;
 			font-weight: 500;
 		}
+
 		p {
 			font-size: rem(1);
 			line-height: rem(1.5);
 		}
+
 		img {
 			width: 100%;
 		}
+
 		ul {
+			
 			li {
 				list-style-type: disc;
 				margin-left: rem(2);
@@ -50,16 +65,21 @@ section.article {
 				}
 			}
 		}
+
 		ol {
+			font-weight: 400;
+
 			li {
 				list-style-type: decimal;
 				margin-left: rem(2);
+
 				p {
 					font-size: rem(1);
 					font-weight: 400;
 				}
 			}
 		}
+
 		code {
 			background-color: $color-blue-dark;
 			color: $color-blue-ice;
@@ -67,16 +87,19 @@ section.article {
 			border-radius: rem(0.5);
 			width: 100%;
 		}
+
 		.btn-article {
 			color: $color-primary;
 			border-bottom: 1px solid $color-primary;
 		}
+
 		blockquote {
 			p {
 				font-size: rem(1.2);
 				line-height: rem(1.4);
 				font-style: italic;
 				position: relative;
+
 				&::after {
 					content: '';
 					display: block;
@@ -92,6 +115,7 @@ section.article {
 				}
 			}
 		}
+
 		.more {
 			margin-top: rem(5);
 			display: flex;

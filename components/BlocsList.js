@@ -1,9 +1,8 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-
 const componentMapping = {
-    hero: dynamic(() => import('./hero/HeroHome')),
+    hero: dynamic(() => import('./hero/HeroHomeCopy')),
     logo_grid: dynamic(() => import('./content/LogoGrid')),
     showcase: dynamic(() => import('./content/Showcase')),
     table: dynamic(() => import('./content/Table')),
@@ -18,6 +17,10 @@ const componentMapping = {
     solutions: dynamic(() => import('./content/Solutions')),
     team: dynamic(() => import('./content/Team')),
     blog: dynamic(() => import('./content/Blog')),
+    cta: dynamic(() => import('./content/Cta')),
+    short_cta: dynamic(() => import('./content/ShortCta')),
+    testimonials: dynamic(() => import('./content/Testimonials')),
+    pricing_section: dynamic(() => import('./content/PricingSection')),
 }
 
 export default function BlocsList({ index, bloc }) {

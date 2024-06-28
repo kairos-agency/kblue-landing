@@ -11,6 +11,7 @@
     p {
       max-width: rem(34);
       text-align: center;
+      color: $color-grey-dark;
 
       &:last-child {
         margin-top: rem(2);
@@ -30,6 +31,7 @@
 
     @media screen and (min-width: $from-small) {
       grid-template-columns: repeat(3, 1fr);
+
       .team-item {
         max-width: rem(19);
       }

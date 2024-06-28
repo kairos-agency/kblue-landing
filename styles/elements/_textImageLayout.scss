@@ -6,6 +6,7 @@
 
     h2 {
       margin: 0;
+      margin-bottom: rem(2);
     }
 
     div,
@@ -24,9 +25,11 @@
         max-width: rem(32);
       }
     }
+
     p {
       line-height: 1.5;
     }
+
     .overtitle,
     h2 {
       text-align: start;

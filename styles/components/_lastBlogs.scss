@@ -58,5 +58,8 @@
     width: fit-content;
     margin: 0 auto;
     margin-top: rem(3);
-  }
+    p {
+      color: $color-primary;
+    }
+    }
 }
