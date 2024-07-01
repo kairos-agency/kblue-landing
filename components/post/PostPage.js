@@ -13,7 +13,7 @@ export default function PostPage({ data }) {
                             }}
                         ></h1>
                         <div>
-                            <p>article.author</p>
+                            <p>{data.author}</p>
                             <p>{date}</p>
                         </div>
                         <div className="image-container">

@@ -19,9 +19,9 @@ async function getData(params) {
             data.map(async post => {
                 if (post.author) {
                     const user = await fetchData(`wp/v2/users/${post.author}`)
-                    post.authorName = user && user.name ? user.name : null
+                    post.author = user && user.name ? user.name : null
                 } else {
-                    post.authorName = null
+                    post.author = null
                 }
 
                 return post
