@@ -1,6 +1,7 @@
 import { fetchData } from '../../utils/utils'
 import Posts from '../../components/post/Posts'
 import { notFound } from 'next/navigation'
+import BlogHeader from '../../components/static/BlogHeader'
 
 async function getData() {
     const data = await fetchData(`wp/v2/posts`)
@@ -46,6 +47,7 @@ export default async function Page() {
 
     return (
         <>
+            <BlogHeader />
             <Posts data={data} />
         </>
     )

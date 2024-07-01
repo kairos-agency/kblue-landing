@@ -2,50 +2,68 @@
 import Link from 'next/link'
 import { FadeInLeft, FadeInRight, FadeInBottom } from '../../scripts/_anims'
 import Image from 'next/image'
+import { fetchData } from '../../utils/utils'
 
-export default function Posts({ data }) {
+export default async function Posts({ data }) {
+    const catagoriesData = await fetchData(`wp/v2/categories`)
+    console.log(catagoriesData)
     return (
-        <section className="other-project">
-            <div className="container-sm">
-                <div className="other-project_grid other-project_grid_list">
-                    {data.map((post, dataIndex) => {
-                        const imageUrl = post.image ? post.image.url : ''
-                        const imageAlt = post.image ? post.image.alt : ''
-                        const title = post.title.rendered
-                        const author = post.author
-                        const slug = post.slug
-                        const date = new Date(post.date).toLocaleString('fr-FR', {
-                            day: 'numeric',
-                            month: 'long',
-                            year: 'numeric',
-                        })
+        <>
+            <section className="other-project">
+                <div className="container">
+                    <div className="filters">
+                        {catagoriesData.map((catagory, catagoryIndex) => {
+                            return (
+                                <button key={catagoryIndex} onClick={() => console.log('clicked')}>
+                                    {catagory.name}
+                                </button>
+                            )
+                        })}
+                    </div>
+                    <div className="other-project_grid other-project_grid_list">
+                        {data.map((post, dataIndex) => {
+                            const imageUrl = post.image ? post.image.url : ''
+                            const imageAlt = post.image ? post.image.alt : ''
+                            const title = post.title.rendered
+                            const author = post.author
+                            const slug = post.slug
+                            const date = new Date(post.date).toLocaleString('fr-FR', {
+                                day: 'numeric',
+                                month: 'long',
+                                year: 'numeric',
+                            })
 
-                        return (
-                            <Link key={dataIndex} href={`blog/${slug}`} prefetch={true}>
-                                <FadeInLeft>
-                                    <Image
-                                        className="full image-full"
-                                        src={imageUrl}
-                                        alt={imageAlt}
-                                        width={1}
-                                        height={1}
-                                        sizes="80vw"
-                                        quality="70"
-                                        priority
-                                    />
-                                </FadeInLeft>
-                                <FadeInBottom>
-                                    <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
-                                    <div className="details">
-                                        <p>{author}</p>
-                                        <p>{date}</p>
-                                    </div>
-                                </FadeInBottom>
-                            </Link>
-                        )
-                    })}
+                            return (
+                                <Link key={dataIndex} href={`blog/${slug}`} prefetch={true}>
+                                    <FadeInLeft>
+                                        <Image
+                                            className="full image-full"
+                                            src={imageUrl}
+                                            alt={imageAlt}
+                                            width={1}
+                                            height={1}
+                                            sizes="80vw"
+                                            quality="70"
+                                            priority
+                                        />
+                                    </FadeInLeft>
+                                    <FadeInBottom>
+                                        <h3 dangerouslySetInnerHTML={{ __html: title }}></h3>
+                                        <div className="details">
+                                            <p>{author}</p>
+                                            <p>{date}</p>
+                                        </div>
+                                        <div className="tags">
+                                            <span>Ressources</span>
+                                            <span>FAQ</span>
+                                        </div>
+                                    </FadeInBottom>
+                                </Link>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }

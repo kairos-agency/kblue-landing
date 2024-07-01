@@ -56,7 +56,7 @@ export default function SectionBlog({ index, bloc }) {
                     </div>
                     <div className="last-blogs-grid">
                         {loading ? (
-                            <div>Chargement...</div>
+                            <div>{bloc.loading_text}</div>
                         ) : (
                             articles.map((post, dataIndex) => {
                                 let categoryNames = []

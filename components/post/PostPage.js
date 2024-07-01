@@ -1,7 +1,15 @@
+'use client'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 export default function PostPage({ data }) {
-    const date = new Date(data.date).toLocaleString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+    const [formattedDate, setFormattedDate] = useState('')
+
+    useEffect(() => {
+        const date = new Date(data.date).toLocaleString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })
+        setFormattedDate(date)
+    }, [data.date])
+
     return (
         <>
             <header className="article">
@@ -14,7 +22,7 @@ export default function PostPage({ data }) {
                         ></h1>
                         <div>
                             <p>{data.author}</p>
-                            <p>{date}</p>
+                            <p>{formattedDate}</p>
                         </div>
                         <div className="image-container">
                             <Image src={data.acf.image_header.url} alt={data.acf.image_header.alt} sizes="300px" fill />

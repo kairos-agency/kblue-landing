@@ -3,6 +3,7 @@
 import dynamic from 'next/dynamic'
 const componentMapping = {
     hero: dynamic(() => import('./hero/HeroHomeCopy')),
+    hero_simple: dynamic(() => import('./hero/HeroSimple')),
     logo_grid: dynamic(() => import('./content/LogoGrid')),
     showcase: dynamic(() => import('./content/Showcase')),
     table: dynamic(() => import('./content/Table')),
