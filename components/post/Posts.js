@@ -26,6 +26,7 @@ export default async function Posts({ data }) {
                         })}
                     </div> */}
                     <div className="other-project_grid other-project_grid_list">
+                        {console.log(data)}
                         {data.map((post, dataIndex) => {
                             const imageUrl = post.image ? post.image.url : ''
                             const imageAlt = post.image ? post.image.alt : ''

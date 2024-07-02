@@ -73,7 +73,11 @@ export default function SectionBlog({ index, bloc }) {
                                                 fill
                                             />
                                         </div>
-                                        <span>{categoryNames.join(' ')}</span>
+                                        <div className="categories">
+                                            {categoryNames.map((categoryName, categoryIndex) => {
+                                                return <span key={categoryIndex}>{categoryName}</span>
+                                            })}
+                                        </div>
                                         <h3 dangerouslySetInnerHTML={{ __html: post.title.rendered }}></h3>
                                         <p>
                                             {post.excerpt.rendered.replace(/<[^>]*>?/gm, '')}

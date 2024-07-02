@@ -181,28 +181,133 @@ function Plan({ selected, bloc }) {
 
     return (
         <>
-            {bloc.cards.map((card, cardIndex) => {
-                return (
-                    <div key={cardIndex} className="accordion accordion--pricing accordion--mobile" onClick={toggle}>
-                        <div className="accordion__title accordion__title--pricing">
-                            <div>
-                                <p>{bloc.rows[cardIndex].title}</p>
-                                <p>{plan.title}</p>
+            {selected === 0 &&
+                bloc.cards.map((card, cardIndex) => {
+                    return (
+                        <div
+                            key={cardIndex}
+                            className="accordion accordion--pricing accordion--mobile"
+                            onClick={toggle}
+                        >
+                            <div className="accordion__title accordion__title--pricing">
+                                <div>
+                                    <p>{bloc.rows[cardIndex].title}</p>
+                                    <p>{plan.title}</p>
+                                </div>
+                                <Image
+                                    src="/images/drop-down.svg"
+                                    alt="arrow"
+                                    className={isShowing ? 'rotate' : ''}
+                                    width={28}
+                                    height={28}
+                                />
                             </div>
-                            <Image
-                                src="/images/drop-down.svg"
-                                alt="arrow"
-                                className={isShowing ? 'rotate' : ''}
-                                width={28}
-                                height={28}
-                            />
+                            <div className="accordion__pulltab accordion__pulltab--pricing">
+                                {bloc.rows[cardIndex].features.map((feature, featureIndex) => (
+                                    <div key={featureIndex} className="pulltab--wrapper">
+                                        <div>
+                                            <p>{feature.title}</p>
+                                            {feature.is_first_column ? (
+                                                <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
+                                            ) : (
+                                                <Image
+                                                    src="/images/cross.svg"
+                                                    alt="not checked"
+                                                    width={20}
+                                                    height={20}
+                                                />
+                                            )}
+                                        </div>
+                                        <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                        <div className="accordion__pulltab accordion__pulltab--pricing">
-                            <ColumnFeatures bloc={bloc} selected={selected} />
+                    )
+                })}
+            {selected === 1 &&
+                bloc.cards.map((card, cardIndex) => {
+                    return (
+                        <div
+                            key={cardIndex}
+                            className="accordion accordion--pricing accordion--mobile"
+                            onClick={toggle}
+                        >
+                            <div className="accordion__title accordion__title--pricing">
+                                <div>
+                                    <p>{bloc.rows[cardIndex].title}</p>
+                                    <p>{plan.title}</p>
+                                </div>
+                                <Image
+                                    src="/images/drop-down.svg"
+                                    alt="arrow"
+                                    className={isShowing ? 'rotate' : ''}
+                                    width={28}
+                                    height={28}
+                                />
+                            </div>
+                            <div className="accordion__pulltab accordion__pulltab--pricing">
+                                {bloc.rows[cardIndex].features.map((feature, featureIndex) => (
+                                    <div key={featureIndex} className="pulltab--wrapper">
+                                        <div>
+                                            <p>{feature.title}</p>
+                                            {feature.is_second_column ? (
+                                                <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
+                                            ) : (
+                                                <Image
+                                                    src="/images/cross.svg"
+                                                    alt="not checked"
+                                                    width={20}
+                                                    height={20}
+                                                />
+                                            )}
+                                        </div>
+                                        <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
+                                    </div>
+                                ))}
+                            </div>
                         </div>
-                    </div>
-                )
-            })}
+                    )
+                })}
+            {selected === 2 &&
+                bloc.cards.map((card, cardIndex) => {
+                    return (
+                        <div
+                            key={cardIndex}
+                            className="accordion accordion--pricing accordion--mobile"
+                            onClick={toggle}
+                        >
+                            <div className="accordion__title accordion__title--pricing">
+                                <div>
+                                    <p>{bloc.rows[cardIndex].title}</p>
+                                    <p>{plan.title}</p>
+                                </div>
+                                <Image
+                                    src="/images/drop-down.svg"
+                                    alt="arrow"
+                                    className={isShowing ? 'rotate' : ''}
+                                    width={28}
+                                    height={28}
+                                />
+                            </div>
+                            <div className="accordion__pulltab accordion__pulltab--pricing">
+                                {bloc.rows[cardIndex].features.map((feature, featureIndex) => (
+                                    <div key={featureIndex} className="pulltab--wrapper">
+                                        <div>
+                                            <p>{feature.title}</p>
+                                            {feature.is_third_column ? (
+                                                <Image src="/images/checkmark.svg" alt="check" width={20} height={20} />
+                                            ) : (
+                                                <p>Sur devis</p>
+                                            )}
+                                        </div>
+                                        <Image src="/images/drop-down.svg" alt="" width={28} height={28} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )
+                })}
         </>
     )
 }

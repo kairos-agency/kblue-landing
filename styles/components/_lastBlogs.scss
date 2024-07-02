@@ -35,8 +35,19 @@
         }
       }
 
+      .categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(1);
+      }
+
       span {
         color: $color-primary;
+        color: #3f65fc;
+        border-radius: 10px;
+        border: 2px solid #3f65fc;
+        padding: 6px 14px;
+        width: fit-content;
       }
 
       h3 {
@@ -54,12 +65,14 @@
       }
     }
   }
+
   .cta {
     width: fit-content;
     margin: 0 auto;
     margin-top: rem(3);
+
     p {
       color: $color-primary;
     }
-    }
+  }
 }
