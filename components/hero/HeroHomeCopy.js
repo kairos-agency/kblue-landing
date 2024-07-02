@@ -4,7 +4,7 @@ const requila = localFont({ src: '../../fonts/Requila.woff' })
 import { useFrame } from '@react-three/fiber'
 import { SmoothScrollbar, UseCanvas, ScrollScene } from '@14islands/r3f-scroll-rig'
 import { useRef, useEffect, useState } from 'react'
-import { Float, MeshTransmissionMaterial, useAnimations, useGLTF } from '@react-three/drei'
+import { Float, MeshTransmissionMaterial, useAnimations, useGLTF, PivotControls } from '@react-three/drei'
 import { FadeInBottom } from '../../scripts/_anims.js'
 import AnimatedText from '../../utils/anims/anims.js'
 import Image from 'next/image.js'
@@ -156,31 +156,33 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
                 >
                     <meshToonMaterial color={'#3F65FC'} />
                 </mesh>
-                <group
-                    name="Empty"
-                    position={[0, 4.55, 0]}
-                >
-                    <mesh name="Rounded_Key" castShadow receiveShadow geometry={nodes.puzzle.geometry} scale={1.2} rotation-x={Math.PI * 0.5}>
-                        <MeshTransmissionMaterial
-                            backside
-                            backsideThickness={0.44}
-                            samples={16}
-                            resolution={512}
-                            transmission={1}
-                            clearcoat={0.1}
-                            clearcoatRoughness={0}
-                            thickness={1.85}
-                            chromaticAberration={0}
-                            anisotropy={0.3}
-                            roughness={0.3}
-                            distortion={0.1}
-                            distortionScale={0}
-                            temporalDistortion={0}
-                            ior={1.5}
-                            color={'#ebeffe'}
-                        />
-                    </mesh>
-                </group>
+                <axesHelper args={[5]} />
+                <PivotControls>
+                    <group name="Empty" position={[0, 4.55, 0]} rotation-z={Math.PI * 0.5}>
+                        <axesHelper args={[1]} />
+
+                        <mesh name="Rounded_Key" castShadow receiveShadow geometry={nodes.puzzle.geometry} scale={1.2}>
+                            <MeshTransmissionMaterial
+                                backside
+                                backsideThickness={0.44}
+                                samples={16}
+                                resolution={512}
+                                transmission={1}
+                                clearcoat={0.1}
+                                clearcoatRoughness={0}
+                                thickness={1.85}
+                                chromaticAberration={0}
+                                anisotropy={0.3}
+                                roughness={0.3}
+                                distortion={0.1}
+                                distortionScale={0}
+                                temporalDistortion={0}
+                                ior={1.5}
+                                color={'#ebeffe'}
+                            />
+                        </mesh>
+                    </group>
+                </PivotControls>
             </group>
         </group>
     )

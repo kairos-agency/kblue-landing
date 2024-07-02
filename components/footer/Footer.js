@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Form from '../content/Form'
 import localFont from 'next/font/local'
 const requila = localFont({ src: '../../fonts/Requila.woff' })
-import { enFooter } from '../../lang/en.js'
+import { frFooter } from '../../lang/fr.js'
 export default function Footer() {
-    const content = enFooter
+    const content = frFooter
     return (
         <>
             <footer>
