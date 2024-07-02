@@ -6,12 +6,17 @@ import { fetchData } from '../../utils/utils'
 
 export default async function Posts({ data }) {
     const catagoriesData = await fetchData(`wp/v2/categories`)
-    console.log(catagoriesData)
+
+    const getCategoryNameById = id => {
+        const category = catagoriesData.find(cat => cat.id === id)
+        return category ? category.name : 'Unknown'
+    }
+
     return (
         <>
             <section className="other-project">
                 <div className="container">
-                    <div className="filters">
+                    {/* <div className="filters">
                         {catagoriesData.map((catagory, catagoryIndex) => {
                             return (
                                 <button key={catagoryIndex} onClick={() => console.log('clicked')}>
@@ -19,7 +24,7 @@ export default async function Posts({ data }) {
                                 </button>
                             )
                         })}
-                    </div>
+                    </div> */}
                     <div className="other-project_grid other-project_grid_list">
                         {data.map((post, dataIndex) => {
                             const imageUrl = post.image ? post.image.url : ''
@@ -32,6 +37,7 @@ export default async function Posts({ data }) {
                                 month: 'long',
                                 year: 'numeric',
                             })
+                            const categoriesNumber = post.categories
 
                             return (
                                 <Link key={dataIndex} href={`blog/${slug}`} prefetch={true}>
@@ -54,8 +60,10 @@ export default async function Posts({ data }) {
                                             <p>{date}</p>
                                         </div>
                                         <div className="tags">
-                                            <span>Ressources</span>
-                                            <span>FAQ</span>
+                                            {categoriesNumber.map((categoryId, categoryIndex) => {
+                                                const categoryName = getCategoryNameById(categoryId)
+                                                return <span key={categoryIndex}>{categoryName}</span>
+                                            })}
                                         </div>
                                     </FadeInBottom>
                                 </Link>

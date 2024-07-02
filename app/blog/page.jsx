@@ -2,6 +2,7 @@ import { fetchData } from '../../utils/utils'
 import Posts from '../../components/post/Posts'
 import { notFound } from 'next/navigation'
 import BlogHeader from '../../components/static/BlogHeader'
+import { Suspense } from 'react'
 
 async function getData() {
     const data = await fetchData(`wp/v2/posts`)
@@ -48,7 +49,15 @@ export default async function Page() {
     return (
         <>
             <BlogHeader />
-            <Posts data={data} />
+            <Suspense
+                fallback={
+                    <div className="other-project">
+                        <div className="container blog-fallback">Chargement des articles en cours...</div>
+                    </div>
+                }
+            >
+                <Posts data={data} />
+            </Suspense>
         </>
     )
 }
