@@ -8,7 +8,6 @@ function Form({ content }) {
 
     const handleSubmit = e => {
         e.preventDefault()
-        console.log('Sending')
         let data = {
             name,
             email,
@@ -21,9 +20,7 @@ function Form({ content }) {
             },
             body: JSON.stringify(data),
         }).then(res => {
-            console.log('Response received', data)
             if (res.status === 200) {
-                console.log('Response succeeded!')
                 setSubmitted(true)
                 setName('')
                 setEmail('')

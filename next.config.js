@@ -32,10 +32,6 @@ module.exports = {
             },
         ],
     },
-    i18n: {
-        locales: ['en', 'fr'],
-        defaultLocale: 'fr',
-    },
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },

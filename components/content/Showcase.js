@@ -61,7 +61,6 @@ function TouchDevice() {
     useEffect(() => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
         setTouch(isTouch)
-        // console.log(isTouch)
     }, [])
     return isTouch ? (
         <Image

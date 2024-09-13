@@ -71,7 +71,6 @@ function MarkupTouchDevice() {
     useEffect(() => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
         setTouch(isTouch)
-        console.log(isTouch)
     }, [])
     return isTouch ? <img src="/images/markup.jpg" alt="hero image" /> : <MarkupSection />
 }
@@ -127,7 +126,6 @@ function GlobeTouchDevice() {
     useEffect(() => {
         const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0
         setTouch(isTouch)
-        console.log(isTouch)
     }, [])
     return isTouch ? <img src="/images/globe.jpg" alt="hero image" /> : <GlobeSection />
 }

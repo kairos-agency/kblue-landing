@@ -1,14 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import { FadeInBottom, FadeInLeft, FadeInRight, FadeIn } from '../../scripts/_anims.js'
+import { FadeInBottom, FadeIn } from '../../scripts/_anims.js'
 
-import { useRouter } from 'next/router.js'
-
-import { enLogoGrid } from '../../lang/en.js'
-import { frLogoGrid } from '../../lang/fr.js'
 import Image from 'next/image.js'
 
 export default function LogoGrid({ index, bloc }) {
-    // const content = useRouter().locale === 'en' ? enLogoGrid : frLogoGrid
     return (
         <section className="logo_grid" key={index}>
             <div className="container-xxs">

@@ -16,17 +16,7 @@ export default async function Posts({ data }) {
         <>
             <section className="other-project">
                 <div className="container">
-                    {/* <div className="filters">
-                        {catagoriesData.map((catagory, catagoryIndex) => {
-                            return (
-                                <button key={catagoryIndex} onClick={() => console.log('clicked')}>
-                                    {catagory.name}
-                                </button>
-                            )
-                        })}
-                    </div> */}
                     <div className="other-project_grid other-project_grid_list">
-                        {console.log(data)}
                         {data.map((post, dataIndex) => {
                             const imageUrl = post.image ? post.image.url : ''
                             const imageAlt = post.image ? post.image.alt : ''

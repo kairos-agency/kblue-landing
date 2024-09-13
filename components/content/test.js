@@ -7,7 +7,6 @@ import { useSnapshot } from 'valtio'
 import AnimatedText from '../../utils/anims/anims.js'
 export default function Pricing({ index, bloc }) {
     const cards = Array.isArray(bloc.cards) ? bloc.cards : []
-    console.log('cards', bloc.steps[0].text)
     const snap = useSnapshot(state)
     return (
         <section key={index} id="Pricing">
