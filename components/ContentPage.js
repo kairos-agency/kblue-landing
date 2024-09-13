@@ -19,7 +19,7 @@ export default function ContentPage({ children }) {
                     }}
                 >
                     <Suspense fallback={null}>
-                        <color attach="background" args={['#FFFFFF']} />
+                        <color attach="background" args={['#FBFBFD']} />
 
                         <Environment resolution={32}>
                             <group rotation={[-Math.PI / 4, -0.3, 0]}>
