@@ -22,27 +22,38 @@ export default function OpenSource() {
                             </FadeInBottom>
                             <FadeIn>
                                 <p className="medium grey">
-                                    Because we believe that together we go further, we have decided to open source the basic version of Kairos Blue. More than
-                                    just a methodology, our philosophy embraces freedom, collaboration and innovation.
+                                    Because we believe that together we go further, we have decided to open source the
+                                    basic version of Kairos Blue. More than just a methodology, our philosophy embraces
+                                    freedom, collaboration and innovation.
                                 </p>
                             </FadeIn>
                             <div className="staggered-container">
                                 <div className="staggered-row">
                                     <div className="staggered-col">
-                                        <h4>It's about trust, transparency, breaking down barriers and creating together.</h4>
+                                        <h4>
+                                            It's about trust, transparency, breaking down barriers and creating
+                                            together.
+                                        </h4>
                                         <p className="medium grey">
-                                            It allows everyone to understand, modify and improve the code, thus creating a dynamic of constant innovation. By
-                                            opting for open source, Kairos blue gains in flexibility and independence. You are no longer limited by the
-                                            constraints of a single supplier. You can tailor the code to your specific needs, creating bespoke solutions that
-                                            perfectly match your vision
+                                            It allows everyone to understand, modify and improve the code, thus creating
+                                            a dynamic of constant innovation. By opting for open source, Kairos blue
+                                            gains in flexibility and independence. You are no longer limited by the
+                                            constraints of a single supplier. You can tailor the code to your specific
+                                            needs, creating bespoke solutions that perfectly match your vision
                                         </p>
                                     </div>
                                     <MarkupTouchDevice />
                                 </div>
                                 <div className="staggered-row reverse">
                                     <div className="staggered-col">
-                                        <h4>Open source is an adventure, a journey to a world where technology is open, shared and constantly improved.</h4>
-                                        <p className="medium grey">Embark with Kairos Blue on this journey and discover the true power of open source.</p>
+                                        <h4>
+                                            Open source is an adventure, a journey to a world where technology is open,
+                                            shared and constantly improved.
+                                        </h4>
+                                        <p className="medium grey">
+                                            Embark with Kairos Blue on this journey and discover the true power of open
+                                            source.
+                                        </p>
                                     </div>
                                     <GlobeTouchDevice />
                                 </div>
@@ -90,8 +101,18 @@ function Markup({ scale, scrollState, ...props }) {
                 <mesh castShadow receiveShadow geometry={nodes.Markup_1.geometry}>
                     <meshPhysicalMaterial color={'#ffffff'} roughness={0} clearcoat={1} clearcoatRoughness={0} />
                 </mesh>
-                <mesh castShadow receiveShadow geometry={nodes.PlanetWindow03001.geometry} position={[1.855, -1.081, 0.836]}></mesh>
-                <mesh castShadow receiveShadow geometry={nodes.PlanetWindow01001.geometry} position={[-2.225, 0.915, -1.236]}>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.PlanetWindow03001.geometry}
+                    position={[1.855, -1.081, 0.836]}
+                ></mesh>
+                <mesh
+                    castShadow
+                    receiveShadow
+                    geometry={nodes.PlanetWindow01001.geometry}
+                    position={[-2.225, 0.915, -1.236]}
+                >
                     <meshToonMaterial color={'#2854ff'} />
                 </mesh>
             </group>
@@ -99,7 +120,7 @@ function Markup({ scale, scrollState, ...props }) {
     )
 }
 
-useGLTF.preload('/markup-test.glb')
+// useGLTF.preload('/markup-test.glb')
 
 function GlobeTouchDevice() {
     const [isTouch, setTouch] = useState(false)
@@ -156,4 +177,4 @@ function Globe({ scale, scrollState, ...props }) {
     )
 }
 
-useGLTF.preload('/planet.glb')
+// useGLTF.preload('/planet.glb')

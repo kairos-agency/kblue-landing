@@ -138,4 +138,4 @@ function SpinningBoxWebGL({ scale, scrollState, ...props }) {
     )
 }
 
-useGLTF.preload('/windows-animated.glb')
+// useGLTF.preload('/windows-animated.glb')
